@@ -1,32 +1,20 @@
 export const navigation = [
-    {
-        title: "Photo editing",
-        icon: "image-check",
-        color: "#8E55EA",
-        url: "/photo-editing",
-    },
-    {
-        title: "Video generation",
-        icon: "play-circle",
-        color: "#D84C10",
-        url: "/video-generation",
-    },
-    {
-        title: "Education feedback",
-        icon: "trophy",
-        color: "#0084FF",
-        url: "/education-feedback",
-    },
-    {
-        title: "Code generation",
-        icon: "codepen",
-        color: "#52BA69",
-        url: "/code-generation",
-    },
-    {
-        title: "Audio generation",
-        icon: "music-note",
-        color: "#E68A1D",
-        url: "/audio-generation",
-    },
+  {
+    title: "Ask Quest Questions",
+    icon: "image-check",
+    color: "#8E55EA",
+    url: "/photo-editing",
+  },
+  {
+    title: "Ask World Questions",
+    icon: "play-circle",
+    color: "#D84C10",
+    url: "/video-generation",
+  },
+  {
+    title: "Ask Open Ended Questions",
+    icon: "trophy",
+    color: "#0084FF",
+    url: "/education-feedback",
+  },
 ];
