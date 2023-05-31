@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Layout from "@/components/Layout";
-import Icon from "@/components/Icon";
+import Layout from "@/components/Layout/Burger/Burger";
+import Icon from "@/components/Icon/Icon";
 import Application from "./Application";
 
 import { applications } from "@/mocks/applications";

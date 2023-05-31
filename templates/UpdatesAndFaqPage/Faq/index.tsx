@@ -1,5 +1,5 @@
-import FaqItem from "@/components/FaqItem";
-import Image from "@/components/Image";
+import FaqItem from "@/components/FaqItem/FaqItem";
+import Image from "@/components/Image/Image";
 
 type FaqItems = {
   id: string;

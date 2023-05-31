@@ -1,14 +1,14 @@
-import Layout from "@/components/Layout";
-import Main from "./Main";
+import Layout from "@/components/Layout/Layout";
+import Main from "./Main/Main";
 import Faq from "./Faq";
 
 const PricingPage = () => {
-    return (
-        <Layout smallSidebar hideRightSidebar>
-            <Main />
-            <Faq />
-        </Layout>
-    );
+  return (
+    <Layout hideRightSidebar smallSidebar>
+      <Main />
+      <Faq />
+    </Layout>
+  );
 };
 
 export default PricingPage;

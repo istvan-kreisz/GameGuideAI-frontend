@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Icon from "@/components/Icon";
+import Icon from "@/components/Icon/Icon";
 
 type FootProps = {};
 

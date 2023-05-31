@@ -1,9 +1,9 @@
-import Layout from "@/components/Layout";
-import Main from "./Main";
+import Layout from "@/components/Layout/Layout";
+import Main from "./Main/Main";
 
 const HomePage = () => {
   return (
-    <Layout hideRightSidebar={true} smallSidebar={true}>
+    <Layout hideRightSidebar={true}>
       <Main />
     </Layout>
   );

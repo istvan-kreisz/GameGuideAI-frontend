@@ -1,11 +1,11 @@
 import { useState } from "react";
-import Layout from "@/components/Layout";
-import Chat from "@/components/Chat";
-import Message from "@/components/Message";
-import Question from "@/components/Question";
-import Answer from "@/components/Answer";
-import Services from "@/components/Services";
-import Audio from "@/components/Audio";
+import Layout from "@/components/Layout/Burger/Burger";
+import Chat from "@/components/Chat/Chat";
+import Message from "@/components/Message/Message";
+import Question from "@/components/Question/Question";
+import Answer from "@/components/Answer/Answer";
+import Services from "@/components/Services/Services";
+import Audio from "@/components/Audio/Audio";
 
 const AudioGenerationPage = () => {
   const [message, setMessage] = useState<string>("");
