@@ -4,11 +4,6 @@ import Select from "@/components/Select/Select";
 import Menu from "./Menu/Menu";
 import EditProfile from "./EditProfile/EditProfile";
 import Password from "./Password/Password";
-import Notifications from "./Notifications/Notifications";
-import ChatExport from "./ChatExport/ChatExport";
-import Sessions from "./Sessions/Sessions";
-import Applications from "./Applications/Applications";
-import Team from "./Team/Team";
 import Appearance from "./Appearance/Appearance";
 import DeleteAccount from "./DeleteAccount/DeleteAccount";
 
@@ -50,11 +45,6 @@ const Settings = ({ items, activeItem }: SettingsProps) => {
         <div className="grow pl-12 md:pl-0">
           {active.id === "edit-profile" && <EditProfile />}
           {active.id === "password" && <Password />}
-          {active.id === "notifications" && <Notifications />}
-          {active.id === "chat-export" && <ChatExport />}
-          {active.id === "sessions" && <Sessions />}
-          {active.id === "applications" && <Applications />}
-          {active.id === "team" && <Team />}
           {active.id === "appearance" && <Appearance />}
           {active.id === "delete-account" && <DeleteAccount />}
         </div>

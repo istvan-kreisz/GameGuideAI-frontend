@@ -69,7 +69,7 @@ const Appearance = ({}: AppearanceProps) => {
           </button>
         ))}
       </div>
-      <div className="flex items-center md:block">
+      {/*<div className="flex items-center md:block">
         <div className="mr-auto base1 font-semibold md:mb-4">
           Primary language
         </div>
@@ -81,7 +81,7 @@ const Appearance = ({}: AppearanceProps) => {
           onChange={setLanguage}
           up
         />
-      </div>
+            </div>(*/}
     </>
   );
 };

@@ -76,7 +76,7 @@ const Layout = ({
             }`}
           >
             <div
-              className={`relative flex flex-col grow max-w-full ${
+              className={`relative flex flex-col grow max-w-full  ${
                 !hideRightSidebar && "md:pt-18"
               }`}
             >
