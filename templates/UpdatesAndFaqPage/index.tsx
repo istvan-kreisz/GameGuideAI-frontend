@@ -1,6 +1,6 @@
 import { Tab } from "@headlessui/react";
 import { useRouter } from "next/router";
-import Layout from "@/components/Layout/Burger/Burger";
+import Layout from "@/components/Layout/Layout";
 import Icon from "@/components/Icon/Icon";
 import Updates from "./Updates";
 import Faq from "./Faq";

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Layout from "@/components/Layout/Burger/Burger";
+import Layout from "@/components/Layout/Layout/";
 import Chat from "@/components/Chat/Chat";
 import Message from "@/components/Message/Message";
 import Question from "@/components/Question/Question";

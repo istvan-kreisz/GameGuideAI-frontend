@@ -6,7 +6,6 @@ import Modal from "@/components/Modal/Modal";
 import Search from "@/components/Search/Search";
 import Settings from "@/components/Settings/Settings";
 import Navigation from "./Navigation/Navigation";
-import ChatList from "./ChatList/ChatList";
 import Profile from "./Profile/Progile";
 import ToggleTheme from "./ToggleTheme/ToggleTheme";
 
@@ -106,7 +105,6 @@ const LeftSidebar = ({
           </button>
         </div>
         <div className="grow overflow-y-auto scroll-smooth scrollbar-none">
-          <ChatList visible={value} items={chatList} />
           <Navigation visible={value} items={navigation} />
           <div
             className={`my-4 h-0.25 bg-n-6 ${
