@@ -109,7 +109,7 @@ module.exports = {
     plugin(function ({ addBase, addComponents, addUtilities }) {
       addBase({
         html: {
-          "@apply text-[0.9rem]": {},
+          "@apply text-[0.92rem]": {},
         },
         body: {
           "@apply bg-n-7 text-[1rem] leading-6 -tracking-[.01em] text-n-7 antialiased md:bg-n-1 dark:text-n-1 dark:md:bg-n-6":

@@ -15,7 +15,7 @@ const Main = ({}: MainProps) => {
             AI Gaming Companion
           </div>
           <div className="body1 text-n-4 2xl:body1S">
-            Chat with the first AI trained on game info!
+            Chat with GPT trained on game info!
           </div>
         </div>
         <Menu className="max-w-[30.75rem] mx-auto" items={navigation} />

@@ -10,7 +10,7 @@ const SignInPage = () => {
         <div className="max-w-[25.4rem]">
           <div className="mb-4 h2 text-n-1">AI Gaming Companion</div>
           <div className="body1 text-n-3">
-            Chat with the first AI trained on game info!
+            Chat with GPT trained on game info!
           </div>
         </div>
         <div className="absolute top-52 left-5 right-5 h-[50rem] xl:top-24">
