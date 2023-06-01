@@ -41,10 +41,16 @@ const LeftSidebar = ({
 
   const navigation = [
     {
-      title: "Skyrim Chat",
+      title: "Home",
       icon: "chat",
       color: "fill-accent-2",
       url: "/",
+    },
+    {
+      title: "Skyrim Chat",
+      icon: "chat",
+      color: "fill-accent-5",
+      url: "/skyrim",
     },
     {
       title: "Manage subscription",

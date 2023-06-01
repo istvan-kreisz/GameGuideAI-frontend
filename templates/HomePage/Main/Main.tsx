@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Menu from "@/components/Menu/Menu";
+import Link from "next/link";
 
 import { navigation } from "@/constants/navigation";
 
@@ -14,14 +15,14 @@ const Main = ({}: MainProps) => {
             AI Gaming Companion
           </div>
           <div className="body1 text-n-4 2xl:body1S">
-            Chat with the first ever AI trained on games!
+            Chat with the first AI trained on game info!
           </div>
         </div>
         <Menu className="max-w-[30.75rem] mx-auto" items={navigation} />
-        <div className="mt-10 text-center">
-          <div className="body1 text-n-4 2xl:body1S">
+        <div className="mt-4 text-center">
+          <Link className="text-primary-1 font-medium text-base" href={"/"}>
             Vote on the next game!
-          </div>
+          </Link>
         </div>
       </div>
     </>

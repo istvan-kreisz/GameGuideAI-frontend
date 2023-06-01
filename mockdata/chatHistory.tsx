@@ -29,7 +29,7 @@ export const chatHistory = [
       "/images/avatar-2.jpg",
     ],
     time: "Just now",
-    url: "/gameai-chat",
+    url: "/skyrim",
   },
   {
     id: "3",
