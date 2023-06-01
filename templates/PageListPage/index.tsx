@@ -7,7 +7,7 @@ const items = [
   },
   {
     title: "Game AI",
-    url: "/gameai-chat",
+    url: "/skyrim",
   },
   {
     title: "Pricing",
