@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import EducationFeedbackPage from "@/templates/ChatSamplePage";
+import EducationFeedbackPage from "@/templates/GameAIPage";
 
 const EducationFeedback: NextPage = () => {
   return <EducationFeedbackPage />;
