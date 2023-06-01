@@ -3,14 +3,11 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import Logo from "@/components/Logo/Logo";
 import Icon from "@/components/Icon/Icon";
 import Modal from "@/components/Modal/Modal";
-import Search from "@/components/Search/Search";
 import Settings from "@/components/Settings/Settings";
 import Navigation from "./Navigation/Navigation";
 import Profile from "./Profile/Progile";
 import ToggleTheme from "./ToggleTheme/ToggleTheme";
 
-import { chatList } from "@/mocks/chatList";
-import { resultSearch } from "@/mocks/resultSearch";
 import { settings } from "@/constants/settings";
 import { twMerge } from "tailwind-merge";
 
@@ -27,7 +24,6 @@ const LeftSidebar = ({
   smallSidebar,
   visibleRightSidebar,
 }: LeftSidebarProps) => {
-  const [visibleSearch, setVisibleSearch] = useState<boolean>(false);
   const [visibleSettings, setVisibleSettings] = useState<boolean>(false);
 
   useEffect(() => {
@@ -40,22 +36,15 @@ const LeftSidebar = ({
   const handleWindowKeyDown = (event: any) => {
     if (event.metaKey && event.key === "f") {
       event.preventDefault();
-      setVisibleSearch(true);
     }
   };
 
   const navigation = [
     {
-      title: "Chats",
+      title: "Skyrim Chat",
       icon: "chat",
       color: "fill-accent-2",
       url: "/",
-    },
-    {
-      title: "Search",
-      icon: "search",
-      color: "fill-primary-2",
-      onClick: () => setVisibleSearch(true),
     },
     {
       title: "Manage subscription",
@@ -106,27 +95,12 @@ const LeftSidebar = ({
         </div>
         <div className="grow overflow-y-auto scroll-smooth scrollbar-none">
           <Navigation visible={value} items={navigation} />
-          <div
-            className={`my-4 h-0.25 bg-n-6 ${
-              value ? "-mx-4 md:mx-0" : "-mx-2 md:mx-0"
-            }`}
-          ></div>
         </div>
         <div className="absolute left-0 bottom-0 right-0 pb-6 px-4 bg-n-7 before:absolute before:left-0 before:right-0 before:bottom-full before:h-10 before:bg-gradient-to-t before:from-[#131617] before:to-[rgba(19,22,23,0)] before:pointer-events-none md:px-3">
           <Profile visible={value} />
           <ToggleTheme visible={value} />
         </div>
       </div>
-      <Modal
-        className="md:!p-0"
-        classWrap="md:min-h-screen-ios md:rounded-none dark:shadow-[inset_0_0_0_0.0625rem_#232627,0_2rem_4rem_-1rem_rgba(0,0,0,0.33)] dark:md:shadow-none"
-        classButtonClose="hidden md:flex md:absolute md:top-6 md:left-6 dark:fill-n-1"
-        classOverlay="md:bg-n-1"
-        visible={visibleSearch}
-        onClose={() => setVisibleSearch(false)}
-      >
-        <Search items={resultSearch} />
-      </Modal>
       <Modal
         className="md:!p-0"
         classWrap="max-w-[48rem] md:min-h-screen-ios md:rounded-none"
