@@ -42,7 +42,7 @@ const Profile = ({ visible }: ProfileProps) => (
       </div>
       {!visible && (
         <Link className="btn-stroke-dark w-full mt-2" href="/pricing">
-          Upgraded to Pro
+          Upgrade to Pro
         </Link>
       )}
     </div>

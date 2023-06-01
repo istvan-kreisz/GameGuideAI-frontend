@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout/Layout/";
+import Layout from "@/components/Layout/Layout";
 import Details from "./Details";
 import Form from "./Form";
 

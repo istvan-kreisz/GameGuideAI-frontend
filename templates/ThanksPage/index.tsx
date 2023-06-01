@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Layout from "@/components/Layout/Layout/";
+import Layout from "@/components/Layout/Layout";
 import Icon from "@/components/Icon/Icon";
 import Menu from "@/components/Menu/Menu";
 
