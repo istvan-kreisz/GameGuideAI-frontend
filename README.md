@@ -2,14 +2,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-This guide https://ui8.notion.site/Project-Setup-af9fa48b613548dd8a5962d126b0265d will help you install Yarn. You can check if Yarn is installed on your PC with the command "yarn --version"
-
 First, run the development server:
 
 ```bash
-yarn install
+npm install
 # next step
-yarn dev
+npm dev
 
 ```
 
@@ -27,8 +25,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 To learn more about Next.js, take a look at the following resources:
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
