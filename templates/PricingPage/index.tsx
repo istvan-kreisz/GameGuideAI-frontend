@@ -4,7 +4,7 @@ import Faq from "./Faq";
 
 const PricingPage = () => {
   return (
-    <Layout hideRightSidebar smallSidebar>
+    <Layout hideRightSidebar>
       <Main />
       <Faq />
     </Layout>
