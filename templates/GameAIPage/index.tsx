@@ -11,14 +11,20 @@ const GameAISamplePage = () => {
 
   return (
     <Layout>
-      <Chat title="Review test and provide feedback">
+      <Chat title="Skyrim Chat">
         <Question
-          content="Review this test and provide feedback on how it can be improved or adjusted to better measure the student's knowledge and understanding of the subject being tested."
+          content="In skyrim what is the fastest way to increase gold?"
           time="Just now"
         />
         <Answer loading />
         <Answer time="Just now">
-          <Feedback />
+          There are several ways to increase your gold in Skyrim quickly: Sell
+          items: One of the easiest ways to make money quickly in Skyrim is by
+          selling items. You can sell items you don't need to merchants, such as
+          weapons, armor, potions, and ingredients. Invest in a store: You can
+          invest in a store by talking to the owner and giving them some gold.
+          Once you do this, the store will have more gold available to buy your
+          items, allowing you to make more money.
         </Answer>
       </Chat>
       <Message
