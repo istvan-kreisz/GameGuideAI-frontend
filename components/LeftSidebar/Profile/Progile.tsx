@@ -29,11 +29,9 @@ const Profile = ({ visible }: ProfileProps) => (
         {!visible && (
           <>
             <div className="ml-4 mr-4">
-              <div className="base2 font-semibold text-n-1">
-                Tran Mau Tri Tam
-              </div>
+              <div className="base2 font-semibold text-n-1">Guest User</div>
               <div className="caption1 font-semibold text-n-3/50">
-                tam@ui8.net
+                guest@gmail.com
               </div>
             </div>
             <div className="shrnik-0 ml-auto self-start px-3 bg-primary-2 rounded-lg caption1 font-bold text-n-7">
