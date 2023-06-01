@@ -15,7 +15,7 @@ type MenuProps = {
 
 const Menu = ({ className, items }: MenuProps) => (
   <div
-    className={`flex md:flex-col items-center justify-center gap-x-2 ${className}`}
+    className={`flex md:flex-col items-center justify-center gap-2 ${className}`}
   >
     {items.map((item, index) => (
       <Link
