@@ -1,34 +1,34 @@
 import { useState } from "react";
-import Layout from "@/components/Layout/Layout/";
+import Layout from "@/components/Layout/Layout";
 import Chat from "@/components/Chat/Chat";
 import Message from "@/components/Message/Message";
 import Question from "@/components/Question/Question";
 import Answer from "@/components/Answer/Answer";
-import Code from "@/components/Code/Code";
+import Feedback from "@/components/Feedback/Feedback";
 
-import { writeCodeChat } from "@/mocks/writeCodeChat";
-
-const CodeGenerationPage = () => {
+const EducationFeedbackPage = () => {
   const [message, setMessage] = useState<string>("");
 
   return (
     <Layout>
-      <Chat title="Create welcome form">
+      <Chat title="Review test and provide feedback">
         <Question
-          content="Write code (HTML, CSS and JS) for a simple welcome page and form with 3 input fields and a dropdown with 2 buttons, cancel and send, then run test with my Codepen project."
+          document="Student-test.pdf"
+          content="Review this test and provide feedback on how it can be improved or adjusted to better measure the student's knowledge and understanding of the subject being tested."
           time="Just now"
         />
         <Answer loading />
         <Answer time="Just now">
-          <Code items={writeCodeChat} />
+          <Feedback />
         </Answer>
       </Chat>
       <Message
         value={message}
         onChange={(e: any) => setMessage(e.target.value)}
+        // document="Student-test.pdf"
       />
     </Layout>
   );
 };
 
-export default CodeGenerationPage;
+export default EducationFeedbackPage;
