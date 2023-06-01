@@ -75,12 +75,8 @@ const Layout = ({
               !hideRightSidebar && "pr-[22.5rem] 2xl:pr-80 lg:pr-0"
             }`}
           >
-            <div
-              className={`relative flex flex-col grow max-w-full  ${
-                !hideRightSidebar && "md:pt-18"
-              }`}
-            >
-              {!hideRightSidebar && (
+            <div className={`relative flex flex-col grow max-w-full md:pt-18`}>
+              {
                 <Burger
                   className={`
                                 ${!visibleSidebar && "md:hidden"}
@@ -88,7 +84,7 @@ const Layout = ({
                   visibleRightSidebar={visibleRightSidebar}
                   onClick={() => setVisibleRightSidebar(!visibleRightSidebar)}
                 />
-              )}
+              }
               {hideRightSidebar && smallSidebar && (
                 <Link
                   className="absolute top-6 right-6 flex justify-center items-center w-10 h-10 border-2 border-n-4/25 rounded-full text-0 transition-colors hover:border-transparent hover:bg-n-4/25"
