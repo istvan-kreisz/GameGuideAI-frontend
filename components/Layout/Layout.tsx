@@ -63,13 +63,7 @@ const Layout = ({
           visibleRightSidebar={visibleRightSidebar}
           smallSidebar={smallSidebar}
         />
-        <div
-          className={`flex py-6 md:py-0 ${
-            hideRightSidebar
-              ? "min-h-screen min-h-screen-ios"
-              : "h-screen h-screen-ios"
-          }`}
-        >
+        <div className={"flex py-6 md:py-0 h-screen h-screen-ios"}>
           <div
             className={`relative flex grow max-w-full bg-n-1 rounded-[1.25rem] md:rounded-none dark:bg-n-6 ${
               !hideRightSidebar && "pr-[22.5rem] 2xl:pr-80 lg:pr-0"
