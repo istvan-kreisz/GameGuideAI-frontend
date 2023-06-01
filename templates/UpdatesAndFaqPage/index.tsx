@@ -5,8 +5,8 @@ import Icon from "@/components/Icon/Icon";
 import Updates from "./Updates";
 import Faq from "./Faq";
 
-import { updates } from "@/mocks/updates";
-import { faqs } from "@/mocks/faq";
+import { updates } from "mockdata/updates";
+import { faqs } from "mockdata/faq";
 
 const tanNavigation = ["Updates", "FAQ"];
 

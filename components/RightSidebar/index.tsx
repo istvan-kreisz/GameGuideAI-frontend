@@ -9,8 +9,8 @@ import Profile from "./Profile";
 import ChatItem from "./ChatItem/ChatItem";
 import ChatEmpty from "./ChatEmpty/ChatEmpty";
 
-import { notifications } from "@/mocks/notifications";
-import { chatHistory } from "@/mocks/chatHistory";
+import { notifications } from "mockdata/notifications";
+import { chatHistory } from "mockdata/chatHistory";
 
 type RightSidebarProps = {
   className?: string;

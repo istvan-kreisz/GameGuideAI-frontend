@@ -1,6 +1,6 @@
 import FaqItem from "@/components/FaqItem/FaqItem";
 
-import { faqPricing } from "@/mocks/faq";
+import { faqPricing } from "mockdata/faq";
 
 type FaqProps = {};
 
