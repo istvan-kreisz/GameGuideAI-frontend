@@ -23,8 +23,8 @@
       "@/hooks/*": ["hooks/*"],
       "@/types/*": ["types/*"],
       "@/constants/*": ["constants/*"],
-      "@/mocks/*": ["mocks/*"]
-    },
+      "@/mocks/*": ["mockdata/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
