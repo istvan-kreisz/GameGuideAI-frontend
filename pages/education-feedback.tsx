@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import EducationFeedbackPage from "@/templates/EducationFeedbackPage";
+import EducationFeedbackPage from "@/templates/ChatSamplePage";
 
 const EducationFeedback: NextPage = () => {
-    return <EducationFeedbackPage />;
+  return <EducationFeedbackPage />;
 };
 
 export default EducationFeedback;
