@@ -17,18 +17,9 @@ const Profile = ({ visible }: ProfileProps) => (
           visible ? "justify-center" : "px-2.5 py-2.5 pb-4.5"
         }`}
       >
-        <div className="relative w-10 h-10">
-          <Image
-            className="rounded-full object-cover"
-            src="/images/avatar.jpg"
-            fill
-            alt="Avatar"
-          />
-          <div className="absolute -right-0.75 -bottom-0.75 w-4.5 h-4.5 bg-primary-2 rounded-full border-4 border-n-6"></div>
-        </div>
         {!visible && (
           <>
-            <div className="ml-4 mr-4">
+            <div className="mr-4">
               <div className="base2 font-semibold text-n-1">Guest User</div>
               <div className="caption1 font-semibold text-n-3/50">
                 guest@gmail.com

@@ -29,14 +29,7 @@ const Question = ({ content, image, document, time }: QuestionProps) => (
       {/* <button className="ml-3 px-2 py-0.5 bg-n-3 rounded-md caption1 txt-n-6 transition-colors hover:text-primary-1 dark:bg-n-5/50">
                 Edit
             </button> */}
-      <div className="relative w-16 h-16 ml-auto rounded-2xl overflow-hidden shadow-[0_0_0_0.25rem_#FEFEFE] dark:shadow-[0_0_0_0.25rem_#232627]">
-        <Image
-          className="object-cover"
-          src="/images/avatar.jpg"
-          fill
-          alt="Avatar"
-        />
-      </div>
+      <div className="relative w-16 h-16 ml-auto "></div>
     </div>
   </div>
 );

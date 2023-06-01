@@ -4,7 +4,6 @@ import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import Image from "@/components/Image/Image";
 import Icon from "@/components/Icon/Icon";
-import Users from "@/components/Users/Users";
 import Notify from "@/components/Notify/Notify";
 
 type ChatItemProps = {
@@ -63,17 +62,6 @@ const ChatItem = ({ item }: ChatItemProps) => {
               />
             </div>
           )}
-          <div className="flex justify-between items-center mt-2">
-            <Users
-              items={item.users}
-              borderColor={twMerge(
-                `border-n-1 transition-colors group-hover:border-n-3/75 dark:border-n-6 dark:group-hover:border-n-5 ${
-                  active && "border-n-3/75 dark:border-n-5"
-                }`
-              )}
-            />
-            <div className="caption2 text-n-4/75">{item.time}</div>
-          </div>
         </div>
       </Link>
     </div>

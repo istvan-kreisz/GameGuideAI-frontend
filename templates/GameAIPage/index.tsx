@@ -4,7 +4,6 @@ import Chat from "@/components/Chat/Chat";
 import Message from "@/components/Message/Message";
 import Question from "@/components/Question/Question";
 import Answer from "@/components/Answer/Answer";
-import Feedback from "@/components/Feedback/Feedback";
 
 const GameAISamplePage = () => {
   const [message, setMessage] = useState<string>("");
