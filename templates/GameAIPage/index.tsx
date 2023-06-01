@@ -10,7 +10,7 @@ const GameAISamplePage = () => {
   const [message, setMessage] = useState<string>("");
 
   return (
-    <Layout>
+    <Layout hideRightSidebar>
       <Chat title="Skyrim Chat">
         <Question
           content="In skyrim what is the fastest way to increase gold?"
