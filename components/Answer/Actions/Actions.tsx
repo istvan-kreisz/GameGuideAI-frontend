@@ -3,7 +3,6 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-hot-toast";
 import Image from "@/components/Image/Image";
 import Notify from "@/components/Notify/Notify";
-import ModalShareChat from "@/components/ModalShareChat/ModalShareChat";
 
 type ActionsProps = {};
 
@@ -93,10 +92,6 @@ const Actions = ({}: ActionsProps) => {
           Archive chat
         </button>
       )}
-      <ModalShareChat
-        visible={visibleModal}
-        onClose={() => setVisibleModal(false)}
-      />
     </>
   );
 };

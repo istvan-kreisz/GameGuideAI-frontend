@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Icon from "@/components/Icon/Icon";
-import ModalShareChat from "@/components/ModalShareChat/ModalShareChat";
 import { toast } from "react-hot-toast";
 import Notify from "@/components/Notify/Notify";
 
@@ -76,10 +75,6 @@ const Chat = ({ title, children }: ChatProps) => {
       <div className="relative z-2 grow p-10 space-y-10 overflow-y-auto scroll-smooth scrollbar-none 2xl:p-6 md:p-5">
         {children}
       </div>
-      <ModalShareChat
-        visible={visibleModal}
-        onClose={() => setVisibleModal(false)}
-      />
     </>
   );
 };

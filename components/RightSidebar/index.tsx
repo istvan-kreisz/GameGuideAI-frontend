@@ -3,7 +3,6 @@ import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import { toast } from "react-hot-toast";
 import Icon from "@/components/Icon/Icon";
-import ModalShareChat from "@/components/ModalShareChat/ModalShareChat";
 import Notify from "@/components/Notify/Notify";
 import Notifications from "./Notifications/Notifications";
 import Profile from "./Profile";
@@ -105,10 +104,6 @@ const RightSidebar = ({ className, visible }: RightSidebarProps) => {
           </Link>
         </div>
       </div>
-      <ModalShareChat
-        visible={visibleModal}
-        onClose={() => setVisibleModal(false)}
-      />
     </>
   );
 };
