@@ -6,28 +6,8 @@ const items = [
     url: "/",
   },
   {
-    title: "Code generation",
-    url: "/code-generation",
-  },
-  {
-    title: "Photo edition",
-    url: "/photo-editing",
-  },
-  {
-    title: "Video generation",
-    url: "/video-generation",
-  },
-  {
-    title: "Audio generation",
-    url: "/audio-generation",
-  },
-  {
-    title: "Generation socials post",
-    url: "/generation-socials-post",
-  },
-  {
-    title: "Education feedback",
-    url: "/education-feedback",
+    title: "Game AI",
+    url: "/gameai-chat",
   },
   {
     title: "Pricing",
