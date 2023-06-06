@@ -1,8 +1,8 @@
-import type { NextPage } from "next";
-import CheckoutPage from "@/templates/CheckoutPage";
+import type { NextPage } from 'next'
+import CheckoutPage from '@/templates/CheckoutPage'
 
 const Checkout: NextPage = () => {
-    return <CheckoutPage />;
-};
+	return <CheckoutPage />
+}
 
-export default Checkout;
+export default Checkout
