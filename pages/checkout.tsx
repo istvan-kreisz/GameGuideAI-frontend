@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import CheckoutPage from '@/templates/CheckoutPage'
+import CheckoutPage from '@/pages-lib/CheckoutPage'
 
 const Checkout: NextPage = () => {
 	return <CheckoutPage />

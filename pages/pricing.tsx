@@ -1,8 +1,8 @@
-import type { NextPage } from "next";
-import PricingPage from "@/templates/PricingPage";
+import type { NextPage } from 'next'
+import PricingPage from '@/pages-lib/PricingPage'
 
 const Pricing: NextPage = () => {
-    return <PricingPage />;
-};
+	return <PricingPage />
+}
 
-export default Pricing;
+export default Pricing
