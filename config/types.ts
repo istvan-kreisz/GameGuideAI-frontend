@@ -1,1 +1,56 @@
-../../backend/functions/types/types.ts
+import { object, string, number, Infer, defaulted, union, literal, optional } from 'superstruct'
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const Conversation = object({
+	id: string(),
+	userId: string(),
+	createdAt: number(),
+	updatedAt: number(),
+})
+
+type Conversation = Infer<typeof Conversation>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const MessageType = union([literal('User'), literal('AI')])
+
+type MessageType = Infer<typeof MessageType>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const Message = object({
+	id: string(),
+	userId: string(),
+	questionId: optional(string()),
+	type: MessageType,
+	text: string(),
+	createdAt: number(),
+})
+
+type Message = Infer<typeof Message>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const Subscription = union([literal('pro')])
+
+type Subscription = Infer<typeof Subscription>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const User = object({
+	id: string(),
+	name: optional(string()),
+	email: string(),
+	subscription: optional(Subscription),
+	subscribedDate: optional(string()),
+	timeZone: optional(string()),
+	createdAt: number(),
+	updatedAt: defaulted(number(), 0),
+})
+
+type User = Infer<typeof User>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export { Conversation, MessageType, Message, Subscription, User }
