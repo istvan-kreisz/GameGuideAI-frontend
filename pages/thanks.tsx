@@ -2,7 +2,6 @@ import type { NextPage } from 'next'
 import Link from 'next/link'
 import Layout from '@/components/Layout/Layout'
 import Icon from '@/components/Icon/Icon'
-import Menu from '@/components/Menu/Menu'
 
 import { navigation } from '@/constants/navigation'
 
@@ -32,7 +31,6 @@ const Thanks: NextPage = () => {
 							</Link>
 						</div>
 					</div>
-					<Menu className="shrink-0 w-[27.875rem] lg:w-full lg:mt-10" items={navigation} />
 				</div>
 			</div>
 		</Layout>
