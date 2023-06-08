@@ -13,7 +13,7 @@ type MenuProps = {
 	items: MenuType[]
 }
 
-const Menu = ({ className, items }: MenuProps) => (
+const Gamecards = ({ className, items }: MenuProps) => (
 	<div className={`flex md:flex-col items-center justify-center gap-2 ${className}`}>
 		{items.map((item, index) => (
 			<Link
@@ -24,21 +24,21 @@ const Menu = ({ className, items }: MenuProps) => (
 				key={index}
 			>
 				<div
-					className={`relative flex justify-center items-center w-38 h-52 ${
+					className={`relative flex justify-center items-center 2xl:w-38 2xl:h-52 w-52 h-72 ${
 						item.enabled ? null : ''
 					}`}
 				>
-					<Image className="rounded-lg" src={`/gamecovers/` + item.image} fill alt="Avatar" />
+					<Image className="rounded-lg " src={`/gamecovers/` + item.image} fill alt="Avatar" />
 					{!item.enabled && (
 						<div className="absolute text-white text-3xl text-center bg-black bg-opacity-40">
 							Coming Soon
 						</div>
 					)}
 				</div>
-				<div className="text-center text-base mt-3">{item.title}</div>
+				<div className="text-center text-base my-auto py-3">{item.title}</div>
 			</Link>
 		))}
 	</div>
 )
 
-export default Menu
+export default Gamecards

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
 import Layout from '@/components/Layout/Layout'
-import Menu from '@/components/Menu/Menu'
+import Gamecards from '@/components/Gamecards/Gamecards'
 import Link from 'next/link'
 import { navigation } from '@/constants/navigation'
 import Modal from '@/components/Modal/Modal'
@@ -16,13 +16,9 @@ const Home: NextPage = () => {
 						<div className="h3 leading-[4rem] 2xl:mb-2 2xl:h4">AI Gaming Companion</div>
 						<div className="body1 text-n-4 2xl:body1S">Chat with GPT trained on game info!</div>
 					</div>
-					<Menu className="max-w-[30.75rem] mx-auto" items={navigation} />
-					<div className="mt-4 text-center">
-						<button
-							className="btn-blue btn-large w-22px"
-							type="submit"
-							onClick={() => setVisible(true)}
-						>
+					<Gamecards className="max-w-[30.75rem] mx-auto" items={navigation} />
+					<div className="my-4 text-center">
+						<button className="btn-blue btn-medium" type="submit" onClick={() => setVisible(true)}>
 							Vote on the next game!
 						</button>
 					</div>
