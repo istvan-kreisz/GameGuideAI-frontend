@@ -1,8 +1,8 @@
-import type { NextPage } from "next";
-import SignInPage from "@/templates/SignInPage";
+import type { NextPage } from 'next'
+import SignInPage from '@/templates/SignInPage'
 
 const SignIn: NextPage = () => {
-    return <SignInPage />;
-};
+	return <SignInPage />
+}
 
-export default SignIn;
+export default SignIn
