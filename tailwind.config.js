@@ -22,6 +22,8 @@ module.exports = {
 			// => @media (max-width: 767px) { ... }
 			sm: { max: '480px' },
 			// => @media (max-width: 480px) { ... }
+			xs: { max: '320px' },
+			// => @media (max-width: 480px) { ... }
 		},
 		extend: {
 			colors: {
