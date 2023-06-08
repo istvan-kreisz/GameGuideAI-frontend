@@ -24,13 +24,20 @@ const Gamecards = ({ className, items }: MenuProps) => (
 				key={index}
 			>
 				<div
-					className={`relative flex justify-center items-center 2xl:w-38 2xl:h-52 w-52 h-72 ${
+					className={`relative flex justify-center items-center 2xl:w-[150px] 2xl:h-52 w-[212px] h-72 ${
 						item.enabled ? null : ''
 					}`}
 				>
-					<Image className="rounded-lg " src={`/gamecovers/` + item.image} fill alt="Avatar" />
+					<Image
+						layout={'fill'}
+						objectFit={'contain'}
+						className="rounded-lg "
+						src={`/gamecovers/` + item.image}
+						fill
+						alt="Avatar"
+					/>
 					{!item.enabled && (
-						<div className="absolute text-white text-3xl text-center bg-black bg-opacity-40">
+						<div className="absolute text-white text-3xl text-center bg-black bg-opacity-40 w-full">
 							Coming Soon
 						</div>
 					)}
