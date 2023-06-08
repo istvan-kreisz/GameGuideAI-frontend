@@ -1,25 +1,44 @@
 import type { NextPage } from 'next'
+import { useState } from 'react'
 import Layout from '@/components/Layout/Layout'
 import Menu from '@/components/Menu/Menu'
 import Link from 'next/link'
 import { navigation } from '@/constants/navigation'
+import Modal from '@/components/Modal/Modal'
 
 const Home: NextPage = () => {
+	const [visible, setVisible] = useState<boolean>(false)
 	return (
-		<Layout hideRightSidebar={true}>
-			<div className="grow px-10 py-20 overflow-y-auto scroll-smooth scrollbar-none 2xl:py-12 md:px-4 md:pt-0 md:pb-6">
-				<div className="mb-10 text-center">
-					<div className="h3 leading-[4rem] 2xl:mb-2 2xl:h4">AI Gaming Companion</div>
-					<div className="body1 text-n-4 2xl:body1S">Chat with GPT trained on game info!</div>
+		<>
+			<Layout hideRightSidebar={true}>
+				<div className="grow px-10 py-20 overflow-y-auto scroll-smooth scrollbar-none 2xl:py-12 md:px-4 md:pt-0 md:pb-6">
+					<div className="mb-10 text-center">
+						<div className="h3 leading-[4rem] 2xl:mb-2 2xl:h4">AI Gaming Companion</div>
+						<div className="body1 text-n-4 2xl:body1S">Chat with GPT trained on game info!</div>
+					</div>
+					<Menu className="max-w-[30.75rem] mx-auto" items={navigation} />
+					<div className="mt-4 text-center">
+						<button
+							className="btn-blue btn-large w-22px"
+							type="submit"
+							onClick={() => setVisible(true)}
+						>
+							Vote on the next game!
+						</button>
+					</div>
 				</div>
-				<Menu className="max-w-[30.75rem] mx-auto" items={navigation} />
-				<div className="mt-4 text-center">
-					<Link className="text-primary-1 font-medium text-base" href={'/'}>
-						Vote on the next game!
-					</Link>
-				</div>
-			</div>
-		</Layout>
+			</Layout>
+			<Modal video visible={visible} onClose={() => setVisible(false)}>
+				<iframe
+					style={{ width: 'inherit', height: '100%' }}
+					src="https://docs.google.com/forms/d/e/1FAIpQLScH-2Bs0iAPhgSLQ4svJMjdxJUquevMPZEhbbl_SvFMTLNOyA/viewform?embedded=true"
+					title="Google Poll"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				>
+					Loading…
+				</iframe>
+			</Modal>
+		</>
 	)
 }
 
