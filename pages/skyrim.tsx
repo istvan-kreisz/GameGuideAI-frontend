@@ -1,8 +1,8 @@
-import type { NextPage } from "next";
-import GameAIPage from "@/templates/ChatPage";
+import type { NextPage } from 'next'
+import GameAIPage from '@/pages-lib/ChatPage'
 
 const GameAI: NextPage = () => {
-  return <GameAIPage />;
-};
+	return <GameAIPage />
+}
 
-export default GameAI;
+export default GameAI

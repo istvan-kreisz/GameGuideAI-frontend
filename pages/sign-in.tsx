@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import SignInPage from '@/templates/SignInPage'
+import SignInPage from '@/pages-lib/SignInPage'
 
 const SignIn: NextPage = () => {
 	return <SignInPage />
