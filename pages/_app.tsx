@@ -6,6 +6,7 @@ import { ColorModeScript, ColorModeProvider } from '@chakra-ui/color-mode'
 import { AuthContextProvider } from 'context/AuthContext'
 import ProtectedRoute from '@/components/Auth/ProtectedRoute'
 import { useRouter } from 'next/router'
+import useSWR, { SWRConfig } from 'swr'
 
 const inter = Inter({
 	weight: ['300', '500', '600', '700'],
@@ -23,11 +24,20 @@ const karla = Karla({
 
 const noAuthRequired = ['/', '/sign-in', '/pagelist', '/thanks', '/404', '/updates-and-faq']
 
+// todo: add userId as key to components (which ones?)
+
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
 
 	return (
 		<AuthContextProvider>
+			{/* <SWRConfig
+				value={{
+					fetcher: (resource: RequestInfo | URL, init: RequestInit | undefined) =>
+						fetch(resource, init).then((res) => res.json()),
+				}}
+			> */}
+			{/* move to another file */}
 			<main className={`${karla.variable} ${inter.variable} font-sans`}>
 				<style jsx global>{`
 					html {
@@ -78,6 +88,7 @@ export default function App({ Component, pageProps }: AppProps) {
 					</Toaster>
 				</ColorModeProvider>
 			</main>
+			{/* </SWRConfig> */}
 		</AuthContextProvider>
 	)
 }

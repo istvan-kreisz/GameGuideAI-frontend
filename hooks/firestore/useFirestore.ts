@@ -1,4 +1,4 @@
-import { Conversation, Message, User } from 'config/types'
+import { Conversation, Message } from 'config/types'
 import { firestore } from '../../config/firebase'
 import { getFirestore, doc, getDoc } from 'firebase/firestore'
 

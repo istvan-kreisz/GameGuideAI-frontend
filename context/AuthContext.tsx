@@ -4,38 +4,47 @@ import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
 	signOut,
+	User as AuthUser,
+	User,
 } from 'firebase/auth'
 import { auth } from '../config/firebase'
+import { UserInfo } from 'config/types'
+import { useGetUser } from '@/hooks/api/endpoints/useGetUser'
 
-type User = {
-	uid: string
-	email: string | null
-	displayName: string | null
-}
+// type AuthUser = {
+// 	uid: string
+// 	email: string | null
+// 	displayName: string | null
+// }
 
 const AuthContext = createContext<{
-	user: User | null
+	authUser: User | null
+	user: UserInfo | undefined | null
 	login: (email: string, password: string) => Promise<void>
 	signup: (email: string, password: string) => Promise<void>
 	logout: () => Promise<void>
-}>({ user: null, login: async () => {}, signup: async () => {}, logout: async () => {} })
+}>({
+	user: null,
+	authUser: null,
+	login: async () => {},
+	signup: async () => {},
+	logout: async () => {},
+})
 
 export const useAuth = () => useContext(AuthContext)
 
 export const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
-	const [user, setUser] = useState<User | null>(null)
+	const [authUser, setAuthUser] = useState<User | null>(null)
+	const { user } = useGetUser(authUser)
 	const [loading, setLoading] = useState<boolean>(true)
 
+	// todo: convert to useSyncExternalStore?
 	useEffect(() => {
-		const unsubscribe = onAuthStateChanged(auth, (user) => {
-			if (user) {
-				setUser({
-					uid: user.uid,
-					email: user.email,
-					displayName: user.displayName,
-				})
+		const unsubscribe = onAuthStateChanged(auth, (newUser) => {
+			if (newUser) {
+				setAuthUser(newUser)
 			} else {
-				setUser(null)
+				setAuthUser(null)
 			}
 			setLoading(false)
 		})
@@ -55,12 +64,12 @@ export const AuthContextProvider = ({ children }: { children: React.ReactNode })
 
 	const logout = async () => {
 		setLoading(true)
-		setUser(null)
+		setAuthUser(null)
 		await signOut(auth)
 	}
 
 	return (
-		<AuthContext.Provider value={{ user, login, signup, logout }}>
+		<AuthContext.Provider value={{ authUser, user, login, signup, logout }}>
 			{loading ? null : children}
 		</AuthContext.Provider>
 	)
