@@ -4,9 +4,15 @@ import Layout from '@/components/Layout/Layout'
 import Gamecards from '@/components/Gamecards/Gamecards'
 import { navigation } from '@/constants/navigation'
 import Modal from '@/components/Modal/Modal'
+import { useGetUser } from '@/hooks/api/endpoints/get/useGetUser'
 
 const Home: NextPage = () => {
 	const [visible, setVisible] = useState<boolean>(false)
+
+	const { userInfo } = useGetUser()
+
+	console.log(userInfo)
+
 	return (
 		<>
 			<Layout hideRightSidebar={true}>

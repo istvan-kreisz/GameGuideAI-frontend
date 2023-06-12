@@ -36,7 +36,7 @@ const Subscription = union([literal('pro')])
 
 type Subscription = Infer<typeof Subscription>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const UserInfo = object({
 	id: string(),
@@ -44,7 +44,7 @@ const UserInfo = object({
 	email: string(),
 	subscription: optional(Subscription),
 	subscribedDate: optional(string()),
-	timeZone: optional(string()),
+	timezone: optional(string()),
 	createdAt: number(),
 	updatedAt: defaulted(number(), 0),
 })

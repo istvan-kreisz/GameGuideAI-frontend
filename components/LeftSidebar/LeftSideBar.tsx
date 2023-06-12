@@ -7,7 +7,6 @@ import Settings from '@/components/Settings/Settings'
 import Navigation from './Navigation/Navigation'
 import Profile from './Profile/Progile'
 import ToggleTheme from './ToggleTheme/ToggleTheme'
-
 import { settings } from '@/constants/settings'
 import { twMerge } from 'tailwind-merge'
 import { useAuth } from 'context/AuthContext'

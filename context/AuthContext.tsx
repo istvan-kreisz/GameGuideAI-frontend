@@ -8,19 +8,15 @@ import {
 	sendPasswordResetEmail,
 } from 'firebase/auth'
 import { auth } from '../config/firebase'
-import { UserInfo } from 'config/types'
-import { useGetUser } from '@/hooks/api/endpoints/useGetUser'
 
 const AuthContext = createContext<{
-	authUser: User | null
-	user: UserInfo | undefined | null
+	user: User | null
 	login: (email: string, password: string) => Promise<void>
 	signup: (email: string, password: string) => Promise<void>
 	logout: () => Promise<void>
 	resetPassword: (email: string) => Promise<void>
 }>({
 	user: null,
-	authUser: null,
 	login: async () => {},
 	signup: async () => {},
 	logout: async () => {},
@@ -30,17 +26,15 @@ const AuthContext = createContext<{
 export const useAuth = () => useContext(AuthContext)
 
 export const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
-	const [authUser, setAuthUser] = useState<User | null>(null)
-	const { user } = useGetUser(authUser)
+	const [user, setUser] = useState<User | null>(null)
 	// const [loading, setLoading] = useState<boolean>(true)
 
-	// todo: convert to useSyncExternalStore?
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (newUser) => {
 			if (newUser) {
-				setAuthUser(newUser)
+				setUser(newUser)
 			} else {
-				setAuthUser(null)
+				setUser(null)
 			}
 			// setLoading(false)
 		})
@@ -71,7 +65,7 @@ export const AuthContextProvider = ({ children }: { children: React.ReactNode })
 	const logout = async () => {
 		try {
 			// setLoading(true)
-			setAuthUser(null)
+			setUser(null)
 			await signOut(auth)
 		} catch (error) {
 			// setLoading(false)
@@ -84,7 +78,7 @@ export const AuthContextProvider = ({ children }: { children: React.ReactNode })
 	}
 
 	return (
-		<AuthContext.Provider value={{ authUser, user, login, signup, logout, resetPassword }}>
+		<AuthContext.Provider value={{ user, login, signup, logout, resetPassword }}>
 			{children}
 			{/* {loading ? null : children} */}
 		</AuthContext.Provider>
