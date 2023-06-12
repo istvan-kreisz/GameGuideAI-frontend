@@ -2,7 +2,6 @@ import type { NextPage } from 'next'
 import { useState } from 'react'
 import Layout from '@/components/Layout/Layout'
 import Gamecards from '@/components/Gamecards/Gamecards'
-import Link from 'next/link'
 import { navigation } from '@/constants/navigation'
 import Modal from '@/components/Modal/Modal'
 
@@ -18,7 +17,7 @@ const Home: NextPage = () => {
 					</div>
 					<Gamecards className="max-w-[30.75rem] mx-auto" items={navigation} />
 					<div className="my-4 text-center">
-						<button className="btn-blue btn-medium" type="submit" onClick={() => setVisible(true)}>
+						<button className="btn-blue btn-medium" onClick={() => setVisible(true)}>
 							Vote on the next game!
 						</button>
 					</div>

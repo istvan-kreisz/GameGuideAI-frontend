@@ -16,7 +16,9 @@ const CreateAccount = ({}: CreateAccountProps) => {
 		router.push('/')
 	}
 
-	const handleSignup = async () => {
+	const handleSignup: FormEventHandler<HTMLFormElement> = async (event) => {
+		event.preventDefault()
+
 		// todo: error handling
 
 		try {
@@ -29,7 +31,7 @@ const CreateAccount = ({}: CreateAccountProps) => {
 	}
 
 	return (
-		<form>
+		<form action="" onSubmit={handleSignup}>
 			<Field
 				className="mb-4"
 				classInput="dark:bg-n-7 dark:border-n-7 dark:focus:bg-transparent"
@@ -50,7 +52,7 @@ const CreateAccount = ({}: CreateAccountProps) => {
 				onChange={(e: any) => setPassword(e.target.value)}
 				required
 			/>
-			<button className="btn-blue btn-large w-full mb-6" type="button" onClick={handleSignup}>
+			<button className="btn-blue btn-large w-full mb-6" type="submit">
 				Create Account
 			</button>
 			<div className="text-center caption1 text-n-4">
