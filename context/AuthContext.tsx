@@ -8,8 +8,9 @@ import {
 	sendPasswordResetEmail,
 } from 'firebase/auth'
 import { auth } from '../config/firebase'
+import { useGetUser } from '@/hooks/api/endpoints/get/useGetUser'
 
-const AuthContext = createContext<{
+export const AuthContext = createContext<{
 	user: User | null
 	login: (email: string, password: string) => Promise<void>
 	signup: (email: string, password: string) => Promise<void>
@@ -25,9 +26,10 @@ const AuthContext = createContext<{
 
 export const useAuth = () => useContext(AuthContext)
 
-export const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
+export const AuthContextProvider = () => {
 	const [user, setUser] = useState<User | null>(null)
 	// const [loading, setLoading] = useState<boolean>(true)
+	const {} = useGetUser()
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (newUser) => {
@@ -77,10 +79,11 @@ export const AuthContextProvider = ({ children }: { children: React.ReactNode })
 		await sendPasswordResetEmail(auth, email)
 	}
 
-	return (
-		<AuthContext.Provider value={{ user, login, signup, logout, resetPassword }}>
-			{children}
-			{/* {loading ? null : children} */}
-		</AuthContext.Provider>
-	)
+	return {
+		user,
+		login,
+		signup,
+		logout,
+		resetPassword,
+	}
 }

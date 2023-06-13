@@ -5,6 +5,7 @@ import { object, string, number, Infer, defaulted, union, literal, optional } fr
 const Conversation = object({
 	id: string(),
 	userId: string(),
+	game: string(),
 	createdAt: number(),
 	updatedAt: number(),
 })
