@@ -59,7 +59,7 @@ const baseHeaders = (token: string): HeadersInit => {
 
 const fetcher = async <T extends Record<string, string | undefined>>(
 	key: string,
-	{ arg }: { arg: { user: User | null; endpoint: Endpoint } & T }
+	{ arg }: { arg: { user: User | null | undefined; endpoint: Endpoint } & T }
 ) => {
 	const { user, endpoint, ...payload } = arg
 

@@ -8,7 +8,7 @@ import { useCallback, useEffect, useRef } from 'react'
 import { User } from 'firebase/auth'
 
 export async function useUserDataListener(
-	user: User | null,
+	user: User | null | undefined,
 	selectedConversationId: string | null,
 	setSelectedConversationId: React.Dispatch<React.SetStateAction<string | null>>,
 	setConversations: React.Dispatch<React.SetStateAction<Conversation[]>>,
