@@ -1,4 +1,14 @@
-import { object, string, number, Infer, defaulted, union, literal, optional } from 'superstruct'
+import {
+	object,
+	string,
+	number,
+	Infer,
+	defaulted,
+	union,
+	literal,
+	optional,
+	boolean,
+} from 'superstruct'
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -26,6 +36,7 @@ const Message = object({
 	questionId: optional(string()),
 	type: MessageType,
 	text: string(),
+	isLoading: defaulted(boolean(), false),
 	createdAt: number(),
 })
 
