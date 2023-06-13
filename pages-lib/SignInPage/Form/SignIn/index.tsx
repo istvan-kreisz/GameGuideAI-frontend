@@ -14,7 +14,6 @@ const SignIn = ({ onClick }: SignInProps) => {
 	const router = useRouter()
 
 	if (user) {
-		console.log('>>>>>>>>>>>>>>> user')
 		router.push('/')
 	}
 

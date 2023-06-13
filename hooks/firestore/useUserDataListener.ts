@@ -1,6 +1,6 @@
 import { Conversation, Message } from 'config/types'
 import { firestore } from '../../config/firebase'
-import { Unsubscribe } from 'firebase/firestore'
+import { Unsubscribe, orderBy } from 'firebase/firestore'
 import { collection, query, onSnapshot } from 'firebase/firestore'
 import { CollectionRef } from './constants'
 import { array, create } from 'superstruct'
@@ -17,7 +17,7 @@ export async function useUserDataListener(
 	const unsubscribeConversation = useRef<Unsubscribe | null>()
 	const unsubscribeMessages = useRef<Unsubscribe | null>()
 
-	const currentUserId = useRef<string | null | undefined>(null)
+	const currentUserId = useRef<string | undefined>(undefined)
 	const currentConversationId = useRef<string | null | undefined>(null)
 
 	useEffect(() => {
@@ -30,7 +30,8 @@ export async function useUserDataListener(
 	const conversationsListener = useCallback(
 		(userId: string, conversationsUpdated: (conversations: Conversation[]) => void) => {
 			const q = query(
-				collection(firestore, `${CollectionRef.users}/${userId}/${CollectionRef.conversations}`)
+				collection(firestore, `${CollectionRef.users}/${userId}/${CollectionRef.conversations}`),
+				orderBy('updatedAt', 'desc')
 			)
 			unsubscribeConversation.current = onSnapshot(q, (querySnapshot) => {
 				const data = querySnapshot.docs.map((doc) => doc.data())
@@ -66,9 +67,13 @@ export async function useUserDataListener(
 
 		if (user?.uid) {
 			conversationsListener(user?.uid, (conversations) => {
-				console.log(conversations)
 				setConversations(conversations)
-				setSelectedConversationId((currentValue) => currentValue || conversations[0]?.id)
+				const conversationIds = conversations.map((conversation) => conversation.id)
+				setSelectedConversationId((currentValue) => {
+					return currentValue && conversationIds.includes(currentValue)
+						? currentValue
+						: conversations[0]?.id
+				})
 			})
 		}
 		currentUserId.current = user?.uid
@@ -79,7 +84,6 @@ export async function useUserDataListener(
 
 		if (user?.uid && selectedConversationId) {
 			messagesListener(user?.uid, selectedConversationId, (messages) => {
-				console.log(messages)
 				setMessages(messages)
 			})
 		}
