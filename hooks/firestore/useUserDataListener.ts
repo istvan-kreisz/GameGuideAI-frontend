@@ -54,7 +54,6 @@ export async function useUserDataListener(
 			)
 			unsubscribeMessages.current = onSnapshot(q, (querySnapshot) => {
 				const data = querySnapshot.docs.map((doc) => doc.data())
-				console.log('>>>>>>>>>>>>>>> updated')
 
 				const messages = create(data, array(Message))
 				messagesUpdated(messages)
