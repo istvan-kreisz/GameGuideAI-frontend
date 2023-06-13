@@ -42,6 +42,7 @@ const Message = ({
 						disabled={disabled}
 						onKeyDown={(event) => {
 							if (event.key === 'Enter') {
+								event.preventDefault()
 								submit()
 							}
 						}}

@@ -11,7 +11,7 @@ import { auth } from '../config/firebase'
 import { useGetUser } from '@/hooks/api/endpoints/get/useGetUser'
 
 export const AuthContext = createContext<{
-	user: User | null
+	user: User | null | undefined
 	login: (email: string, password: string) => Promise<void>
 	signup: (email: string, password: string) => Promise<void>
 	logout: () => Promise<void>
@@ -27,7 +27,7 @@ export const AuthContext = createContext<{
 export const useAuth = () => useContext(AuthContext)
 
 export const AuthContextProvider = () => {
-	const [user, setUser] = useState<User | null>(null)
+	const [user, setUser] = useState<User | null | undefined>(undefined)
 	// const [loading, setLoading] = useState<boolean>(true)
 	const {} = useGetUser()
 

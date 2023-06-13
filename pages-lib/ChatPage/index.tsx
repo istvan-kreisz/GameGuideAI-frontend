@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Layout from '@/components/Layout/Layout'
 import Chat from '@/components/Chat/Chat'
 import Question from '@/components/Question/Question'
@@ -9,14 +9,18 @@ import Message from '@/components/Message/Message'
 import { v4 as uuidv4 } from 'uuid'
 import { useAuth } from 'context/AuthContext'
 import { useSendMessage } from '@/hooks/api/endpoints/post/useSendMessage'
+import { useDeleteAllMessages } from '@/hooks/api/endpoints/post/useDeleteAllMessages'
 
 const GameAIPage = () => {
 	const { user } = useAuth()
-	const { sendMessage } = useSendMessage()
+	const { selectedConversationId, messages } = useUserData()
+
 	const [newMessage, setNewMessage] = useState<string>('')
 	const [lastSentMessage, setLastSentMessage] = useState<MessageType | null>(null)
+	const listEnd = useRef<HTMLDivElement | null>(null)
 
-	const { messages } = useUserData()
+	const { sendMessage } = useSendMessage()
+	const { deleteAllMessages } = useDeleteAllMessages()
 
 	const messageIds = messages.map((val) => val.id)
 
@@ -45,9 +49,22 @@ const GameAIPage = () => {
 		sendMessage({ messageId: newUserMessage.id, message: newUserMessage.text })
 	}
 
+	useEffect(() => {
+		if (listEnd.current) {
+			listEnd.current.scrollIntoView({ behavior: 'smooth' })
+		}
+	}, [messages, lastSentMessage])
+
 	return (
 		<Layout hideRightSidebar>
-			<Chat title="Skyrim Chat">
+			<Chat
+				title="Skyrim Chat"
+				deleteAllMessages={() => {
+					if (selectedConversationId) {
+						deleteAllMessages({ conversationId: selectedConversationId })
+					}
+				}}
+			>
 				{messages.map((message) => {
 					if (message.type === 'User') {
 						return <Question key={message.id} content={message.text} time="" />
@@ -63,6 +80,7 @@ const GameAIPage = () => {
 						)
 					}
 				})}
+				<div className="" ref={listEnd}></div>
 			</Chat>
 			<Message
 				value={newMessage}

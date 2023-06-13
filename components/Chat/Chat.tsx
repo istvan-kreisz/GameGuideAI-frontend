@@ -6,15 +6,17 @@ import Notify from '@/components/Notify/Notify'
 type ChatProps = {
 	title: string
 	children: React.ReactNode
+	deleteAllMessages: () => void
 }
 
-const Chat = ({ title, children }: ChatProps) => {
+const Chat = ({ title, children, deleteAllMessages }: ChatProps) => {
 	const [clean, setClean] = useState<boolean>(false)
 	const [visibleModal, setVisibleModal] = useState<boolean>(false)
 
 	const handleClickClear = (t: any) => {
 		setClean(true)
 		toast.dismiss(t.id)
+		deleteAllMessages()
 	}
 
 	return (
