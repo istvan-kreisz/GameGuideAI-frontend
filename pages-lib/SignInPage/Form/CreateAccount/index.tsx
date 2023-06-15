@@ -52,9 +52,7 @@ const CreateAccount = ({}: CreateAccountProps) => {
 				onChange={(e: any) => setPassword(e.target.value)}
 				required
 			/>
-			<button className="btn-blue btn-large w-full mb-6" type="button">
-				Create Account
-			</button>
+			<button className="btn-blue btn-large w-full mb-6">Create Account</button>
 			<div className="text-center caption1 text-n-4">
 				By creating an account, you agree to our{' '}
 				<Link

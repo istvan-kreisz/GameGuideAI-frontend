@@ -44,13 +44,7 @@ const ForgotPassword = ({ onClick }: ForgotPasswordProps) => {
 					onChange={(e: any) => setEmail(e.target.value)}
 					required
 				/>
-				<button
-					className="btn-blue btn-large w-full mb-6"
-					type="button"
-					onClick={handleResetPassword}
-				>
-					Reset password
-				</button>
+				<button className="btn-blue btn-large w-full mb-6">Reset password</button>
 			</form>
 		</>
 	)
