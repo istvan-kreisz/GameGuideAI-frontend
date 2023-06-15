@@ -58,12 +58,12 @@ const Chat = ({ title, children, deleteAllMessages }: ChatProps) => {
 							</div>
 						</button>
 					)}
-					<button
+					{/* <button
 						className="group w-8 h-8 ml-6 md:ml-3 md:hidden"
 						onClick={() => setVisibleModal(true)}
 					>
 						<Icon className="fill-n-4 transition-colors group-hover:fill-primary-1" name="share" />
-					</button>
+					</button> */}
 				</div>
 			</div>
 			<div className="relative z-2 grow p-10 space-y-10 overflow-y-auto scroll-smooth scrollbar-none 2xl:p-6 md:p-5">
