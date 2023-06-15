@@ -1,9 +1,9 @@
 import { useGetUser } from '@/hooks/api/endpoints/get/useGetUser'
-import { updateRequest } from '../../utils'
+import { useUpdateRequest } from '../../utils'
 
 export const useUpdateUsername = () => {
 	const { userInfo, mutate } = useGetUser()
-	const { updateUsername: update } = updateRequest<{ username: string }>('updateUsername')
+	const { updateUsername: update } = useUpdateRequest<{ username: string }>('updateUsername')
 
 	const updateUsername = async ({ username }: { username: string }) => {
 		if (!userInfo) {

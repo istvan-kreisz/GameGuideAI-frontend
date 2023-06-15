@@ -81,7 +81,7 @@ const fetcher = async <T extends Record<string, string | undefined>>(
 	})
 }
 
-const updateRequest = <T extends Record<string, string>>(endpoint: Endpoint) => {
+const useUpdateRequest = <T extends Record<string, string>>(endpoint: Endpoint) => {
 	const { user } = useAuth()
 	const { trigger } = useSWRMutation(endpoint, fetcher)
 
@@ -104,6 +104,6 @@ export {
 	UPDATEUSERNAME,
 }
 
-export { getURL, baseHeaders, updateRequest }
+export { getURL, baseHeaders, useUpdateRequest }
 
 export type { Endpoint }

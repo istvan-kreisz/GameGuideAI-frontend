@@ -1,4 +1,4 @@
-import { updateRequest } from '../../utils'
+import { useUpdateRequest } from '../../utils'
 
 // const deleteMessage = async (
 // 	key: string,
@@ -17,7 +17,7 @@ import { updateRequest } from '../../utils'
 // }
 
 export const useDeleteMessage = () => {
-	const { deleteMessage } = updateRequest<{ conversationId: string; messageId: string }>(
+	const { deleteMessage } = useUpdateRequest<{ conversationId: string; messageId: string }>(
 		'deleteMessage'
 	)
 	return { deleteMessage }

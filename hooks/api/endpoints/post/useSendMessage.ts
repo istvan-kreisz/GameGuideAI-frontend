@@ -1,6 +1,6 @@
-import { updateRequest } from '../../utils'
+import { useUpdateRequest } from '../../utils'
 
 export const useSendMessage = () => {
-	const { sendMessage } = updateRequest<{ messageId: string; message: string }>('sendMessage')
+	const { sendMessage } = useUpdateRequest<{ messageId: string; message: string }>('sendMessage')
 	return { sendMessage }
 }
