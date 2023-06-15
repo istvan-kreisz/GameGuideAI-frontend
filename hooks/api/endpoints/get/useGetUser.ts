@@ -4,6 +4,9 @@ import { User } from 'firebase/auth'
 import { create } from 'superstruct'
 import { UserInfo } from 'config/types'
 import { useAuth } from 'context/AuthContext'
+import { useUpdateTimezone } from '@/hooks/api/endpoints/post/useUpdateTimezone'
+import moment from 'moment-timezone'
+import { useRef } from 'react'
 
 const fetchUser = async ([userId, user]: [string, User | null]) => {
 	if (!user) return undefined
@@ -21,6 +24,17 @@ const fetchUser = async ([userId, user]: [string, User | null]) => {
 export const useGetUser = () => {
 	const { user } = useAuth()
 	const { data, error, isLoading, mutate } = useSWR([user?.uid, user], fetchUser)
+
+	const { updateTimezone } = useUpdateTimezone()
+	const prevUserInfo = useRef<UserInfo | null>(null)
+
+	if (data && !prevUserInfo.current) {
+		if (!data.timezone) {
+			const timezone = moment.tz.guess()
+			updateTimezone({ timezone: timezone })
+		}
+		prevUserInfo.current = data
+	}
 
 	return {
 		userInfo: data,

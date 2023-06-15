@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useRef, useState } from 'react'
 import {
 	onAuthStateChanged,
 	createUserWithEmailAndPassword,
@@ -8,7 +8,6 @@ import {
 	sendPasswordResetEmail,
 } from 'firebase/auth'
 import { auth } from '../config/firebase'
-import { useGetUser } from '@/hooks/api/endpoints/get/useGetUser'
 
 export const AuthContext = createContext<{
 	user: User | null | undefined
@@ -29,7 +28,6 @@ export const useAuth = () => useContext(AuthContext)
 export const AuthContextProvider = () => {
 	const [user, setUser] = useState<User | null | undefined>(undefined)
 	// const [loading, setLoading] = useState<boolean>(true)
-	const {} = useGetUser()
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (newUser) => {
