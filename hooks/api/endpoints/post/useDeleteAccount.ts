@@ -1,6 +1,6 @@
-import { updateRequest } from '../../utils'
+import { useUpdateRequest } from '../../utils'
 
 export const useDeleteAccount = () => {
-	const { deleteAccount } = updateRequest('deleteAccount')
+	const { deleteAccount } = useUpdateRequest('deleteAccount')
 	return { deleteAccount: () => deleteAccount({}) }
 }

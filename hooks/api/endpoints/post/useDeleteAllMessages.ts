@@ -1,6 +1,6 @@
-import { updateRequest } from '../../utils'
+import { useUpdateRequest } from '../../utils'
 
 export const useDeleteAllMessages = () => {
-	const { deleteAllMessages } = updateRequest<{ conversationId: string }>('deleteAllMessages')
+	const { deleteAllMessages } = useUpdateRequest<{ conversationId: string }>('deleteAllMessages')
 	return { deleteAllMessages }
 }

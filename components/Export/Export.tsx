@@ -1,3 +1,5 @@
+export {}
+
 // import Image from '@/components/Image/Image'
 // import Icon from '@/components/Icon/Icon'
 

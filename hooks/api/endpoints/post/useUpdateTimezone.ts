@@ -1,6 +1,6 @@
-import { updateRequest } from '../../utils'
+import { useUpdateRequest } from '../../utils'
 
 export const useUpdateTimezone = () => {
-	const { updateTimezone } = updateRequest<{ timezone: string }>('updateTimezone')
+	const { updateTimezone } = useUpdateRequest<{ timezone: string }>('updateTimezone')
 	return { updateTimezone }
 }
