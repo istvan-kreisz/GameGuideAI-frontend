@@ -75,9 +75,7 @@ const GameAIPage = () => {
 								key={message.id}
 								loading={message.isLoading && message.text.length === 0}
 								time=""
-							>
-								{message.text}
-							</Answer>
+							></Answer>
 						)
 					}
 				})}

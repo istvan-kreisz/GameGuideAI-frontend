@@ -2,19 +2,25 @@ import Image from '@/components/Image/Image'
 import Icon from '@/components/Icon/Icon'
 import Loading from './Loading/Loading'
 import Actions from './Actions/Actions'
+import { Anchorme } from 'react-anchorme'
 
 type AnswerProps = {
 	text: string
-	children?: React.ReactNode
 	loading?: boolean
 	time?: string
 }
 
-const Answer = ({ text, children, loading, time }: AnswerProps) => {
+const Answer = ({ text, loading, time }: AnswerProps) => {
 	return (
 		<div className="max-w-[50rem]">
 			<div className="pt-6 px-6 pb-16 space-y-4 bg-n-2 rounded-[1.25rem] md:p-5 md:pb-14 dark:bg-n-7">
-				{loading ? <Loading /> : children}
+				{loading ? (
+					<Loading />
+				) : (
+					<Anchorme className="text-accent-2" target="_blank">
+						{text}
+					</Anchorme>
+				)}
 			</div>
 			<div className="-mt-8 flex items-end pl-6">
 				<div
