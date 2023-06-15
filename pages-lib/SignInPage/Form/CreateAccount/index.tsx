@@ -19,19 +19,19 @@ const CreateAccount = ({}: CreateAccountProps) => {
 	const handleSignup: FormEventHandler<HTMLFormElement> = async (event) => {
 		event.preventDefault()
 
-		// todo: error handling
-
 		try {
 			await signup(email, password)
 			router.push('/')
-		} catch (err) {
+		} catch (error) {
 			// todo: error handling
-			console.log(err)
+			console.log('>>>>>>>>>>>>>>> error')
+			console.log(error)
 		}
+		return false
 	}
 
 	return (
-		<form action="" onSubmit={handleSignup}>
+		<form onSubmit={handleSignup}>
 			<Field
 				className="mb-4"
 				classInput="dark:bg-n-7 dark:border-n-7 dark:focus:bg-transparent"
@@ -52,9 +52,7 @@ const CreateAccount = ({}: CreateAccountProps) => {
 				onChange={(e: any) => setPassword(e.target.value)}
 				required
 			/>
-			<button className="btn-blue btn-large w-full mb-6" type="submit">
-				Create Account
-			</button>
+			<button className="btn-blue btn-large w-full mb-6">Create Account</button>
 			<div className="text-center caption1 text-n-4">
 				By creating an account, you agree to our{' '}
 				<Link

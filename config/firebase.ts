@@ -1,7 +1,8 @@
 import { getApps, initializeApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth'
-import { getFirestore } from 'firebase/firestore'
+import { connectAuthEmulator, getAuth } from 'firebase/auth'
+import { connectFirestoreEmulator, getFirestore } from 'firebase/firestore'
 import { Analytics, getAnalytics } from 'firebase/analytics'
+import { useEmulator } from './config'
 
 const firebaseConfig = {
 	apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -15,11 +16,16 @@ const firebaseConfig = {
 
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0]
 const firestore = getFirestore(app)
+const auth = getAuth(app)
 
 let analytics: Analytics | undefined
 if (typeof window !== 'undefined') {
 	analytics = getAnalytics(app)
 }
-const auth = getAuth(app)
+
+if (useEmulator) {
+	connectFirestoreEmulator(firestore, 'localhost', 8080)
+	connectAuthEmulator(auth, 'http://localhost:9099')
+}
 
 export { firestore, auth, analytics }

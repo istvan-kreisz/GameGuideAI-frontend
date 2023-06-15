@@ -45,9 +45,7 @@ const Field = ({
 				{label && (
 					<div className="flex mb-2 base2 font-semibold">
 						{label}
-						{textarea && (
-							<span className="ml-auto pl-4 text-n-4/50">{remainingChars}</span>
-						)}
+						{textarea && <span className="ml-auto pl-4 text-n-4/50">{remainingChars}</span>}
 					</div>
 				)}
 				<div className="relative">
