@@ -4,9 +4,9 @@ import { toast } from 'react-hot-toast'
 import Image from '@/components/Image/Image'
 import Notify from '@/components/Notify/Notify'
 
-type ActionsProps = {}
+type ActionsProps = { text: string }
 
-const Actions = ({}: ActionsProps) => {
+const Actions = ({ text }: ActionsProps) => {
 	const [copied, setCopied] = useState<boolean>(false)
 	const [share, setShare] = useState<boolean>(false)
 	const [archive, setArchive] = useState<boolean>(false)
@@ -37,7 +37,7 @@ const Actions = ({}: ActionsProps) => {
 
 	return (
 		<>
-			<CopyToClipboard text="Content" onCopy={onCopy}>
+			<CopyToClipboard text={text} onCopy={onCopy}>
 				<button className={`${styleButton} md:hidden`}>Copy</button>
 			</CopyToClipboard>
 			{/* <button className={styleButton}>Regenerate response</button> */}

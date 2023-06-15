@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FormEventHandler, useState } from 'react'
 import Field from '@/components/Field/Field'
 import { useAuth } from 'context/AuthContext'
 import { useRouter } from 'next/router'
@@ -17,7 +17,8 @@ const SignIn = ({ onClick }: SignInProps) => {
 		router.push('/')
 	}
 
-	const handleLogin = async () => {
+	const handleLogin: FormEventHandler<HTMLFormElement> = async (event) => {
+		event.preventDefault()
 		try {
 			await login(email, password)
 			router.push('/')
@@ -26,10 +27,11 @@ const SignIn = ({ onClick }: SignInProps) => {
 			console.log('>>>>>>>>>>>>>>> error')
 			console.log(err)
 		}
+		return false
 	}
 
 	return (
-		<form>
+		<form onSubmit={handleLogin}>
 			<Field
 				className="mb-4"
 				classInput="dark:bg-n-7 dark:border-n-7 dark:focus:bg-transparent"
@@ -58,9 +60,7 @@ const SignIn = ({ onClick }: SignInProps) => {
 			>
 				Forgot password?
 			</button>
-			<button className="btn-blue btn-large w-full" type="button" onClick={handleLogin}>
-				Sign in with GameGuideAI
-			</button>
+			<button className="btn-blue btn-large w-full">Sign in with GameGuideAI</button>
 		</form>
 	)
 }

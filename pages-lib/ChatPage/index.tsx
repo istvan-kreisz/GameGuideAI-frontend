@@ -71,6 +71,7 @@ const GameAIPage = () => {
 					} else {
 						return (
 							<Answer
+								text={message.text}
 								key={message.id}
 								loading={message.isLoading && message.text.length === 0}
 								time=""

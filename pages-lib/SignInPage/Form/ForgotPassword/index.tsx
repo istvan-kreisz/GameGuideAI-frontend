@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FormEventHandler, useState } from 'react'
 import Icon from '@/components/Icon/Icon'
 import Field from '@/components/Field/Field'
 import { useAuth } from 'context/AuthContext'
@@ -11,7 +11,8 @@ const ForgotPassword = ({ onClick }: ForgotPasswordProps) => {
 	const [email, setEmail] = useState<string>('')
 	const { resetPassword } = useAuth()
 
-	const handleResetPassword = async () => {
+	const handleResetPassword: FormEventHandler<HTMLFormElement> = async (event) => {
+		event.preventDefault()
 		try {
 			await resetPassword(email)
 			// todo: add success message
@@ -20,6 +21,7 @@ const ForgotPassword = ({ onClick }: ForgotPasswordProps) => {
 			console.log('>>>>>>>>>>>>>>> error')
 			console.log(err)
 		}
+		return false
 	}
 
 	return (
@@ -31,7 +33,7 @@ const ForgotPassword = ({ onClick }: ForgotPasswordProps) => {
 				/>
 				Reset your password
 			</button>
-			<form>
+			<form onSubmit={handleResetPassword}>
 				<Field
 					className="mb-6"
 					classInput="dark:bg-n-7 dark:border-n-7 dark:focus:bg-transparent"
