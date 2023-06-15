@@ -14,8 +14,6 @@ const EditProfile = ({}: EditProfileProps) => {
 	const [bio, setBio] = useState<string>('')
 	const { updateUsername } = useUpdateUsername()
 
-	console.log(userInfo)
-
 	const handleUpdate: FormEventHandler<HTMLFormElement> = (event) => {
 		event.preventDefault()
 
