@@ -3,14 +3,18 @@ import Image from '@/components/Image/Image'
 import Icon from '@/components/Icon/Icon'
 import Field from '@/components/Field/Field'
 import { useUpdateUsername } from '@/hooks/api/endpoints/post/useUpdateUsername'
+import { useGetUser } from '@/hooks/api/endpoints/get/useGetUser'
 
 type EditProfileProps = {}
 
 const EditProfile = ({}: EditProfileProps) => {
 	const [objectURL, setObjectURL] = useState<any>('/images/avatar.jpg')
-	const [name, setName] = useState<string>('')
+	const { userInfo } = useGetUser()
+	const [name, setName] = useState<string>(userInfo?.name || '')
 	const [bio, setBio] = useState<string>('')
 	const { updateUsername } = useUpdateUsername()
+
+	console.log(userInfo)
 
 	const handleUpdate: FormEventHandler<HTMLFormElement> = (event) => {
 		event.preventDefault()
