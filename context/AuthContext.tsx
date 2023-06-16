@@ -67,7 +67,6 @@ export const AuthContextProvider = () => {
 	}
 
 	const loginWithGoogle = async () => {
-		console.log('>>>>>>>>>>>>>>>')
 		const provider = new GoogleAuthProvider()
 
 		try {
