@@ -1,6 +1,4 @@
 import { FormEventHandler, useState } from 'react'
-import Image from '@/components/Image/Image'
-import Icon from '@/components/Icon/Icon'
 import Field from '@/components/Field/Field'
 import { useUpdateUsername } from '@/hooks/api/endpoints/post/useUpdateUsername'
 import { useGetUser } from '@/hooks/api/endpoints/get/useGetUser'
@@ -19,7 +17,7 @@ const EditProfile = ({}: EditProfileProps) => {
 
 		try {
 			updateUsername({ username: name })
-			// todo: add success message
+			// todo: add success message or dismiss modal
 		} catch (error) {
 			// todo: error handling
 			console.log('>>>>>>>>>>>>>>> error')

@@ -75,7 +75,6 @@ const fetcher = async <T extends Record<string, string | undefined>>(
 
 	const token = await user.getIdToken()
 
-	console.log(endpoint, baseHeaders(token))
 	await fetch(getURL(endpoint), {
 		method: 'POST',
 		headers: baseHeaders(token),
