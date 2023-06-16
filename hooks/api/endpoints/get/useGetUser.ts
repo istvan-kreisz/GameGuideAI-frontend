@@ -23,12 +23,12 @@ const fetchUser = async ([userId, user]: [string, User | null]) => {
 
 export const useGetUser = () => {
 	const { user } = useAuth()
-	const { data, error, isLoading, mutate } = useSWR([user?.uid, user], fetchUser)
+	const { data, error, isLoading, mutate } = useSWR([user?.uid || '', user], fetchUser)
 
 	const { updateTimezone } = useUpdateTimezone()
 	const prevUserInfo = useRef<UserInfo | null>(null)
 
-	if (data && !prevUserInfo.current) {
+	if (user && data && !prevUserInfo.current) {
 		if (!data.timezone) {
 			const timezone = moment.tz.guess()
 			updateTimezone({ timezone: timezone })
