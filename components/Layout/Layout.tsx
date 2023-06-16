@@ -38,7 +38,7 @@ const Layout = ({ smallSidebar, hideRightSidebar, backUrl, children }: LayoutPro
 	return (
 		<>
 			<Head>
-				<title>GameGuideAI</title>
+				<title>AI GameGuide</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 			</Head>
 			<div
@@ -47,7 +47,7 @@ const Layout = ({ smallSidebar, hideRightSidebar, backUrl, children }: LayoutPro
 						? 'pl-24 md:pl-0'
 						: smallSidebar
 						? 'pl-24 md:pl-0'
-						: 'pl-80 xl:pl-24 md:pl-0'
+						: 'pl-72 xl:pl-24 md:pl-0'
 				}`}
 			>
 				<LeftSidebar
