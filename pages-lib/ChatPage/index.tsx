@@ -61,6 +61,7 @@ const GameAIPage = () => {
 				title="Skyrim Chat"
 				deleteAllMessages={() => {
 					if (selectedConversationId) {
+						setLastSentMessage(null)
 						deleteAllMessages({ conversationId: selectedConversationId })
 					}
 				}}

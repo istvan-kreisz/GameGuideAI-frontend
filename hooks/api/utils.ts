@@ -25,11 +25,12 @@ type Endpoint =
 	| typeof UPDATEUSERNAME
 
 const getURL = (endpoint: Endpoint) => {
-	const postFix = 'm46ipsyeya-uc.a.run.app'
+	// const postFix = 'm46ipsyeya-uc.a.run.app'
 	if (useEmulator) {
 		return `http://localhost:5001/gameguide-ai/us-central1/${endpoint}`
 	} else {
-		return `https://${endpoint.toLowerCase()}-${postFix}`
+		return `https://us-central1-gameguide-ai.cloudfunctions.net/${endpoint}`
+		// return `https://${endpoint.toLowerCase()}-${postFix}`
 	}
 }
 

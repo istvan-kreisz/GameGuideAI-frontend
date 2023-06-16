@@ -42,7 +42,7 @@ const EditProfile = ({}: EditProfileProps) => {
 			</div> */}
 			<Field
 				className="mb-6"
-				label="Username"
+				// label="Username"
 				placeholder="Username"
 				icon="profile-1"
 				value={name}
