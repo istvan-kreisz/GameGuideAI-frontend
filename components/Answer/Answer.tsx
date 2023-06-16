@@ -35,15 +35,16 @@ const Answer = ({ text, loading, time }: AnswerProps) => {
 						alt="Avatar"
 					/>
 				</div>
-				{loading ? (
-					<button className="group flex items-center ml-3 px-2 py-0.5 bg-n-3 rounded-md caption1 txt-n-6 transition-colors hover:text-primary-1 dark:bg-n-7 dark:text-n-3 dark:hover:text-primary-1">
-						<Icon
-							className="w-4 h-4 mr-2 transition-colors group-hover:fill-primary-1 dark:fill-n-3"
-							name="pause-circle"
-						/>
-						Pause generating
-					</button>
-				) : (
+				{loading ? null : (
+					// (
+					// <button className="group flex items-center ml-3 px-2 py-0.5 bg-n-3 rounded-md caption1 txt-n-6 transition-colors hover:text-primary-1 dark:bg-n-7 dark:text-n-3 dark:hover:text-primary-1">
+					// 	<Icon
+					// 		className="w-4 h-4 mr-2 transition-colors group-hover:fill-primary-1 dark:fill-n-3"
+					// 		name="pause-circle"
+					// 	/>
+					// 	Pause generating
+					// </button>
+					// )
 					<div className="flex items-center">
 						<div className="caption1 text-n-4/50 dark:text-n-4">{time}</div>
 						<Actions text={text} />
