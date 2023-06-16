@@ -6,12 +6,14 @@ import Image from '@/components/Image/Image'
 import SignIn from './SignIn'
 import CreateAccount from './CreateAccount'
 import ForgotPassword from './ForgotPassword'
+import { useAuth } from 'context/AuthContext'
 
 const tabNav = ['Sign in', 'Create account']
 
 type FormProps = {}
 
 const Form = ({}: FormProps) => {
+	const { loginWithGoogle } = useAuth()
 	const [forgot, setForgot] = useState<boolean>(false)
 
 	const { colorMode } = useColorMode()
@@ -35,14 +37,18 @@ const Form = ({}: FormProps) => {
 								</Tab>
 							))}
 						</Tab.List>
-						<button className="btn-stroke-light btn-large w-full mb-3">
+						<button
+							className="btn-stroke-light btn-large w-full mb-3"
+							type="button"
+							onClick={loginWithGoogle}
+						>
 							<Image src="/images/google.svg" width={24} height={24} alt="" />
 							<span className="ml-4">Continue with Google</span>
 						</button>
-						<button className="btn-stroke-light btn-large w-full">
+						{/* <button className="btn-stroke-light btn-large w-full">
 							<Image src="/images/apple.svg" width={24} height={24} alt="" />
 							<span className="ml-4">Continue with Apple</span>
-						</button>
+						</button> */}
 						<div className="flex items-center my-8 md:my-4">
 							<span className="grow h-0.25 bg-n-4/50"></span>
 							<span className="shrink-0 mx-5 text-n-4/50">OR</span>

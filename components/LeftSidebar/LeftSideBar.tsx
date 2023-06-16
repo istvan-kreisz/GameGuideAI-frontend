@@ -86,7 +86,7 @@ const LeftSidebar = ({ value, setValue, smallSidebar, visibleRightSidebar }: Lef
 			<div
 				className={twMerge(
 					`fixed z-20 top-0 left-0 bottom-0 flex flex-col pt-30 px-4 bg-n-7 md:invisible md:opacity-0 md:transition-opacity ${
-						value ? 'w-24 pb-38 md:w-16 md:px-0 md:pb-30' : 'w-80 pb-58'
+						value ? 'w-24 md:w-16 md:px-0' : 'w-80'
 					} ${visibleRightSidebar && 'md:visible md:opacity-100'}`
 				)}
 			>
