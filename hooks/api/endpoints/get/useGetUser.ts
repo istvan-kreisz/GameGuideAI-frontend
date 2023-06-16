@@ -31,7 +31,9 @@ export const useGetUser = () => {
 	if (user && data && !prevUserInfo.current) {
 		if (!data.timezone) {
 			const timezone = moment.tz.guess()
-			updateTimezone({ timezone: timezone })
+			setTimeout(() => {
+				updateTimezone({ timezone: timezone })
+			}, 1000)
 		}
 		prevUserInfo.current = data
 	}
