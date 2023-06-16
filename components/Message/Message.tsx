@@ -47,14 +47,15 @@ const Message = ({
 							}
 						}}
 					/>
-					{value === '' ? (
-						<button className={`${stylesButton}`}>
-							<Icon
-								className="fill-n-4 transition-colors group-hover:fill-primary-1"
-								name="recording"
-							/>
-						</button>
-					) : (
+					{value === '' ? null : (
+						// (
+						// 	<button className={`${stylesButton}`}>
+						// 		<Icon
+						// 			className="fill-n-4 transition-colors group-hover:fill-primary-1"
+						// 			name="recording"
+						// 		/>
+						// 	</button>
+						// )
 						<button
 							className={`${stylesButton} bg-primary-1 rounded-xl transition-colors hover:bg-primary-1/90`}
 							onClick={submit}
