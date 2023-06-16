@@ -38,7 +38,7 @@ const LeftSidebar = ({ value, setValue, smallSidebar, visibleRightSidebar }: Lef
 	const navigation = [
 		{
 			title: 'Home',
-			icon: 'chat',
+			icon: 'home',
 			color: 'fill-accent-2',
 			url: '/',
 		},
@@ -48,15 +48,15 @@ const LeftSidebar = ({ value, setValue, smallSidebar, visibleRightSidebar }: Lef
 			color: 'fill-accent-5',
 			url: '/skyrim',
 		},
-		{
+		/*{
 			title: 'Manage subscription',
 			icon: 'card',
 			color: 'fill-accent-4',
 			url: '/pricing',
-		},
+		},*/
 		{
 			title: 'Updates & FAQ',
-			icon: 'barcode',
+			icon: 'notes',
 			color: 'fill-accent-1',
 			url: '/updates-and-faq',
 		},
@@ -78,7 +78,7 @@ const LeftSidebar = ({ value, setValue, smallSidebar, visibleRightSidebar }: Lef
 			<div
 				className={twMerge(
 					`fixed z-20 top-0 left-0 bottom-0 flex flex-col pt-30 px-4 bg-n-7 md:invisible md:opacity-0 md:transition-opacity ${
-						value ? 'w-24 pb-38 md:w-16 md:px-0 md:pb-30' : 'w-80 pb-58'
+						value ? 'w-24 pb-38 md:w-16 md:px-0 md:pb-30' : 'w-72 pb-58'
 					} ${visibleRightSidebar && 'md:visible md:opacity-100'}`
 				)}
 			>
