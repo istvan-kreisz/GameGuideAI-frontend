@@ -8,7 +8,11 @@ type ProfileProps = {
 const Profile = ({ visible, logout }: ProfileProps) => (
 	<div className={`${visible ? 'mb-6' : 'mb-3 shadow-[0_1.25rem_1.5rem_0_rgba(0,0,0,0.5)]'}`}>
 		<div className={`${!visible && 'p-2.5 bg-n-6 rounded-xl'}`}>
-			<div className={`flex items-center ${visible ? 'justify-center' : 'px-2.5 py-2.5 pb-4.5'}`}>
+			<div
+				className={`flex items-center justify-center text-center ${
+					visible ? 'justify-center' : 'px-2.5 py-2.5 pb-4.5'
+				}`}
+			>
 				{!visible && (
 					<>
 						<div className="mr-4">
