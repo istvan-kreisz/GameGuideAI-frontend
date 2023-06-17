@@ -25,12 +25,12 @@ type Endpoint =
 	| typeof UPDATEUSERNAME
 
 const getURL = (endpoint: Endpoint) => {
-	// const postFix = 'm46ipsyeya-uc.a.run.app'
+	const postFix = 'm46ipsyeya-uc.a.run.app'
 	if (useEmulator) {
 		return `http://localhost:5001/gameguide-ai/us-central1/${endpoint}`
 	} else {
-		return `https://us-central1-gameguide-ai.cloudfunctions.net/${endpoint}`
-		// return `https://${endpoint.toLowerCase()}-${postFix}`
+		// return `https://us-central1-gameguide-ai.cloudfunctions.net/${endpoint}`
+		return `https://${endpoint.toLowerCase()}-${postFix}`
 	}
 }
 
@@ -41,22 +41,6 @@ const baseHeaders = (token: string): HeadersInit => {
 		Authorization: `Bearer ${token}`,
 	}
 }
-
-// const deleteMessage = async (
-// 	key: string,
-// 	{ arg }: { arg: { user: User | null; conversationId: string; messageId: string } }
-// ) => {
-// 	if (!arg.user || !arg.conversationId?.length || !arg.messageId?.length) {
-// 		throw new Error('Invalid arguments')
-// 	}
-
-// 	const token = await arg.user.getIdToken()
-// 	await fetch(getURL('deleteMessage'), {
-// 		method: 'POST',
-// 		headers: baseHeaders(token),
-// 		body: JSON.stringify({ conversationId: arg.conversationId, messageId: arg.messageId }),
-// 	})
-// }
 
 const fetcher = async <T extends Record<string, string | undefined>>(
 	key: string,

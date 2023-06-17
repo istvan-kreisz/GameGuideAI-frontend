@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Icon from '@/components/Icon/Icon'
 import { toast } from 'react-hot-toast'
 import Notify from '@/components/Notify/Notify'
@@ -11,8 +10,6 @@ type ChatProps = {
 }
 
 const Chat = ({ title, children, deleteAllMessages, clean }: ChatProps) => {
-	const [visibleModal, setVisibleModal] = useState<boolean>(false)
-
 	const handleClickClear = (t: any) => {
 		toast.dismiss(t.id)
 		deleteAllMessages()
