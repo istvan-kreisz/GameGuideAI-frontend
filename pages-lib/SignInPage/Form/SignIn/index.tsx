@@ -2,6 +2,9 @@ import { FormEventHandler, useState } from 'react'
 import Field from '@/components/Field/Field'
 import { useAuth } from 'context/AuthContext'
 import { useRouter } from 'next/router'
+import { Infer, create, string, type } from 'superstruct'
+import { showError } from '@/components/Error/Error'
+import { getErrorMessage } from '../../utils'
 
 type SignInProps = {
 	onClick: () => void
@@ -22,10 +25,11 @@ const SignIn = ({ onClick }: SignInProps) => {
 		try {
 			await login(email, password)
 			router.push('/')
-		} catch (err) {
-			// todo: error handling
-			console.log('>>>>>>>>>>>>>>> error')
-			console.log(err)
+		} catch (error) {
+			const errorMessage = getErrorMessage(error)
+			if (errorMessage) {
+				showError(errorMessage)
+			}
 		}
 		return false
 	}

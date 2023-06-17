@@ -29,7 +29,7 @@ const Chat = ({ title, children, deleteAllMessages }: ChatProps) => {
 							className="group relative ml-auto text-0"
 							onClick={() =>
 								toast((t) => (
-									<Notify className="md:flex-col md:items-center md:px-10" iconDelete>
+									<Notify className="md:flex-col md:items-center md:px-10" iconName="trash">
 										<div className="ml-3 mr-6 h6 md:mx-0 md:my-2">Clear all chat history?</div>
 										<div className="flex justify-center">
 											<button

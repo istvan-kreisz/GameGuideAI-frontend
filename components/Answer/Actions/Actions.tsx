@@ -15,7 +15,7 @@ const Actions = ({ text }: ActionsProps) => {
 	const onCopy = () => {
 		setCopied(true)
 		toast((t) => (
-			<Notify iconCheck>
+			<Notify iconName="check-thin">
 				<div className="ml-3 h6">Content copied</div>
 			</Notify>
 		))
@@ -23,7 +23,7 @@ const Actions = ({ text }: ActionsProps) => {
 
 	const handleClick = () => {
 		toast((t) => (
-			<Notify iconCheck>
+			<Notify iconName="check-thin">
 				<div className="mr-6 ml-3 h6">1 chat archived</div>
 				<button className="btn-blue btn-medium ml-3" onClick={() => toast.dismiss(t.id)}>
 					Undo
