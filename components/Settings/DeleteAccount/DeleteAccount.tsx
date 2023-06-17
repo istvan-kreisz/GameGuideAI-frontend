@@ -1,3 +1,4 @@
+import { showNotification } from '@/components/Notify/showNotification'
 import { useDeleteAccount } from '@/hooks/api/endpoints/post/useDeleteAccount'
 import { handleError } from '@/utils/utils'
 import { useAuth } from 'context/AuthContext'
@@ -11,6 +12,7 @@ const DeleteAccount = ({}: DeleteAccountProps) => {
 	const deleteAndLogout = async () => {
 		try {
 			await deleteAccount()
+			showNotification('Account deleted', 'success')
 			try {
 				await logout()
 			} catch {}
