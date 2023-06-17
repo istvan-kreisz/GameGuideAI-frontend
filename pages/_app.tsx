@@ -25,8 +25,6 @@ const karla = Karla({
 
 const noAuthRequired = ['/', '/sign-in', '/pagelist', '/thanks', '/404', '/updates-and-faq']
 
-// todo: add userId as key to components (which ones?)
-
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
 

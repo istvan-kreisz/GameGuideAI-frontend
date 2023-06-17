@@ -7,6 +7,9 @@ import SignIn from './SignIn'
 import CreateAccount from './CreateAccount'
 import ForgotPassword from './ForgotPassword'
 import { useAuth } from 'context/AuthContext'
+import { useRouter } from 'next/router'
+import { getErrorMessage } from '../utils'
+import { showNotification } from '@/components/Notify/showNotification'
 
 const tabNav = ['Sign in', 'Create account']
 
@@ -18,6 +21,22 @@ const Form = ({}: FormProps) => {
 
 	const { colorMode } = useColorMode()
 	const isLightMode = colorMode === 'light'
+
+	const router = useRouter()
+
+	const googleLogin = async () => {
+		try {
+			await loginWithGoogle()
+			router.push('/')
+		} catch (error) {
+			const errorMessage = getErrorMessage(error)
+			if (errorMessage) {
+				showNotification(errorMessage, 'error')
+			} else {
+				showNotification('Something went wrong', 'error')
+			}
+		}
+	}
 
 	return (
 		<div className="w-full max-w-[31.5rem] m-auto">
@@ -40,7 +59,7 @@ const Form = ({}: FormProps) => {
 						<button
 							className="btn-stroke-light btn-large w-full mb-3"
 							type="button"
-							onClick={loginWithGoogle}
+							onClick={googleLogin}
 						>
 							<Image src="/images/google.svg" width={24} height={24} alt="" />
 							<span className="ml-4">Continue with Google</span>

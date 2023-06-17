@@ -10,6 +10,8 @@ import { v4 as uuidv4 } from 'uuid'
 import { useAuth } from 'context/AuthContext'
 import { useSendMessage } from '@/hooks/api/endpoints/post/useSendMessage'
 import { useDeleteAllMessages } from '@/hooks/api/endpoints/post/useDeleteAllMessages'
+import { showNotification } from '@/components/Notify/showNotification'
+import { handleError } from '@/utils/utils'
 
 const GameAIPage = () => {
 	const { user } = useAuth()
@@ -28,11 +30,13 @@ const GameAIPage = () => {
 	const isLoading =
 		didNotLoadLastMessage || (messages.length > 0 && messages[messages.length - 1].isLoading)
 
-	if (didNotLoadLastMessage) {
-		messages.push(lastSentMessage)
+	if (didNotLoadLastMessage && lastSentMessage) {
+		if (!messageIds.includes(lastSentMessage.id)) {
+			messages.push(lastSentMessage)
+		}
 	}
 
-	const send = () => {
+	const send = async () => {
 		if (!user?.uid) return
 
 		const newUserMessage: MessageType = {
@@ -46,7 +50,18 @@ const GameAIPage = () => {
 		}
 		setNewMessage('')
 		setLastSentMessage(newUserMessage)
-		sendMessage({ messageId: newUserMessage.id, message: newUserMessage.text })
+		try {
+			if (newUserMessage.text.length === 0) {
+				throw new Error('Message is empty')
+			}
+			await sendMessage({ messageId: newUserMessage.id, message: newUserMessage.text })
+		} catch (error) {
+			setLastSentMessage(null)
+			if (messageIds.length && messageIds[messageIds.length - 1] === lastSentMessage?.id) {
+				messages.pop()
+			}
+			handleError(error)
+		}
 	}
 
 	useEffect(() => {
@@ -59,10 +74,21 @@ const GameAIPage = () => {
 		<Layout hideRightSidebar>
 			<Chat
 				title="Skyrim Chat"
-				deleteAllMessages={() => {
+				clean={messageIds.length === 0}
+				deleteAllMessages={async () => {
 					if (selectedConversationId) {
-						setLastSentMessage(null)
-						deleteAllMessages({ conversationId: selectedConversationId })
+						try {
+							if (messageIds.length === 0) {
+								throw new Error('No messages to delete')
+							}
+							setLastSentMessage(null)
+							await deleteAllMessages({
+								conversationId: selectedConversationId,
+							})
+							showNotification('Messages deleted', 'success')
+						} catch (error) {
+							handleError(error)
+						}
 					}
 				}}
 			>

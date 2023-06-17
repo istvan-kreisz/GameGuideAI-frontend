@@ -75,11 +75,21 @@ const fetcher = async <T extends Record<string, string | undefined>>(
 
 	const token = await user.getIdToken()
 
-	await fetch(getURL(endpoint), {
+	const res = await fetch(getURL(endpoint), {
 		method: 'POST',
 		headers: baseHeaders(token),
 		body: JSON.stringify(payload),
 	})
+
+	let text = 'Unknow Error'
+	if (!res.ok) {
+		try {
+			text = await res.text()
+		} catch {
+			throw new Error(res.statusText)
+		}
+		throw new Error(text)
+	}
 }
 
 const useUpdateRequest = <T extends Record<string, string>>(endpoint: Endpoint) => {

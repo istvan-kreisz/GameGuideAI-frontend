@@ -10,6 +10,7 @@ import {
 	GoogleAuthProvider,
 } from 'firebase/auth'
 import { auth } from '../config/firebase'
+import { handleError } from '@/utils/utils'
 
 export const AuthContext = createContext<{
 	user: User | null | undefined
@@ -72,8 +73,6 @@ export const AuthContextProvider = () => {
 		try {
 			await signInWithPopup(auth, provider)
 		} catch (error: any) {
-			console.log(error)
-			// todo: handle errors
 			throw error
 			// Handle Errors here.
 			// if (error.code) {

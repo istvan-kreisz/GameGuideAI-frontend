@@ -16,16 +16,6 @@ const Notify = ({ className, iconName, children }: NotifyProps) => {
 			>
 				<Icon className={iconColor} name={iconName} />
 			</div>
-			{/* {iconName === 'check-thin' && (
-				<div className="flex justify-center items-center shrink-0 w-10 h-10 rounded-full bg-primary-2">
-					<Icon className="fill-n-7" name={iconName} />
-				</div>
-			)}
-			{iconDelete && (
-				<div className="flex justify-center items-center shrink-0 w-10 h-10 rounded-full bg-accent-1">
-					<Icon className="fill-n-1" name="trash" />
-				</div>
-			)} */}
 			{children}
 		</div>
 	)

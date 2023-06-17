@@ -2,7 +2,7 @@ import { FormEventHandler, useState } from 'react'
 import Icon from '@/components/Icon/Icon'
 import Field from '@/components/Field/Field'
 import { useAuth } from 'context/AuthContext'
-import { showError } from '@/components/Error/Error'
+import { showNotification } from '@/components/Notify/showNotification'
 import { getErrorMessage } from '../../utils'
 
 type ForgotPasswordProps = {
@@ -17,11 +17,13 @@ const ForgotPassword = ({ onClick }: ForgotPasswordProps) => {
 		event.preventDefault()
 		try {
 			await resetPassword(email)
-			// todo: add success message
+			showNotification('Please check your email.', 'success')
 		} catch (error) {
 			const errorMessage = getErrorMessage(error)
 			if (errorMessage) {
-				showError(errorMessage)
+				showNotification(errorMessage, 'error')
+			} else {
+				showNotification('Something went wrong', 'error')
 			}
 		}
 		return false

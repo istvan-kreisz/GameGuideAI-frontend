@@ -7,14 +7,13 @@ type ChatProps = {
 	title: string
 	children: React.ReactNode
 	deleteAllMessages: () => void
+	clean: boolean
 }
 
-const Chat = ({ title, children, deleteAllMessages }: ChatProps) => {
-	const [clean, setClean] = useState<boolean>(false)
+const Chat = ({ title, children, deleteAllMessages, clean }: ChatProps) => {
 	const [visibleModal, setVisibleModal] = useState<boolean>(false)
 
 	const handleClickClear = (t: any) => {
-		setClean(true)
 		toast.dismiss(t.id)
 		deleteAllMessages()
 	}

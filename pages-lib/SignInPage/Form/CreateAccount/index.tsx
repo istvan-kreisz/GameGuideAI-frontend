@@ -4,7 +4,7 @@ import Field from '@/components/Field/Field'
 import { useAuth } from 'context/AuthContext'
 import { useRouter } from 'next/router'
 import { getErrorMessage } from '../../utils'
-import { showError } from '@/components/Error/Error'
+import { showNotification } from '@/components/Notify/showNotification'
 
 type CreateAccountProps = {}
 
@@ -27,7 +27,9 @@ const CreateAccount = ({}: CreateAccountProps) => {
 		} catch (error) {
 			const errorMessage = getErrorMessage(error)
 			if (errorMessage) {
-				showError(errorMessage)
+				showNotification(errorMessage, 'error')
+			} else {
+				showNotification('Something went wrong', 'error')
 			}
 		}
 		return false

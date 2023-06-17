@@ -1,4 +1,5 @@
 import { useDeleteAccount } from '@/hooks/api/endpoints/post/useDeleteAccount'
+import { handleError } from '@/utils/utils'
 import { useAuth } from 'context/AuthContext'
 
 type DeleteAccountProps = {}
@@ -14,7 +15,7 @@ const DeleteAccount = ({}: DeleteAccountProps) => {
 				await logout()
 			} catch {}
 		} catch (error) {
-			// todo: handle errors
+			handleError(error)
 		}
 	}
 

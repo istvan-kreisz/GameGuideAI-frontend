@@ -16,6 +16,16 @@ const fetchUser = async ([userId, user]: [string, User | null]) => {
 		method: 'POST',
 		headers: baseHeaders(token),
 	})
+	let text = 'Unknow Error'
+	if (!res.ok) {
+		try {
+			text = await res.text()
+		} catch {
+			throw new Error(res.statusText)
+		}
+		throw new Error(text)
+	}
+
 	const json = await res.json()
 	const userInfo = create(json, UserInfo)
 	return userInfo
