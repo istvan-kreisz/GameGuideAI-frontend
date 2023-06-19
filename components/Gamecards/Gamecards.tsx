@@ -29,12 +29,12 @@ const Gamecards = ({ className, items }: MenuProps) => (
 					}`}
 				>
 					<Image
-						layout={'fill'}
-						objectFit={'contain'}
-						className="rounded-lg "
+						className="rounded-lg"
 						src={`/gamecovers/` + item.image}
 						fill
-						alt="Avatar"
+						sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 10vw"
+						alt={`Game cover - ${item.title}`}
+						priority={true}
 					/>
 					{!item.enabled && (
 						<div className="absolute text-white text-3xl text-center bg-black bg-opacity-40 w-full">
