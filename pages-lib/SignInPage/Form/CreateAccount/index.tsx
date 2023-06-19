@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Field from '@/components/Field/Field'
 import { useAuth } from 'context/AuthContext'
 import { useRouter } from 'next/router'
+import { getErrorMessage } from '../../utils'
+import { showNotification } from '@/components/Notify/showNotification'
 
 type CreateAccountProps = {}
 
@@ -23,9 +25,12 @@ const CreateAccount = ({}: CreateAccountProps) => {
 			await signup(email, password)
 			router.push('/')
 		} catch (error) {
-			// todo: error handling
-			console.log('>>>>>>>>>>>>>>> error')
-			console.log(error)
+			const errorMessage = getErrorMessage(error)
+			if (errorMessage) {
+				showNotification(errorMessage, 'error')
+			} else {
+				showNotification('Something went wrong', 'error')
+			}
 		}
 		return false
 	}

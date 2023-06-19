@@ -41,22 +41,6 @@ const baseHeaders = (token: string): HeadersInit => {
 	}
 }
 
-// const deleteMessage = async (
-// 	key: string,
-// 	{ arg }: { arg: { user: User | null; conversationId: string; messageId: string } }
-// ) => {
-// 	if (!arg.user || !arg.conversationId?.length || !arg.messageId?.length) {
-// 		throw new Error('Invalid arguments')
-// 	}
-
-// 	const token = await arg.user.getIdToken()
-// 	await fetch(getURL('deleteMessage'), {
-// 		method: 'POST',
-// 		headers: baseHeaders(token),
-// 		body: JSON.stringify({ conversationId: arg.conversationId, messageId: arg.messageId }),
-// 	})
-// }
-
 const fetcher = async <T extends Record<string, string | undefined>>(
 	key: string,
 	{ arg }: { arg: { user: User | null | undefined; endpoint: Endpoint } & T }
@@ -74,11 +58,21 @@ const fetcher = async <T extends Record<string, string | undefined>>(
 
 	const token = await user.getIdToken()
 
-	await fetch(getURL(endpoint), {
+	const res = await fetch(getURL(endpoint), {
 		method: 'POST',
 		headers: baseHeaders(token),
 		body: JSON.stringify(payload),
 	})
+
+	let text = 'Unknow Error'
+	if (!res.ok) {
+		try {
+			text = await res.text()
+		} catch {
+			throw new Error(res.statusText)
+		}
+		throw new Error(text)
+	}
 }
 
 const useUpdateRequest = <T extends Record<string, string>>(endpoint: Endpoint) => {

@@ -3,8 +3,6 @@ import Link from 'next/link'
 import Layout from '@/components/Layout/Layout'
 import Icon from '@/components/Icon/Icon'
 
-import { navigation } from '@/constants/navigation'
-
 const Thanks: NextPage = () => {
 	return (
 		<Layout smallSidebar hideRightSidebar>

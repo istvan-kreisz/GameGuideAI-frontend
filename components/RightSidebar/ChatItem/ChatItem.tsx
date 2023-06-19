@@ -16,7 +16,7 @@ const ChatItem = ({ item }: ChatItemProps) => {
 	const handleClick = () => {
 		setActive(true)
 		toast((t) => (
-			<Notify iconCheck>
+			<Notify iconName="check-thin">
 				<div className="mr-6 ml-3 h6">1 chat archived</div>
 				<button className="btn-blue btn-medium ml-3" onClick={() => toast.dismiss(t.id)}>
 					Undo

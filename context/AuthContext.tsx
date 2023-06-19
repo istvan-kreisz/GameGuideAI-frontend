@@ -6,19 +6,23 @@ import {
 	signOut,
 	User,
 	sendPasswordResetEmail,
+	signInWithPopup,
+	GoogleAuthProvider,
 } from 'firebase/auth'
 import { auth } from '../config/firebase'
-import { useGetUser } from '@/hooks/api/endpoints/get/useGetUser'
+import { handleError } from '@/utils/utils'
 
 export const AuthContext = createContext<{
 	user: User | null | undefined
 	login: (email: string, password: string) => Promise<void>
+	loginWithGoogle: () => Promise<void>
 	signup: (email: string, password: string) => Promise<void>
 	logout: () => Promise<void>
 	resetPassword: (email: string) => Promise<void>
 }>({
 	user: null,
 	login: async () => {},
+	loginWithGoogle: async () => {},
 	signup: async () => {},
 	logout: async () => {},
 	resetPassword: async () => {},
@@ -29,7 +33,6 @@ export const useAuth = () => useContext(AuthContext)
 export const AuthContextProvider = () => {
 	const [user, setUser] = useState<User | null | undefined>(undefined)
 	// const [loading, setLoading] = useState<boolean>(true)
-	const {} = useGetUser()
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (newUser) => {
@@ -64,6 +67,27 @@ export const AuthContextProvider = () => {
 		}
 	}
 
+	const loginWithGoogle = async () => {
+		const provider = new GoogleAuthProvider()
+
+		try {
+			await signInWithPopup(auth, provider)
+		} catch (error: any) {
+			throw error
+			// Handle Errors here.
+			// if (error.code) {
+			// 	const errorCode = error.code
+			// 	const errorMessage = error.message
+			// 	// The email of the user's account used.
+			// 	const email = error.customData.email
+			// 	// The AuthCredential type that was used.
+			// 	const credential = GoogleAuthProvider.credentialFromError(error)
+			// } else {
+			// }
+			// ...
+		}
+	}
+
 	const logout = async () => {
 		try {
 			// setLoading(true)
@@ -82,6 +106,7 @@ export const AuthContextProvider = () => {
 	return {
 		user,
 		login,
+		loginWithGoogle,
 		signup,
 		logout,
 		resetPassword,

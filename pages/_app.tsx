@@ -25,8 +25,6 @@ const karla = Karla({
 
 const noAuthRequired = ['/', '/sign-in', '/pagelist', '/thanks', '/404', '/updates-and-faq']
 
-// todo: add userId as key to components (which ones?)
-
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
 
@@ -39,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		setMessages,
 	} = UserDataContextProvider()
 
-	const { user, login, signup, logout, resetPassword } = AuthContextProvider()
+	const { user, login, loginWithGoogle, signup, logout, resetPassword } = AuthContextProvider()
 
 	useUserDataListener(
 		user,
@@ -50,7 +48,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	)
 
 	return (
-		<AuthContext.Provider value={{ user, login, signup, logout, resetPassword }}>
+		<AuthContext.Provider value={{ user, login, loginWithGoogle, signup, logout, resetPassword }}>
 			<UserDataContext.Provider
 				value={{
 					selectedConversationId,

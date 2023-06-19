@@ -4,11 +4,11 @@ export const settings = [
 		title: 'Edit profile',
 		icon: 'profile',
 	},
-	{
-		id: 'password',
-		title: 'Password',
-		icon: 'lock-1',
-	},
+	// {
+	// 	id: 'password',
+	// 	title: 'Password',
+	// 	icon: 'lock-1',
+	// },
 	{
 		id: 'appearance',
 		title: 'Appearance',

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Icon from '@/components/Icon/Icon'
 import { toast } from 'react-hot-toast'
 import Notify from '@/components/Notify/Notify'
@@ -7,14 +6,11 @@ type ChatProps = {
 	title: string
 	children: React.ReactNode
 	deleteAllMessages: () => void
+	clean: boolean
 }
 
-const Chat = ({ title, children, deleteAllMessages }: ChatProps) => {
-	const [clean, setClean] = useState<boolean>(false)
-	const [visibleModal, setVisibleModal] = useState<boolean>(false)
-
+const Chat = ({ title, children, deleteAllMessages, clean }: ChatProps) => {
 	const handleClickClear = (t: any) => {
-		setClean(true)
 		toast.dismiss(t.id)
 		deleteAllMessages()
 	}
@@ -29,7 +25,7 @@ const Chat = ({ title, children, deleteAllMessages }: ChatProps) => {
 							className="group relative ml-auto text-0"
 							onClick={() =>
 								toast((t) => (
-									<Notify className="md:flex-col md:items-center md:px-10" iconDelete>
+									<Notify className="md:flex-col md:items-center md:px-10" iconName="trash">
 										<div className="ml-3 mr-6 h6 md:mx-0 md:my-2">Clear all chat history?</div>
 										<div className="flex justify-center">
 											<button
