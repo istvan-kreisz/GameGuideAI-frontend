@@ -35,18 +35,22 @@ const Updates = ({ items }: UpdatesProps) => {
 							<div className="mb-5 h6">{item.title}</div>
 							<div className="base1 font-semibold text-n-4/50">{item.date}</div>
 						</div>
-						<div className="grow">
-							<div>
-								<Image
-									className="w-full rounded-3xl md:rounded-xl"
-									src={isDarkMode ? item.imageDark : item.imageLight}
-									width={600}
-									height={400}
-									alt=""
-								/>
+						{item.imageLight ? (
+							<div className="grow">
+								<div>
+									<Image
+										className="w-full rounded-3xl md:rounded-xl"
+										src={isDarkMode ? item.imageDark : item.imageLight}
+										width={600}
+										height={400}
+										alt=""
+									/>
+								</div>
+								<div className="mt-8 base1 text-n-4">{item.content}</div>
 							</div>
+						) : (
 							<div className="mt-8 base1 text-n-4">{item.content}</div>
-						</div>
+						)}
 					</div>
 				))}
 			</div>
