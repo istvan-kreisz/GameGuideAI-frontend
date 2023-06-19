@@ -28,12 +28,12 @@ const Profile = ({ visible, logout }: ProfileProps) => (
 			{!visible && (
 				<>
 					{logout ? (
-						<button className="btn-stroke-dark w-full" onClick={logout}>
+						<button className="btn-stroke-dark w-full h-11" onClick={logout}>
 							Log Out
 						</button>
 					) : (
-						<button className="btn-stroke-dark w-full" onClick={logout}>
-							Sign Up & Save Chats
+						<button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 border border-blue-500 rounded-xl w-full">
+							Sign In to Save Chats
 						</button>
 					)}
 					<div className="text-center px-7 pt-4 opacity-90">
@@ -42,7 +42,7 @@ const Profile = ({ visible, logout }: ProfileProps) => (
 						</Link>*/}
 
 						<a
-							href="https://www.patreon.com/bePatron?u=83091163"
+							href="https://www.patreon.com/GameGuideAI"
 							target="_blank"
 							rel="noopener noreferrer"
 							role="link"
