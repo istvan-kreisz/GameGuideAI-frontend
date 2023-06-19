@@ -50,9 +50,9 @@ const Updates = ({ items }: UpdatesProps) => {
 					</div>
 				))}
 			</div>
-			<div className="text-center">
+			{/*<div className="text-center">
 				<button className="btn-stroke-light">Load more</button>
-			</div>
+			</div>*/}
 		</>
 	)
 }
