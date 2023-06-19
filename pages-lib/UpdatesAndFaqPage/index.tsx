@@ -15,13 +15,7 @@ const UpdatesAndFaqPage = () => {
 
 	return (
 		<Layout hideRightSidebar>
-			<div className="p-20 2xl:px-10 md:pt-6 md:px-6 md:pb-10">
-				<button
-					className="hidden absolute top-6 right-6 w-10 h-10 border-2 border-n-4/25 rounded-full text-0 transition-colors hover:border-transparent hover:bg-n-4/25 md:block"
-					onClick={() => router.back()}
-				>
-					<Icon className="fill-n-4" name="close" />
-				</button>
+			<div className="grow overflow-y-auto scroll-smooth scrollbar-none p-20 2xl:px-10 md:pt-6 md:px-6 md:pb-10">
 				<div className="max-w-[58.5rem] mx-auto">
 					<div className="mb-4 h2 md:pr-16 md:h3">Updates & FAQ</div>
 					<div className="mb-12 body1 text-n-4 md:mb-6">Features, fixes & improvements.</div>
