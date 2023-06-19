@@ -76,7 +76,7 @@ export const faqs = [
 		id: '5',
 		title: 'Can I suggest new games to be added to GameGuide.ai?',
 		content:
-			'Yes, you can suggest new games to be added to GameGuide.ai by submitting the google poll on our homepage!',
+			'Yes, you can suggest new games to be added to GameGuide.ai by Voting on the Google Form on our homepage!',
 		defaultOpen: false,
 	},
 	{
