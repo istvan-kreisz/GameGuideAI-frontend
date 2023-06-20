@@ -1,6 +1,5 @@
 import { useGetUser } from '@/hooks/api/endpoints/get/useGetUser'
 import { useAuth } from 'context/AuthContext'
-import Link from 'next/link'
 
 type ProfileProps = {
 	visible?: boolean
