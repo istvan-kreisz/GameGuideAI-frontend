@@ -18,6 +18,7 @@ type UpdatesProps = {
 
 const Updates = ({ items }: UpdatesProps) => {
 	const { colorMode } = useColorMode()
+
 	const isDarkMode = colorMode === 'dark'
 
 	return (
