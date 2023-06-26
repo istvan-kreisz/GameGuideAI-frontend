@@ -39,7 +39,7 @@ const Gamecards = ({ className, items }: MenuProps) => (
 						fill
 						sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 10vw"
 						alt={`Game cover - ${item.title}`}
-						loading="lazy"
+						loading={index >= 10 ? 'lazy' : 'eager'}
 						priority={index < 10}
 					/>
 					{!item.enabled && (
