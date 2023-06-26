@@ -11,7 +11,7 @@ type AnswerProps = {
 }
 
 const Answer = ({ text, loading, time }: AnswerProps) => {
-	const paragraphs = text.split('\n')
+	const newline = text.split('\n')
 
 	return (
 		<div className="max-w-[50rem]">
@@ -19,7 +19,7 @@ const Answer = ({ text, loading, time }: AnswerProps) => {
 				{loading ? (
 					<Loading />
 				) : (
-					paragraphs.map((paragraph, index) => (
+					newline.map((paragraph, index) => (
 						<p key={index}>
 							<Anchorme className="text-accent-2" target="_blank">
 								{paragraph}
