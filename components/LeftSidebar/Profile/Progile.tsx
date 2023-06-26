@@ -24,13 +24,13 @@ const Profile = ({ visible }: ProfileProps) => {
 									<div className="caption1 font-semibold text-n-3/50">{userInfo.email}</div>
 								)}
 							</div>
-							<div
+							{/*<div
 								className={`shrnik-0 ml-auto self-start px-3 ${
 									userInfo?.subscription === 'pro' ? 'bg-accent-1' : 'bg-primary-2'
 								} rounded-lg caption1 font-bold text-n-7`}
 							>
 								{userInfo?.subscription === 'pro' ? 'Pro' : 'Free'}
-							</div>
+							</div>*/}
 						</>
 					)}
 				</div>
