@@ -11,15 +11,21 @@ type AnswerProps = {
 }
 
 const Answer = ({ text, loading, time }: AnswerProps) => {
+	const paragraphs = text.split('\n')
+
 	return (
 		<div className="max-w-[50rem]">
 			<div className="pt-6 px-6 pb-16 space-y-4 bg-n-2 rounded-[1.25rem] md:p-5 md:pb-14 dark:bg-n-7">
 				{loading ? (
 					<Loading />
 				) : (
-					<Anchorme className="text-accent-2" target="_blank">
-						{text}
-					</Anchorme>
+					paragraphs.map((paragraph, index) => (
+						<p key={index}>
+							<Anchorme className="text-accent-2" target="_blank">
+								{paragraph}
+							</Anchorme>
+						</p>
+					))
 				)}
 			</div>
 			<div className="-mt-8 flex items-end pl-6">
