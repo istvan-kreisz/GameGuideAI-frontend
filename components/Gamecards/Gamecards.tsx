@@ -14,7 +14,12 @@ type MenuProps = {
 }
 
 const Gamecards = ({ className, items }: MenuProps) => (
-	<div className={`flex md:flex-col items-center justify-center gap-2 ${className}`}>
+	<div
+		className={`flex flex-wrap overflow-x-auto items-center justify-center gap-2 scrollbar-thin scrollbar-thumb-n-3 scrollbar-track-n-1 dark:scrollbar-thumb-n-5 dark:scrollbar-track-n-7 ${className}`}
+		style={{
+			scrollbarWidth: 'thin',
+		}}
+	>
 		{items.map((item, index) => (
 			<Link
 				className={`group flex flex-col items-center mx-1 border-2 border-n-3 rounded-xl h6 transition-all hover:shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0px_2rem_1.5rem_-1rem_rgba(0,0,0,0.12)] last:mb-0 2xl:p-2.5 lg:p-3.5 dark:border-n-5 dark:hover:border-n-7 dark:hover:bg-n-7 ${
@@ -34,11 +39,11 @@ const Gamecards = ({ className, items }: MenuProps) => (
 						fill
 						sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 10vw"
 						alt={`Game cover - ${item.title}`}
-						priority={true}
+						priority={index < 10}
 					/>
 					{!item.enabled && (
 						<div className="absolute text-white text-3xl text-center bg-black bg-opacity-40 w-full">
-							Coming Soon
+							Vote On It!
 						</div>
 					)}
 				</div>
