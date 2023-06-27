@@ -18,8 +18,8 @@ const Chat = ({ title, children, deleteAllMessages, clean }: ChatProps) => {
 	return (
 		<>
 			<div className="flex items-center min-h-[4.5rem] px-10 py-3 border-b border-n-3 shadow-[0_0.75rem_2.5rem_-0.75rem_rgba(0,0,0,0.06)] 2xl:px-6 lg:-mt-18 lg:pr-20 md:pl-5 md:pr-18 dark:border-n-5 dark:shadow-[0_0.75rem_2.5rem_-0.75rem_rgba(0,0,0,0.15)]">
-				<div className="mr-auto h5 truncate md:h6">{title}</div>
-				<div className="flex items-center ml-6">
+				<div className="mx-auto pl-16 xs:pl-0 h5 truncate md:h6">{title}</div>
+				<div className="flex items-center">
 					{!clean && (
 						<button
 							className="group relative ml-auto text-0"
@@ -62,7 +62,7 @@ const Chat = ({ title, children, deleteAllMessages, clean }: ChatProps) => {
 					</button> */}
 				</div>
 			</div>
-			<div className="relative z-2 grow p-10 space-y-6 overflow-y-auto scroll-smooth scrollbar-none 2xl:p-6 md:p-5">
+			<div className="relative z-2 grow p-10 space-y-6 overflow-y-auto scroll-smooth scrollbar-none 2xl:p-6 md:p-5 mx-auto max-w-4xl">
 				{children}
 			</div>
 		</>
