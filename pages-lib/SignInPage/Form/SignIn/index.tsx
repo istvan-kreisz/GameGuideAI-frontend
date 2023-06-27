@@ -65,7 +65,7 @@ const SignIn = ({ onClick }: SignInProps) => {
 			>
 				Forgot password?
 			</button>
-			<button className="btn-blue btn-large w-full">Sign in with GameGuideAI</button>
+			<button className="btn-blue btn-large w-full">Sign In</button>
 		</form>
 	)
 }
