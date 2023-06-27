@@ -15,7 +15,7 @@ const Answer = ({ text, loading, time }: AnswerProps) => {
 
 	return (
 		<div className="max-w-[50rem]">
-			<div className="pt-6 px-6 pb-16 space-y-4 bg-n-2 rounded-[1.25rem] md:p-5 md:pb-14 dark:bg-n-7">
+			<div className="pt-6 px-6 pb-16 space-y-4 mr-5 bg-n-2 rounded-[1.25rem] md:p-5 md:pb-14 dark:bg-n-7">
 				{loading ? (
 					<Loading />
 				) : (

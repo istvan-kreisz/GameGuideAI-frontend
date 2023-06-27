@@ -62,7 +62,7 @@ const Chat = ({ title, children, deleteAllMessages, clean }: ChatProps) => {
 					</button> */}
 				</div>
 			</div>
-			<div className="relative z-2 grow p-10 space-y-10 overflow-y-auto scroll-smooth scrollbar-none 2xl:p-6 md:p-5">
+			<div className="relative z-2 grow p-10 space-y-6 overflow-y-auto scroll-smooth scrollbar-none 2xl:p-6 md:p-5">
 				{children}
 			</div>
 		</>
