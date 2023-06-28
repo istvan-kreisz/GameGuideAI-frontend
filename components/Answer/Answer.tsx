@@ -28,7 +28,7 @@ const Answer = ({ text, loading, time }: AnswerProps) => {
 					))
 				)}
 			</div>
-			<div className="-mt-8 flex items-end pl-6">
+			<div className="-mt-10 flex items-end pl-6">
 				<div
 					className={`relative shrink-0 w-16 h-16 mr-auto rounded-2xl overflow-hidden ${
 						!loading && 'shadow-[0_0_0_0.25rem_#FEFEFE] dark:shadow-[0_0_0_0.25rem_#232627]'
