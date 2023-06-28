@@ -11,10 +11,11 @@ const SignInPage = () => {
 					<div className="mb-4 h2 text-n-1">AI Gaming Companion</div>
 					<div className="body1 text-n-3">Chat with GPT trained on game info!</div>
 				</div>
-				<div className="absolute top-52 left-5 right-5 h-[50rem] xl:top-24">
+				<div className="absolute top-[12%] left-5 right-5 h-[50rem]">
 					<Image
+						unoptimized
 						className="object-contain"
-						src="/images/create-pic.png"
+						src="/images/login-art.png"
 						fill
 						sizes="(max-width: 1180px) 50vw, 33vw"
 						alt=""
