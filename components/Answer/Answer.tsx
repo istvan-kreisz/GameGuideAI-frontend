@@ -14,7 +14,7 @@ const Answer = ({ text, loading, time }: AnswerProps) => {
 	const newline = text.split('\n')
 
 	return (
-		<div className="max-w-[50rem]">
+		<div className="max-w-[45rem]">
 			<div className="pt-6 px-6 pb-16 space-y-4 bg-n-2 rounded-[0.75rem] md:p-5 md:pb-14 dark:bg-n-7">
 				{loading ? (
 					<Loading />
