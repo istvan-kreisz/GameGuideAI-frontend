@@ -8,7 +8,7 @@ const useColorModDefault = () => {
 	useEffect(() => {
 		const savedColorMode = localStorage.getItem('theme-color-mode')
 		if (!savedColorMode) {
-			setColorMode('dark')
+			setColorMode('light')
 		} else {
 			setColorMode(savedColorMode)
 		}
