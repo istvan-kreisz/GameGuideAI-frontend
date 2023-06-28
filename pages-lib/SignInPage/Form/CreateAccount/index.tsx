@@ -58,7 +58,7 @@ const CreateAccount = ({}: CreateAccountProps) => {
 				required
 			/>
 			<button className="btn-blue btn-large w-full mb-6">Create Account</button>
-			<div className="text-center caption1 text-n-4">
+			{/*<div className="text-center caption1 text-n-4">
 				By creating an account, you agree to our{' '}
 				<Link
 					className="text-n-5 transition-colors hover:text-n-7 dark:text-n-3 dark:hover:text-n-1"
@@ -74,7 +74,7 @@ const CreateAccount = ({}: CreateAccountProps) => {
 					Privacy & Cookie Statement
 				</Link>
 				.
-			</div>
+			</div>*/}
 		</form>
 	)
 }
