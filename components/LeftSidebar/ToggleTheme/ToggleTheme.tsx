@@ -1,4 +1,3 @@
-import { useColorMode } from '@chakra-ui/color-mode'
 import { twMerge } from 'tailwind-merge'
 import Icon from '@/components/Icon/Icon'
 import useColorModDefault from '@/styles/useColorModeDefault'

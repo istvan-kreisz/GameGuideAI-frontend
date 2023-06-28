@@ -1,17 +1,24 @@
-import { useColorMode, ColorMode } from '@chakra-ui/color-mode'
+import { useEffect } from 'react'
+import { useColorMode } from '@chakra-ui/color-mode'
 
-const useColorModDefault = (): {
-	colorMode: ColorMode
-	setColorMode: (mode: ColorMode) => void
-} => {
+const useColorModDefault = () => {
 	const { colorMode, setColorMode } = useColorMode()
 
-	// Set the initial color mode to dark if not set
-	if (typeof window !== 'undefined' && !localStorage.getItem('chakra-ui-color-mode')) {
-		setColorMode('dark')
+	useEffect(() => {
+		const savedColorMode = localStorage.getItem('theme-color-mode')
+		if (!savedColorMode) {
+			setColorMode('dark')
+		} else {
+			setColorMode(savedColorMode)
+		}
+	}, [setColorMode])
+
+	const setColorModeWithStorage = (mode: 'light' | 'dark') => {
+		setColorMode(mode)
+		localStorage.setItem('theme-color-mode', mode)
 	}
 
-	return { colorMode, setColorMode }
+	return { colorMode, setColorMode: setColorModeWithStorage }
 }
 
 export default useColorModDefault
