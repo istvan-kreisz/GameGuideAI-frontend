@@ -4,6 +4,7 @@ import { useColorMode } from '@chakra-ui/color-mode'
 const useColorModDefault = () => {
 	const { colorMode, setColorMode } = useColorMode()
 
+	// Set the default color mode
 	useEffect(() => {
 		const savedColorMode = localStorage.getItem('theme-color-mode')
 		if (!savedColorMode) {
@@ -13,12 +14,12 @@ const useColorModDefault = () => {
 		}
 	}, [setColorMode])
 
-	const setColorModeWithStorage = (mode: 'light' | 'dark') => {
-		setColorMode(mode)
-		localStorage.setItem('theme-color-mode', mode)
-	}
+	// Update local storage if color mode changes
+	useEffect(() => {
+		localStorage.setItem('theme-color-mode', colorMode)
+	}, [colorMode])
 
-	return { colorMode, setColorMode: setColorModeWithStorage }
+	return { colorMode, setColorMode }
 }
 
 export default useColorModDefault
