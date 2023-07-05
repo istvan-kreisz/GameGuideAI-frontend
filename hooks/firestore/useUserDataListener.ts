@@ -7,7 +7,7 @@ import { array, create } from 'superstruct'
 import { useCallback, useEffect, useRef } from 'react'
 import { User } from 'firebase/auth'
 
-export async function useUserDataListener(
+export function useUserDataListener(
 	user: User | null | undefined,
 	selectedConversationId: string | null,
 	setSelectedConversationId: React.Dispatch<React.SetStateAction<string | null>>,

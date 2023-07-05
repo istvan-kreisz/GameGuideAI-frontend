@@ -1,6 +1,10 @@
 import { useUpdateRequest } from '../../utils'
 
 export const useSendMessage = () => {
-	const { sendMessage } = useUpdateRequest<{ messageId: string; message: string }>('sendMessage')
+	const { sendMessage } = useUpdateRequest<{
+		userMessageId: string
+		message: string
+		aiMessageId: string
+	}>('sendMessage')
 	return { sendMessage }
 }
