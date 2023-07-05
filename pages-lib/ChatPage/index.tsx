@@ -104,7 +104,7 @@ const GameAIPage = () => {
 				listenToMessageUpdates(user.uid, selectedConversationId, newAIMessage.id, (text) => {
 					setPendingAIMessage((val) => {
 						if (val) {
-							const newVal = { ...val, text }
+							const newVal = { ...val, text: val.text + text }
 							return newVal
 						} else {
 							return val
@@ -133,7 +133,7 @@ const GameAIPage = () => {
 		if (listEnd.current) {
 			listEnd.current.scrollIntoView({ behavior: 'smooth' })
 		}
-	}, [messages, lastSentMessage])
+	}, [messages, lastSentMessage, pendingAIMessage])
 
 	return (
 		<Layout hideRightSidebar>
