@@ -1,5 +1,4 @@
 import Image from '@/components/Image/Image'
-import Icon from '@/components/Icon/Icon'
 import Loading from './Loading/Loading'
 import Actions from './Actions/Actions'
 import { Anchorme } from 'react-anchorme'
@@ -28,7 +27,7 @@ const Answer = ({ text, loading, time }: AnswerProps) => {
 					))
 				)}
 			</div>
-			<div className="-mt-10 flex items-end pl-6">
+			<div className="-mt-9 flex items-end pl-6">
 				<div
 					className={`relative shrink-0 w-16 h-16 mr-auto rounded-2xl overflow-hidden ${
 						!loading && 'shadow-[0_0_0_0.25rem_#FEFEFE] dark:shadow-[0_0_0_0.25rem_#232627]'

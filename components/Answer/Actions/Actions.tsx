@@ -38,7 +38,7 @@ const Actions = ({ text }: ActionsProps) => {
 	return (
 		<>
 			<CopyToClipboard text={text} onCopy={onCopy}>
-				<button className={`${styleButton} md:hidden`}>Copy</button>
+				<button className={`${styleButton} md:hidden mt`}>Copy</button>
 			</CopyToClipboard>
 			{/* <button className={styleButton}>Regenerate response</button> */}
 			{/* {!share && !archive && (
