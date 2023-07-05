@@ -32,7 +32,7 @@ export function useMessageListener() {
 					updated(chunks.current[index])
 					index++
 				}
-			}, 30)
+			}, 35)
 			const messageRef = ref(database, [userId, conversationId, messageId].join('/'))
 			unsubscribe.current = onValue(messageRef, (snapshot) => {
 				let val = snapshot.val()
