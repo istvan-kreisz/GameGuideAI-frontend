@@ -1,5 +1,4 @@
 import Image from '@/components/Image/Image'
-import Icon from '@/components/Icon/Icon'
 import Loading from './Loading/Loading'
 import Actions from './Actions/Actions'
 import { Anchorme } from 'react-anchorme'
