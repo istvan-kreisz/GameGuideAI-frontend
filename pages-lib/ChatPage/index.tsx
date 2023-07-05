@@ -87,7 +87,7 @@ const GameAIPage = () => {
 			id: uuidv4(),
 			userId: user.uid,
 			questionId: newUserMessage.id,
-			type: 'User',
+			type: 'AI',
 			text: '',
 			isLoading: true,
 			createdAt: new Date().getTime(),
