@@ -35,15 +35,6 @@ const Profile = ({ visible }: ProfileProps) => {
 				</div>
 				{!visible && (
 					<>
-						{logout ? (
-							<button className="btn-stroke-dark w-full h-11" onClick={logout}>
-								Log Out
-							</button>
-						) : (
-							<button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 border border-blue-500 rounded-xl w-full">
-								Sign In to Save Chats
-							</button>
-						)}
 						<div className="text-center px-7 pt-4 opacity-90">
 							{/*<Link className="btn-stroke-dark w-full mt-2" href="/pricing">
 						Support us on Patreon!
@@ -88,6 +79,11 @@ const Profile = ({ visible }: ProfileProps) => {
 								</div>
 							</a>
 						</div>
+						{logout && (
+							<button className="btn-stroke-dark w-full h-11 mt-2" onClick={logout}>
+								Log Out
+							</button>
+						)}
 					</>
 				)}
 			</div>
