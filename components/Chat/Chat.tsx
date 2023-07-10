@@ -62,7 +62,7 @@ const Chat = ({ title, children, deleteAllMessages, clean }: ChatProps) => {
 					</button> */}
 				</div>
 			</div>
-			<div className="h-full overflow-y-scroll">
+			<div className="h-full overflow-y-scroll scrollbar-none scroll-smooth">
 				<div className="h-fit relative z-2 grow p-10 space-y-6 overflow-y-auto scroll-smooth scrollbar-none 2xl:p-8 md:p-5 mx-auto max-w-4xl w-full">
 					{children}
 				</div>
