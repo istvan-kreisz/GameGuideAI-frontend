@@ -27,7 +27,7 @@ const Gamecards = ({ className, items }: MenuProps) => {
 
 	return (
 		<div
-			className={`flex flex-wrap overflow-x-auto items-center justify-center gap-2 scrollbar-thin scrollbar-thumb-n-3 scrollbar-track-n-1 dark:scrollbar-thumb-n-5 dark:scrollbar-track-n-7 ${className}`}
+			className={`flex flex-wrap overflow-x-auto gap-4 items-center justify-center scrollbar-thin scrollbar-thumb-n-3 scrollbar-track-n-1 dark:scrollbar-thumb-n-5 dark:scrollbar-track-n-7 ${className}`}
 			style={{
 				scrollbarWidth: 'thin',
 			}}
@@ -35,11 +35,11 @@ const Gamecards = ({ className, items }: MenuProps) => {
 			{items.map((item, index) => (
 				<Link href={item.url} key={index} passHref>
 					<div
-						className={`group flex flex-col items-center mx-1 border-2 border-n-3 rounded-xl h6 transition-all hover:shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0px_2rem_1.5rem_-1rem_rgba(0,0,0,0.12)] last:mb-0 2xl:p-2.5 lg:p-3.5 dark:border-n-5 dark:hover:border-n-7 dark:hover:bg-n-7`}
+						className={`group flex flex-col items-center border-2 border-n-3 rounded-xl h6 transition-all hover:shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0px_2rem_1.5rem_-1rem_rgba(0,0,0,0.12)] last:mb-0 p-1 dark:border-n-5 dark:hover:border-n-7 dark:hover:bg-n-7`}
 						onClick={(event) => handleClick(event, item.enabled)}
 					>
 						<div
-							className={`relative flex justify-center items-center 2xl:w-[150px] 2xl:h-52 w-[212px] h-72`}
+							className={`relative flex justify-center items-center w-[212px] h-72 2xl:w-[150px] 2xl:h-52 xl:w-[127px] xl:h-44`}
 						>
 							<Image
 								className="rounded-lg"
@@ -51,12 +51,14 @@ const Gamecards = ({ className, items }: MenuProps) => {
 								priority={index < 10}
 							/>
 							{!item.enabled && (
-								<div className="absolute text-white text-3xl text-center bg-black bg-opacity-40 w-full">
+								<div className="absolute text-white 2xl:text-2xl text-3xl text-center bg-black bg-opacity-40 w-full">
 									Vote On It!
 								</div>
 							)}
 						</div>
-						<div className="text-center text-sm font-bold my-auto py-3">{item.title}</div>
+						<div className="text-center text-sm font-bold my-auto py-3 whitespace-nowrap">
+							{item.title}
+						</div>
 					</div>
 				</Link>
 			))}
