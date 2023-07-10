@@ -18,7 +18,7 @@ export const navigation = [
 		enabled: false,
 	},
 	{
-		title: 'Zelda: Tears of Kingdom',
+		title: 'Zelda: ToTK',
 		image: 'zeldatearsofkingom.jpg',
 		url: '/zeldatearsofkingom',
 		enabled: false,
