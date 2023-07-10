@@ -56,7 +56,7 @@ const Gamecards = ({ className, items }: MenuProps) => {
 								</div>
 							)}
 							{item.enabled && (
-								<div className="absolute top-[4%] right-[-11%] rotate-45 bg-primary-1 text-white px-8 whitespace-nowrap text-center py-1 text-sm font-medium">
+								<div className="absolute top-[4%] right-[-11%] 2xl:right-[-16%] xl:right-[-20%] rotate-45 bg-primary-1 text-white px-8 whitespace-nowrap text-center py-1 text-sm font-medium">
 									BETA
 								</div>
 							)}
