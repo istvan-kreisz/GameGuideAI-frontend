@@ -59,6 +59,8 @@ const UserInfo = object({
 	timezone: optional(string()),
 	createdAt: number(),
 	updatedAt: defaulted(number(), 0),
+	currentMonth: optional(number()),
+	messageCountInCurrentMonth: defaulted(number(), 0),
 })
 
 type UserInfo = Infer<typeof UserInfo>

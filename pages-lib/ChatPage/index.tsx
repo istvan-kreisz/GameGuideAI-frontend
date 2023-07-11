@@ -13,11 +13,13 @@ import { useDeleteAllMessages } from '@/hooks/api/endpoints/post/useDeleteAllMes
 import { showNotification } from '@/components/Notify/showNotification'
 import { handleError } from '@/utils/utils'
 import { useMessageListener } from '@/hooks/realtimedatabase/useMessageListener'
+import { useCheckIfReachedMonthlyLimit } from '@/hooks/api/endpoints/post/useCheckIfReachedDailyLimit'
 
 const GameAIPage = () => {
 	const { user } = useAuth()
 	const { selectedConversationId, messages } = useUserData()
 	const { sendMessage } = useSendMessage()
+	const { checkIfReachedMonthlyLimit } = useCheckIfReachedMonthlyLimit()
 	const { deleteAllMessages } = useDeleteAllMessages()
 
 	const [newMessage, setNewMessage] = useState<string>('')
@@ -73,6 +75,13 @@ const GameAIPage = () => {
 	const send = async () => {
 		if (!user?.uid) return
 
+		try {
+			await checkIfReachedMonthlyLimit()
+		} catch (error) {
+			handleError(error)
+			return
+		}
+
 		const newUserMessage: MessageType = {
 			id: uuidv4(),
 			userId: user.uid,
@@ -122,9 +131,6 @@ const GameAIPage = () => {
 			stopListener()
 			setLastSentMessage(null)
 			setPendingAIMessage(null)
-			if (messageIds.length && messageIds[messageIds.length - 1] === lastSentMessage?.id) {
-				messages.pop()
-			}
 			handleError(error)
 		}
 	}
