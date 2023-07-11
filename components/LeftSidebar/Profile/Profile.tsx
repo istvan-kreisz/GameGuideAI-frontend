@@ -59,7 +59,7 @@ const Profile = ({ visible }: ProfileProps) => {
 								</div>
 							</a>
 							<a
-								href="https://discord.gg/your_invite_link"
+								href="https://discord.gg/Pwzt3yBG5w"
 								target="_blank"
 								rel="noopener noreferrer"
 								role="link"
