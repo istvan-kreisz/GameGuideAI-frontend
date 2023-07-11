@@ -7,7 +7,7 @@ const SENDMESSAGE = 'sendMessage' as const
 const DELETEALLMESSAGES = 'deleteAllMessages' as const
 const DELETECONVERSATION = 'deleteConversation' as const
 const DELETEMESSAGE = 'deleteMessage' as const
-const CHECKIFREACHEDDAILYLIMIT = 'checkIfReachedDailyLimit' as const
+const CHECKIFREACHEDMONTHLYLIMIT = 'checkIfReachedMonthlyLimit' as const
 const DELETEACCOUNT = 'deleteAccount' as const
 const GETUSER = 'getUser' as const
 const UPDATETIMEZONE = 'updateTimezone' as const
@@ -18,7 +18,7 @@ type Endpoint =
 	| typeof DELETEALLMESSAGES
 	| typeof DELETECONVERSATION
 	| typeof DELETEMESSAGE
-	| typeof CHECKIFREACHEDDAILYLIMIT
+	| typeof CHECKIFREACHEDMONTHLYLIMIT
 	| typeof DELETEACCOUNT
 	| typeof GETUSER
 	| typeof UPDATETIMEZONE
@@ -91,7 +91,7 @@ export {
 	DELETEALLMESSAGES,
 	DELETECONVERSATION,
 	DELETEMESSAGE,
-	CHECKIFREACHEDDAILYLIMIT,
+	CHECKIFREACHEDMONTHLYLIMIT,
 	DELETEACCOUNT,
 	GETUSER,
 	UPDATETIMEZONE,

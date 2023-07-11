@@ -1,6 +1,6 @@
 import { useUpdateRequest } from '../../utils'
 
-export const useCheckIfReachedDailyLimit = () => {
-	const { checkIfReachedDailyLimit } = useUpdateRequest('checkIfReachedDailyLimit')
-	return { checkIfReachedDailyLimit: () => checkIfReachedDailyLimit({}) }
+export const useCheckIfReachedMonthlyLimit = () => {
+	const { checkIfReachedMonthlyLimit } = useUpdateRequest('checkIfReachedMonthlyLimit')
+	return { checkIfReachedMonthlyLimit: () => checkIfReachedMonthlyLimit({}) }
 }
