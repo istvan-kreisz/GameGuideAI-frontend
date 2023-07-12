@@ -1,7 +1,7 @@
 export const chatHistory = [
 	{
 		id: '0',
-		title: 'GameGuideAI AI UI Kit',
+		title: 'AI GameGuide',
 		content:
 			'Write code (HTML, CSS and JS) for a simple form with 3 input fields and a dropdown with 2 buttons, cancel and send',
 		users: ['/images/avatar-1.jpg'],
