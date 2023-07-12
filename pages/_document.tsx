@@ -5,30 +5,27 @@ export default function Document() {
 		<Html lang="en">
 			<Head>
 				<meta
-					content="Figma UI kit designed to enhance the functionality of ChatGPT"
-					name="GameGuideAI - AI UI Kit"
+					content="Discover GameGuideAI, the first AI-powered game guide enhancing player strategies, walkthroughs, and tips. Level up your gaming experience with artificial intelligence."
+					name="GameGuideAI - Chat with GPT trained on game info"
 				/>
-				<meta content="GameGuideAI - AI UI Kit" property="og:title" />
+				<meta content="GameGuideAI - Chat with GPT trained on game info" property="og:title" />
 				<meta
-					content="Figma UI kit designed to enhance the functionality of ChatGPT"
+					content="Discover GameGuideAI, the first AI-powered game guide enhancing player strategies, walkthroughs, and tips. Level up your gaming experience with artificial intelligence."
 					property="og:description"
 				/>
 				<meta content="%PUBLIC_URL%/fb-og-image.png" property="og:image" />
+				<meta property="og:url" content="https://gameguide.ai" />
+				<meta property="og:site_name" content="GameGuideAI - Chat with GPT trained on game info" />
+				<meta content="GameGuideAI - Chat with GPT trained on game info" property="twitter:title" />
 				<meta
-					property="og:url"
-					content="https://ui8.net/ui8/products/GameGuideAI-ai-ui-design-kit"
-				/>
-				<meta property="og:site_name" content="GameGuideAI - AI UI Kit" />
-				<meta content="GameGuideAI - AI UI Kit" property="twitter:title" />
-				<meta
-					content="Figma UI kit designed to enhance the functionality of ChatGPT"
+					content="Discover GameGuideAI, the first AI-powered game guide enhancing player strategies, walkthroughs, and tips. Level up your gaming experience with artificial intelligence."
 					property="twitter:description"
 				/>
 				<meta content="%PUBLIC_URL%/twitter-card.png" property="twitter:image" />
 				<meta property="og:type" content="Article" />
 				<meta content="summary" name="twitter:card" />
-				{/* <meta name="twitter:site" content="@ui8" />
-				<meta name="twitter:creator" content="@ui8" /> */}
+				{/* <meta name="twitter:site" content="@gameguideai" />
+				<meta name="twitter:creator" content="@gameguideai" /> */}
 				{/* <meta property="fb:admins" content="132951670226590" /> */}
 
 				<meta name="msapplication-TileColor" content="#da532c" />
