@@ -64,8 +64,11 @@ const fetcher = async <T extends Record<string, string | undefined>>(
 		body: JSON.stringify(payload),
 	})
 
-	let text = 'Unknow Error'
-	if (!res.ok) {
+	if (res.ok) {
+		const json = await res.json()
+		return json
+	} else {
+		let text = 'Unknow Error'
 		try {
 			text = await res.text()
 		} catch {
@@ -81,7 +84,8 @@ const useUpdateRequest = <T extends Record<string, string>>(endpoint: Endpoint) 
 
 	return {
 		[endpoint]: async (args: T) => {
-			await trigger({ user, endpoint, ...args })
+			const res = await trigger({ user, endpoint, ...args })
+			return res
 		},
 	}
 }

@@ -14,9 +14,13 @@ import { showNotification } from '@/components/Notify/showNotification'
 import { handleError } from '@/utils/utils'
 import { useMessageListener } from '@/hooks/realtimedatabase/useMessageListener'
 import { useCheckIfReachedMonthlyLimit } from '@/hooks/api/endpoints/post/useCheckIfReachedDailyLimit'
+import { useGetUser } from '@/hooks/api/endpoints/get/useGetUser'
+import { boolean, create, object } from 'superstruct'
 
 const GameAIPage = () => {
+	const MONTHLY_LIMIT = 25
 	const { user } = useAuth()
+	const { userInfo } = useGetUser()
 	const { selectedConversationId, messages } = useUserData()
 	const { sendMessage } = useSendMessage()
 	const { checkIfReachedMonthlyLimit } = useCheckIfReachedMonthlyLimit()
@@ -27,6 +31,7 @@ const GameAIPage = () => {
 	const [pendingAIMessage, setPendingAIMessage] = useState<MessageType | null>(null)
 
 	const listEnd = useRef<HTMLDivElement | null>(null)
+	const didReachMonthlyLimit = useRef<boolean>(false)
 
 	const messageIds = messages.map((val) => val.id)
 
@@ -72,13 +77,36 @@ const GameAIPage = () => {
 
 	const { listenToMessageUpdates, stopListener } = useMessageListener()
 
+	useEffect(() => {
+		if (userInfo?.subscription === 'pro') return
+		if (
+			userInfo?.messageCountInCurrentMonth &&
+			userInfo.messageCountInCurrentMonth >= MONTHLY_LIMIT
+		) {
+			didReachMonthlyLimit.current = true
+			return
+		}
+
+		;(async () => {
+			try {
+				const res = await checkIfReachedMonthlyLimit()
+				const resParsed = create(res, object({ didReachMonthlyLimit: boolean() }))
+				didReachMonthlyLimit.current = resParsed.didReachMonthlyLimit
+			} catch (error) {
+				return
+			}
+		})()
+	}, [userInfo])
+
+	console.log(didReachMonthlyLimit.current)
+
 	const send = async () => {
 		if (!user?.uid) return
 
-		try {
-			await checkIfReachedMonthlyLimit()
-		} catch (error) {
-			handleError(error)
+		if (didReachMonthlyLimit.current) {
+			handleError(
+				`Montly question limit ${MONTHLY_LIMIT} reached. Please upgrade to Pro to remove question limit!`
+			)
 			return
 		}
 
@@ -121,11 +149,14 @@ const GameAIPage = () => {
 					})
 				})
 			}
-			await sendMessage({
+
+			const res = await sendMessage({
 				userMessageId: newUserMessage.id,
 				message: newUserMessage.text,
 				aiMessageId: newAIMessage.id,
 			})
+			const resParsed = create(res, object({ didReachMonthlyLimit: boolean() }))
+			didReachMonthlyLimit.current = resParsed.didReachMonthlyLimit
 			stopListener()
 		} catch (error) {
 			stopListener()
