@@ -65,8 +65,12 @@ const fetcher = async <T extends Record<string, string | undefined>>(
 	})
 
 	if (res.ok) {
-		const json = await res.json()
-		return json
+		if (res.body) {
+			try {
+				const json = await res.json()
+				return json
+			} catch {}
+		}
 	} else {
 		let text = 'Unknow Error'
 		try {
