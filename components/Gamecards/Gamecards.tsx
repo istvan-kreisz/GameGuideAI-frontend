@@ -13,9 +13,16 @@ type MenuType = {
 type MenuProps = {
 	className?: string
 	items: MenuType[]
+	filterEnabled?: boolean
+	filterDisabled?: boolean
 }
 
-const Gamecards = ({ className, items }: MenuProps) => {
+const Gamecards = ({
+	className,
+	items,
+	filterEnabled = false,
+	filterDisabled = false,
+}: MenuProps) => {
 	const [visible, setVisible] = useState<boolean>(false)
 
 	const handleClick = (event: React.MouseEvent, enabled: boolean) => {
@@ -25,6 +32,15 @@ const Gamecards = ({ className, items }: MenuProps) => {
 		}
 	}
 
+	// Filter items based on filterEnabled and filterDisabled props.
+	let filteredItems = items
+	if (filterEnabled) {
+		filteredItems = filteredItems.filter((item) => item.enabled)
+	}
+	if (filterDisabled) {
+		filteredItems = filteredItems.filter((item) => !item.enabled)
+	}
+
 	return (
 		<div
 			className={`flex flex-wrap overflow-x-auto 2xl:gap-4 gap-6 items-center justify-center scrollbar-thin scrollbar-thumb-n-3 scrollbar-track-n-1 dark:scrollbar-thumb-n-5 dark:scrollbar-track-n-7 ${className}`}
@@ -32,7 +48,7 @@ const Gamecards = ({ className, items }: MenuProps) => {
 				scrollbarWidth: 'thin',
 			}}
 		>
-			{items.map((item, index) => (
+			{filteredItems.map((item, index) => (
 				<Link href={item.url} key={index} passHref>
 					<div
 						className={`group flex flex-col items-center border-2 border-n-3 rounded-xl h6 transition-all hover:shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0px_2rem_1.5rem_-1rem_rgba(0,0,0,0.12)] last:mb-0 dark:border-n-5 dark:hover:border-n-7 dark:hover:bg-n-7`}
@@ -47,7 +63,6 @@ const Gamecards = ({ className, items }: MenuProps) => {
 								fill
 								sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 10vw"
 								alt={`Game cover - ${item.title}`}
-								//loading={index >= 10 ? 'lazy' : 'eager'}
 								priority={index < 10}
 							/>
 							{!item.enabled && (
