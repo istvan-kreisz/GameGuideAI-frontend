@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '../styles/floatingCubes.css'
 import type { AppProps } from 'next/app'
 import { Toaster, resolveValue } from 'react-hot-toast'
 import { Inter, Karla } from 'next/font/google'
@@ -23,7 +24,15 @@ const karla = Karla({
 	variable: '--font-karla',
 })
 
-const noAuthRequired = ['/', '/sign-in', '/pagelist', '/thanks', '/404', '/updates-and-faq']
+const noAuthRequired = [
+	'/',
+	'/games',
+	'/sign-in',
+	'/pagelist',
+	'/thanks',
+	'/404',
+	'/updates-and-faq',
+]
 
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
