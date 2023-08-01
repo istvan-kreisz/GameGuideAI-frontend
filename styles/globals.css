@@ -129,12 +129,14 @@
 	.multiselect .multiselect__option--is-focused {
 		@apply bg-n-3/50 dark:bg-n-6;
 	}
-	.swiper-slide {
-		text-align: center;
+}
 
-		/* Center slide text vertically */
-		display: flex !important;
-		justify-content: center;
-		align-items: center;
-	}
+/* Center the game cards on the landing page*/
+.swiper-slide {
+	text-align: center;
+
+	/* Center slide text vertically */
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
 }
