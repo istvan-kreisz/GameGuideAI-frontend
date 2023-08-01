@@ -36,11 +36,11 @@ const Landing: NextPage = () => {
 						</a>
 					</div>
 				</nav>
-				<div className="flex flex-col h-fit items-center justify-center bg-black text-center relative">
-					<div className="bg-gradient-to-b from-n-6 via-primary-1/40 to-n-1 w-full h-full pt-10 pb-20 px-10">
+				<div className="flex flex-col h-fit items-center justify-center text-center relative">
+					<div className="bg-gradient-to-b from-n-6 via-[#2a5e90] to-n-1 w-full h-full pt-10 pb-20 px-10">
 						{/* Hero Section */}
 						<section className="items-center justify-center flex flex-col gap-20">
-							<h1 className="text-5xl mb-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1">
+							<h1 className="text-5xl m-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1">
 								First Ever AI-Powered Game Guide
 							</h1>
 
