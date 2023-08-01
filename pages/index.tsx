@@ -44,7 +44,7 @@ const Landing: NextPage = () => {
 								First Ever AI-Powered Game Guide
 							</h1>
 
-							<div className="max-w-[620px] min-w-[200px]">
+							<div className="max-w-[640px] min-w-[640px] md:min-w-full mx-5">
 								<div className="pt-6 px-6 pb-16 space-y-4 bg-n-2 rounded-[0.75rem] md:p-5 md:pb-14 dark:bg-n-7">
 									{loading ? (
 										<Loading />
@@ -53,8 +53,8 @@ const Landing: NextPage = () => {
 											sequence={[
 												'Chat with GPT trained on game info!\n\n' +
 													'Time to revolutionize gaming with in-depth tips and real-time assistance powered by AI 🧠\n\n' +
-													'Join our Discord to participate in our closed beta 🚀\n\n' +
-													"We're working hard to democratizing gaming data, making it accessible, personalized, and easy for everyone to use. We see a future where gaming data is open-source, public, and shaped by gamers for gamers 💪",
+													'Join our Discord to participate in our closed beta 🚀\n\n',
+												/*+ "We're working hard to democratizing gaming data, making it accessible, personalized, and easy for everyone to use. We see a future where gaming data is open-source, public, and shaped by gamers for gamers 💪",*/
 											]}
 											speed={60}
 											wrapper="span"
