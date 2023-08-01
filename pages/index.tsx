@@ -53,7 +53,7 @@ const Landing: NextPage = () => {
 											sequence={[
 												'Chat with GPT trained on game info!\n\n' +
 													'Time to revolutionize gaming with in-depth tips and real-time assistance powered by AI 🧠\n\n' +
-													'Join our Discord to participate in our closed beta 🚀\n\n',
+													'Join us on Discord to participate in our closed beta 🚀\n\n',
 												/*+ "We're working hard to democratizing gaming data, making it accessible, personalized, and easy for everyone to use. We see a future where gaming data is open-source, public, and shaped by gamers for gamers 💪",*/
 											]}
 											speed={60}
@@ -85,7 +85,7 @@ const Landing: NextPage = () => {
 								aria-label="Discord"
 								className="btn btn-secondary z-50 bg-blue-600 hover:bg-blue-700 flex flex-row gap-x-2 justify-center items-center rounded-full w-5/6 max-w-xs mx-auto h-12 mb-14"
 							>
-								<h3 className="text-2xl font-medium text-white">Join our Discord</h3>
+								<h3 className="text-2xl font-medium text-white">Join on Discord</h3>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="24"
