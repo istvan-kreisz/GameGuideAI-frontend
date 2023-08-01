@@ -45,7 +45,7 @@ const Landing: NextPage = () => {
 							</h1>
 
 							<div className="max-w-[640px] min-w-[640px] md:min-w-full mx-5">
-								<div className="pt-6 px-6 pb-16 space-y-4 bg-n-2 rounded-[0.75rem] md:p-5 md:pb-14 dark:bg-n-7">
+								<div className="pt-10 px-6 pb-16 space-y-4 bg-n-2 rounded-[0.75rem] md:p-5 md:pb-14 dark:bg-n-7">
 									{loading ? (
 										<Loading />
 									) : (
