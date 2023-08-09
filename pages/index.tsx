@@ -7,11 +7,14 @@ import { TypeAnimation } from 'react-type-animation'
 import Gamecards from '@/components/Gamecards/Gamecards'
 import GamecardsCarousel from '@/components/Gamecards/GamecardsCarousel'
 import { navigation } from '@/constants/navigation'
+import { useColorMode } from '@chakra-ui/color-mode'
 
 const Landing: NextPage = () => {
 	const [loading, setLoading] = useState(true)
+	const { setColorMode } = useColorMode()
 
 	useEffect(() => {
+		setColorMode('dark')
 		setLoading(true)
 		setTimeout(() => {
 			setLoading(false)
