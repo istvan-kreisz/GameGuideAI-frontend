@@ -80,7 +80,7 @@ const Profile = ({ visible }: ProfileProps) => {
 							</a>
 						</div>
 						{logout && (
-							<button className="btn-stroke-dark border-surf-4 w-full h-11 mt-2" onClick={logout}>
+							<button className="btn-stroke-dark w-full h-11 mt-2" onClick={logout}>
 								Log Out
 							</button>
 						)}

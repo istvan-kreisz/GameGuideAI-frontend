@@ -1,13 +1,13 @@
 import { twMerge } from 'tailwind-merge'
 import Icon from '@/components/Icon/Icon'
-import useColorModDefault from '@/styles/useColorModeDefault'
+import { useColorMode } from '@chakra-ui/color-mode'
 
 type ToggleThemeProps = {
 	visible?: boolean
 }
 
 const ToggleTheme = ({ visible }: ToggleThemeProps) => {
-	const { colorMode, setColorMode } = useColorModDefault()
+	const { colorMode, setColorMode } = useColorMode()
 
 	const items = [
 		{
