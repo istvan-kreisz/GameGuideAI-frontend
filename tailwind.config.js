@@ -188,7 +188,7 @@ module.exports = {
 						{},
 				},
 				'.btn-stroke-dark': {
-					'@apply btn border-n-5 text-n-1 hover:bg-n-5 dark:border-surf-4': {},
+					'@apply btn border-surf-4 text-n-1 hover:bg-surf-1': {},
 				},
 				'.btn-stroke-light': {
 					'@apply btn border-n-3 fill-n-7 hover:bg-n-3 hover:text-n-7 dark:border-n-4 dark:hover:bg-surf-1 dark:hover:text-n-1 dark:fill-n-1':
