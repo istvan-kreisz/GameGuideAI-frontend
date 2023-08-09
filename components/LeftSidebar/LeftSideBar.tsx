@@ -81,7 +81,7 @@ const LeftSidebar = ({ value, setValue, smallSidebar, visibleRightSidebar }: Lef
 		<>
 			<div
 				className={twMerge(
-					`fixed z-20 top-0 left-0 bottom-0 flex flex-col pt-30 px-4 bg-n-7 md:invisible md:opacity-0 md:transition-opacity ${
+					`fixed z-20 top-0 left-0 bottom-0 flex flex-col pt-30 px-4 bg-surf-1 md:invisible md:opacity-0 md:transition-opacity ${
 						value ? 'w-24 pb-38 md:w-16 md:px-0 md:pb-30' : 'w-72 pb-58'
 					} ${visibleRightSidebar && 'md:visible md:opacity-100'}`
 				)}
@@ -102,7 +102,7 @@ const LeftSidebar = ({ value, setValue, smallSidebar, visibleRightSidebar }: Lef
 				<div className="grow overflow-y-auto scroll-smooth scrollbar-none">
 					<Navigation visible={value} items={navigation} />
 				</div>
-				<div className="absolute left-0 bottom-0 right-0 pb-6 px-4 bg-n-7 before:absolute before:left-0 before:right-0 before:bottom-full before:h-10 before:bg-gradient-to-t before:from-[#131617] before:to-[rgba(19,22,23,0)] before:pointer-events-none md:px-3">
+				<div className="absolute left-0 bottom-0 right-0 pb-6 px-4 bg-surf-1 before:absolute before:left-0 before:right-0 before:bottom-full before:pointer-events-none md:px-3">
 					{user && <Profile visible={value} />}
 					<ToggleTheme visible={value} />
 				</div>

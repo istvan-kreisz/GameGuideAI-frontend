@@ -10,7 +10,7 @@ type QuestionProps = {
 
 const Question = ({ content, image, document, time }: QuestionProps) => (
 	<div className="max-w-[45rem] ml-auto">
-		<div className="space-y-6 pt-6 px-6 pb-6 border-3 border-n-2 rounded-[0.75rem] md:p-5 md:pb-8 dark:border-transparent dark:bg-n-5/50">
+		<div className="space-y-6 pt-6 px-6 pb-6 border-3 border-n-2 rounded-[0.75rem] md:p-5 md:pb-8 dark:border-transparent dark:bg-surf-3/50">
 			{document && <Document value={document} />}
 			<div className="">{content}</div>
 			{image && (
@@ -21,7 +21,7 @@ const Question = ({ content, image, document, time }: QuestionProps) => (
 		</div>
 		{/*<div className="-mt-8 flex items-end pr-6">
 			<div className="pb-0.5 caption1 text-n-4/50 dark:text-n-4">{time}</div>
-			 <button className="ml-3 px-2 py-0.5 bg-n-3 rounded-md caption1 txt-n-6 transition-colors hover:text-primary-1 dark:bg-n-5/50">
+			 <button className="ml-3 px-2 py-0.5 bg-n-3 rounded-md caption1 txt-n-6 transition-colors hover:text-primary-1 dark:bg-surf-3/50">
                 Edit
             </button> 
 			<div className="relative w-16 h-16 ml-auto "></div>

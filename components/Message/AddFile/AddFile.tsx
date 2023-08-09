@@ -19,7 +19,7 @@ const AddFile = ({}: AddFileProps) => {
 			</button>
 			<Modal
 				classWrap="max-w-[25.2rem] rounded-none bg-transparent"
-				classOverlay="bg-n-7/95 dark:bg-n-7/95"
+				classOverlay="bg-surf-1/95 dark:bg-surf-1/95"
 				classButtonClose="hidden"
 				visible={visible}
 				onClose={() => setVisible(false)}

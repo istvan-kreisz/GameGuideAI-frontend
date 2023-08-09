@@ -23,12 +23,12 @@ const Burger = ({ className, onClick, visibleRightSidebar }: BurgerProps) => {
 				onClick={onClick}
 			>
 				<span
-					className={`w-5 h-0.5 my-0.5 bg-n-7 rounded-full transition-all dark:bg-n-4 ${
+					className={`w-5 h-0.5 my-0.5 bg-surf-1 rounded-full transition-all dark:bg-n-4 ${
 						visibleRightSidebar && 'translate-y-0.75 rotate-45'
 					}`}
 				></span>
 				<span
-					className={`w-5 h-0.5 my-0.5 bg-n-7 rounded-full transition-all dark:bg-n-4 ${
+					className={`w-5 h-0.5 my-0.5 bg-surf-1 rounded-full transition-all dark:bg-n-4 ${
 						visibleRightSidebar && '-translate-y-0.75 -rotate-45'
 					}`}
 				></span>

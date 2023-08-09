@@ -30,7 +30,7 @@ const EditProfile = ({}: EditProfileProps) => {
 		<form className="" onSubmit={handleUpdate}>
 			<div className="mb-8 h4 md:mb-6">Edit profile</div>
 			{/* <div className="flex items-center mb-6">
-				<div className="relative flex justify-center items-center shrink-0 w-28 h-28 mr-4 rounded-full overflow-hidden bg-n-2 dark:bg-n-6">
+				<div className="relative flex justify-center items-center shrink-0 w-28 h-28 mr-4 rounded-full overflow-hidden bg-n-2 dark:bg-surf-2">
 					{objectURL !== null ? (
 						<Image className="object-cover rounded-full" src={objectURL} fill alt="Avatar" />
 					) : (

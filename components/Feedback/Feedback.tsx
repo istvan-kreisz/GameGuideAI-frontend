@@ -5,7 +5,7 @@ type FeedbackProps = {}
 
 const Feedback = ({}: FeedbackProps) => (
 	<div className="">
-		<div className="max-w-[38rem] mb-5 bg-n-1 rounded-2xl xl:max-w-full dark:bg-n-6">
+		<div className="max-w-[38rem] mb-5 bg-n-1 rounded-2xl xl:max-w-full dark:bg-surf-2">
 			<Details />
 			<Assessment />
 		</div>

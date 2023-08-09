@@ -20,7 +20,7 @@ export {}
 // 					</div>
 // 					{item.list.map((x: any, index: number) => (
 // 						<button
-// 							className="flex items-center w-full px-3 py-2 rounded-lg transition-colors hover:bg-n-2 dark:hover:bg-n-6"
+// 							className="flex items-center w-full px-3 py-2 rounded-lg transition-colors hover:bg-n-2 dark:hover:bg-surf-2"
 // 							key={index}
 // 						>
 // 							<div className="relative shrink-0 flex items-center justify-center w-10 h-10 mr-4 rounded-full">
@@ -39,7 +39,7 @@ export {}
 // 					))}
 // 				</div>
 // 			))}
-// 			<button className="flex items-center w-full px-3 py-2 rounded-lg transition-colors hover:bg-n-2 dark:hover:bg-n-6">
+// 			<button className="flex items-center w-full px-3 py-2 rounded-lg transition-colors hover:bg-n-2 dark:hover:bg-surf-2">
 // 				<div className="relative flex justify-center items-center shrink-0 w-10 h-10 mr-4 rounded-full">
 // 					<Icon className="dark:fill-n-1" name="dots" />
 // 				</div>

@@ -9,9 +9,9 @@ type PackageProps = {
 
 const Package = ({ plan, item }: PackageProps) => (
 	<div
-		className={`flex basis-1/3 border-r-2 border-n-3 p-8 bg-n-1 first:rounded-l-3xl last:rounded-r-3xl last:border-none 2xl:px-6 lg:shrink-0 lg:basis-[18.5rem] dark:bg-n-7 dark:border-n-6 ${
+		className={`flex basis-1/3 border-r-2 border-n-3 p-8 bg-n-1 first:rounded-l-3xl last:rounded-r-3xl last:border-none 2xl:px-6 lg:shrink-0 lg:basis-[18.5rem] dark:bg-surf-1 dark:border-n-6 ${
 			item.popular &&
-			'relative text-n-1 before:absolute before:-top-4 before:left-0 before:right-0 before:-bottom-4 before:bg-n-6 before:rounded-3xl dark:text-n-7 dark:before:bg-n-2'
+			'relative text-n-1 before:absolute before:-top-4 before:left-0 before:right-0 before:-bottom-4 before:bg-surf-2 before:rounded-3xl dark:text-n-7 dark:before:bg-n-2'
 		}`}
 	>
 		<div className="relative flex flex-col grow z-2">

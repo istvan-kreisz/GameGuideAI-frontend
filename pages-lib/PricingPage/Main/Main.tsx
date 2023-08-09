@@ -11,7 +11,7 @@ const Main = ({}: MainProps) => {
 	const [plan, setPlan] = useState(false)
 
 	return (
-		<div className="py-32 px-15 bg-n-2 rounded-t-[1.25rem] 2xl:py-20 2xl:px-10 xl:px-8 md:rounded-none dark:bg-n-6">
+		<div className="py-32 px-15 bg-n-2 rounded-t-[1.25rem] 2xl:py-20 2xl:px-10 xl:px-8 md:rounded-none dark:bg-surf-2">
 			<div className="max-w-[75.25rem] mx-auto">
 				<div className="mb-20 text-center 2xl:mb-16 lg:mb-10">
 					<div className="mb-4 h2 lg:h3">AI chat made affordable</div>

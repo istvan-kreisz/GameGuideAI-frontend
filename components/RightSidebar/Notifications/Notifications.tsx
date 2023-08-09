@@ -51,7 +51,7 @@ const Notifications = ({ items }: NotificationsProps) => {
 								leaveFrom="transform scale-100 opacity-100"
 								leaveTo="transform scale-95 opacity-0"
 							>
-								<Menu.Items className="absolute top-full -right-2.5 w-[30.75rem] p-6 bg-n-1 rounded-[1.25rem] shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0px_2rem_2rem_-1rem_rgba(0,0,0,0.1)] lg:mt-2 lg:-right-32 md:-right-56 md:w-[calc(100vw-2rem)] md:p-4 dark:bg-n-7 dark:border dark:border-n-5">
+								<Menu.Items className="absolute top-full -right-2.5 w-[30.75rem] p-6 bg-n-1 rounded-[1.25rem] shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0px_2rem_2rem_-1rem_rgba(0,0,0,0.1)] lg:mt-2 lg:-right-32 md:-right-56 md:w-[calc(100vw-2rem)] md:p-4 dark:bg-surf-1 dark:border dark:border-n-5">
 									<div className="flex justify-between items-center mb-3">
 										<div className="h4 md:h5">Notifications</div>
 										<button className="group" onClick={() => handleClick(close)}>

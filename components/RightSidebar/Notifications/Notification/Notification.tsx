@@ -7,7 +7,7 @@ type NotificationProps = {
 
 const Notification = ({ item }: NotificationProps) => (
 	<Link
-		className="flex items-center p-4 rounded-xl transition-colors hover:bg-n-2 md:hover:bg-transparent md:p-0 dark:hover:bg-n-6 dark:md:hover:bg-transparent"
+		className="flex items-center p-4 rounded-xl transition-colors hover:bg-n-2 md:hover:bg-transparent md:p-0 dark:hover:bg-surf-2 dark:md:hover:bg-transparent"
 		href={item.url}
 	>
 		<div className="w-[calc(100%-3.75rem)] px-5 md:px-3">
@@ -15,7 +15,7 @@ const Notification = ({ item }: NotificationProps) => (
 				{item.content}
 			</div>
 			<div>
-				<span className="inline-block w-0.5 h-2 bg-n-3 rounded-full mx-3 md:mx-2 dark:bg-n-5"></span>
+				<span className="inline-block w-0.5 h-2 bg-n-3 rounded-full mx-3 md:mx-2 dark:bg-surf-3"></span>
 				<span className="caption1 text-n-4">{item.category}</span>
 			</div>
 		</div>

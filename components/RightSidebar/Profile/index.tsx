@@ -51,7 +51,7 @@ const Profile = ({}: ProfileProps) => {
 						leaveFrom="transform scale-100 opacity-100"
 						leaveTo="transform scale-95 opacity-0"
 					>
-						<Menu.Items className="absolute top-full -right-5 w-[19.88rem] mt-[0.9375rem] p-4 bg-n-1 border border-n-2 rounded-2xl shadow-[0px_48px_64px_-16px_rgba(0,0,0,0.25)] md:-right-38 md:w-[calc(100vw-4rem)] dark:bg-n-7 dark:border-n-5">
+						<Menu.Items className="absolute top-full -right-5 w-[19.88rem] mt-[0.9375rem] p-4 bg-n-1 border border-n-2 rounded-2xl shadow-[0px_48px_64px_-16px_rgba(0,0,0,0.25)] md:-right-38 md:w-[calc(100vw-4rem)] dark:bg-surf-1 dark:border-n-5">
 							<div className="flex items-center mb-3">
 								<div className="relative w-15 h-15">
 									<Image
@@ -67,7 +67,7 @@ const Profile = ({}: ProfileProps) => {
 									<div className="caption1 text-n-4">Lead visual designer at UI8</div>
 								</div>
 							</div>
-							<div className="px-4 bg-n-2 rounded-xl dark:bg-n-6">
+							<div className="px-4 bg-n-2 rounded-xl dark:bg-surf-2">
 								{menu.map((item, index) => (
 									<Menu.Item key={index}>
 										<button

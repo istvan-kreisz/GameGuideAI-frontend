@@ -41,7 +41,7 @@ const ChatItem = ({ item }: ChatItemProps) => {
 			<Link className="block" href={item.url}>
 				<div
 					className={`group py-3 pl-12 pr-3 rounded-xl transition-colors hover:bg-n-3/75 dark:hover:bg-n-5 ${
-						active && 'bg-n-3/75 dark:bg-n-5'
+						active && 'bg-n-3/75 dark:bg-surf-3'
 					}`}
 				>
 					<div className="base1 font-semibold dark:text-n-1">{item.title}</div>

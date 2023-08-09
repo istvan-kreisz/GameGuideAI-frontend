@@ -44,8 +44,14 @@ module.exports = {
 					3: '#E8ECEF',
 					4: '#6C7275',
 					5: '#343839',
-					6: '#232627',
+					6: '#272A37',
 					7: '#141718',
+				},
+				surf: {
+					1: '#272A37',
+					2: '#323644',
+					3: '#1D90F5',
+					4: '#424656',
 				},
 			},
 			spacing: {
@@ -114,7 +120,7 @@ module.exports = {
 					'@apply text-[0.92rem]': {},
 				},
 				body: {
-					'@apply bg-n-7 text-[1rem] leading-6 -tracking-[.01em] text-n-7 antialiased md:bg-n-1 dark:text-n-1 dark:md:bg-n-6':
+					'@apply bg-surf-1 text-[1rem] leading-6 -tracking-[.01em] text-n-7 antialiased md:bg-n-1 dark:text-n-1 dark:md:bg-surf-2':
 						{},
 				},
 			})
@@ -174,11 +180,11 @@ module.exports = {
 						{},
 				},
 				'.btn-dark': {
-					'@apply btn bg-n-7 border-n-7 text-n-1 fill-n-1 hover:bg-n-5 hover:border-n-5 dark:bg-n-1 dark:border-n-1 dark:text-n-7 dark:fill-n-7 dark:hover:border-transparent dark:hover:text-primary-1 dark:hover:fill-primary-1':
+					'@apply btn bg-surf-1 border-n-7 text-n-1 fill-n-1 hover:bg-n-5 hover:border-n-5 dark:bg-n-1 dark:border-n-1 dark:text-n-7 dark:fill-n-7 dark:hover:border-transparent dark:hover:text-primary-1 dark:hover:fill-primary-1':
 						{},
 				},
 				'.btn-white': {
-					'@apply btn bg-n-1 border-transparent shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.15)] text-n-7 fill-n-7 hover:bg-n-2 dark:bg-n-6 dark:border-n-1/10 dark:text-n-1 dark:fill-n-1 dark:hover:bg-n-1/10':
+					'@apply btn bg-n-1 border-transparent shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.15)] text-n-7 fill-n-7 hover:bg-n-2 dark:bg-surf-2 dark:border-n-1/10 dark:text-n-1 dark:fill-n-1 dark:hover:bg-n-1/10':
 						{},
 				},
 				'.btn-stroke-dark': {

@@ -41,7 +41,7 @@ const ForgotPassword = ({ onClick }: ForgotPasswordProps) => {
 			<form onSubmit={handleResetPassword}>
 				<Field
 					className="mb-6"
-					classInput="dark:bg-n-7 dark:border-n-7 dark:focus:bg-transparent"
+					classInput="dark:bg-surf-1 dark:border-n-7 dark:focus:bg-transparent"
 					placeholder="Email"
 					icon="email"
 					type="email"

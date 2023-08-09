@@ -19,10 +19,10 @@ const Landing: NextPage = () => {
 	}, [])
 
 	return (
-		<div className="flex flex-col min-h-screen bg-n-1">
+		<div className="flex flex-col min-h-screen bg-surf-2">
 			<div className="relative">
 				{/* Navbar */}
-				<nav className="flex items-center justify-between p-6 bg-n-6 shadow-lg">
+				<nav className="flex items-center justify-between p-6 bg-surf-1 shadow-lg">
 					{<Logo />}
 					<div className="flex items-center space-x-4">
 						<a
@@ -31,13 +31,13 @@ const Landing: NextPage = () => {
 						>
 							About
 						</a>
-						<a href="#" className="text-white bg-blue-600 rounded-md px-6 py-2 hover:bg-blue-700">
+						<a href="#" className="text-white bg-surf-3 rounded-md px-6 py-2 hover:bg-blue-700">
 							Login
 						</a>
 					</div>
 				</nav>
 				<div className="flex flex-col h-fit items-center justify-center text-center relative">
-					<div className="bg-gradient-to-b from-n-6 via-[#2a5e90] to-n-1 w-full h-full pt-10 pb-20 px-10">
+					<div className="bg-gradient-to-b from-surf-1 via-[#2a5e90] to-surf-2 w-full h-full pt-10 pb-20 px-10">
 						{/* Hero Section */}
 						<section className="items-center justify-center flex flex-col gap-20">
 							<h1 className="text-5xl m-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1">
@@ -45,7 +45,7 @@ const Landing: NextPage = () => {
 							</h1>
 
 							<div className="max-w-[640px] min-w-[640px] md:min-w-full mx-5">
-								<div className="pt-10 px-6 pb-16 space-y-4 bg-n-2 rounded-[0.75rem] md:p-5 md:pb-14 dark:bg-n-7">
+								<div className="pt-10 px-6 pb-16 space-y-4  rounded-[0.75rem] md:p-5 md:pb-14 bg-surf-1">
 									{loading ? (
 										<Loading />
 									) : (
@@ -67,7 +67,7 @@ const Landing: NextPage = () => {
 									<div
 										className={`relative shrink-0 w-16 h-16 mr-auto rounded-2xl overflow-hidden ${
 											!loading &&
-											'shadow-[0_0_0_0.25rem_#FEFEFE] dark:shadow-[0_0_0_0.25rem_#232627]'
+											'shadow-[0_0_0_0.25rem_#FEFEFE] dark:shadow-[0_0_0_0.25rem_#272A37]'
 										}`}
 									>
 										<Image
@@ -103,12 +103,12 @@ const Landing: NextPage = () => {
 						<div className="my-10"></div>
 						<section className="items-center justify-center flex flex-col gap-20">
 							<header className="text-center max-w-6xl -mb-10 mt-10">
-								<h2 className="h3 text-blue-50 font-medium">Our Goals</h2>
+								<h2 className="h3 text-n-2 font-medium">Our Goals</h2>
 							</header>
 							<main className="flex flex-wrap justify-center gap-10 w-full z-50">
-								<div className="w-full max-w-2xl text-left p-6 bg-n-2 rounded-2xl shadow-lg">
+								<div className="w-full max-w-2xl text-left p-6 bg-surf-1 rounded-2xl shadow-lg">
 									<div className="text-5xl">👤⚡</div>
-									<h3 className="text-xl font-bold mb-2 text-n-5">
+									<h3 className="text-xl font-bold mb-2 text-surf-3">
 										Personalized and Instant Gaming Guidance
 									</h3>
 									<p>
@@ -120,9 +120,9 @@ const Landing: NextPage = () => {
 									</p>
 								</div>
 
-								<div className="w-full max-w-2xl text-left p-6 bg-n-2 rounded-2xl shadow-lg">
+								<div className="w-full max-w-2xl text-left p-6 bg-surf-1 rounded-2xl shadow-lg">
 									<div className="text-5xl">🧑‍🤝‍🧑📚</div>
-									<h3 className="text-xl font-bold mb-2 text-n-5">
+									<h3 className="text-xl font-bold mb-2 text-surf-3">
 										Community-driven Knowledge Base
 									</h3>
 									<p>
@@ -133,9 +133,11 @@ const Landing: NextPage = () => {
 									</p>
 								</div>
 
-								<div className="w-full max-w-2xl text-left p-6 bg-n-2 rounded-2xl shadow-lg">
+								<div className="w-full max-w-2xl text-left p-6 bg-surf-1 rounded-2xl shadow-lg">
 									<div className="text-5xl">🌱🤝</div>
-									<h3 className="text-xl font-bold mb-2 text-n-5">Building a Gaming Community </h3>
+									<h3 className="text-xl font-bold mb-2 text-surf-3">
+										Building a Gaming Community{' '}
+									</h3>
 									<p>
 										We're not just building a product; we're building a community. We plan to
 										introduce game specific community features such as showcasing popular questions
@@ -162,18 +164,18 @@ const Landing: NextPage = () => {
 				</div>
 			</div>
 			{/* Games Section */}
-			<section className="p-10 bg-n-1 my-5 items-center text-center flex flex-col gap-10">
-				<div className="h4 2xl:mb-2 2xl:h4 text-n-5">Our games in Beta</div>
+			<section className="p-10 bg-surf-2 my-5 items-center text-center flex flex-col gap-10">
+				<div className="h4 2xl:mb-2 2xl:h4 text-n-2">Our games in Beta</div>
 				<Gamecards className="mx-auto" items={navigation} filterEnabled />
-				<div className="h4 2xl:mb-2 2xl:h4 text-n-5">Vote on the next Game!</div>
+				<div className="h4 2xl:mb-2 2xl:h4 text-n-2">Vote on the next Game!</div>
 				<GamecardsCarousel className="mx-auto" items={navigation} filterDisabled />
 			</section>
 			{/* Unused Section */}
 			<section className="flex items-center justify-center text-center relative">
-				<div className="bg-gradient-to-b from-n-1 to-primary-1/20 w-full py-40 px-10 gap-20 flex flex-col items-center"></div>
+				<div className="bg-gradient-to-b from-surf-2 to-primary-1/20 w-full py-40 px-10 gap-20 flex flex-col items-center"></div>
 			</section>
 			{/* Footer 
-			<footer className="mt-auto p-6 bg-n-6 shadow-lg">
+			<footer className="mt-auto p-6 bg-surf-2 shadow-lg">
 				<div className="text-center text-white">{&copy; 2023 AI Game Guide}</div>
 					</footer>*/}
 		</div>
