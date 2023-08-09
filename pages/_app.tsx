@@ -80,9 +80,9 @@ export default function App({ Component, pageProps }: AppProps) {
 					`}</style>
 					<ColorModeProvider>
 						<ColorModeScript
-							initialColorMode="system"
+							initialColorMode="dark"
 							key="chakra-ui-no-flash"
-							storageKey="chakra-ui-color-mode"
+							storageKey="theme-color-mode"
 						/>
 
 						{noAuthRequired.includes(router.pathname) ? (
