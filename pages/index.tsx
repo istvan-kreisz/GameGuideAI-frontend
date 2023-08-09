@@ -40,12 +40,12 @@ const Landing: NextPage = () => {
 					<div className="bg-gradient-to-b from-surf-1 via-[#2a5e90] to-surf-2 w-full h-full pt-10 pb-20 px-10">
 						{/* Hero Section */}
 						<section className="items-center justify-center flex flex-col gap-20">
-							<h1 className="text-5xl m-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1">
+							<h1 className="text-6xl m-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1">
 								First Ever AI-Powered Game Guide
 							</h1>
 
-							<div className="max-w-[640px] min-w-[640px] md:min-w-full mx-5">
-								<div className="pt-10 px-6 pb-16 space-y-4  rounded-[0.75rem] md:p-5 md:pb-14 bg-surf-1">
+							<div className="max-w-[640px] min-w-[640px] md:min-w-full mx-5 three-d-hero z-50">
+								<div className="pt-10 px-6 pb-16 space-y-4  rounded-[1.5rem] md:p-5 md:pb-14 bg-surf-1 three-d-box">
 									{loading ? (
 										<Loading />
 									) : (
@@ -63,12 +63,9 @@ const Landing: NextPage = () => {
 										/>
 									)}
 								</div>
-								<div className="-mt-9 flex items-end pl-6">
+								<div className="-mt-9 flex items-end pl-3">
 									<div
-										className={`relative shrink-0 w-16 h-16 mr-auto rounded-2xl overflow-hidden ${
-											!loading &&
-											'shadow-[0_0_0_0.25rem_#FEFEFE] dark:shadow-[0_0_0_0.25rem_#272A37]'
-										}`}
+										className={`relative shrink-0 w-16 h-16 mr-auto rounded-2xl overflow-hidden ${'shadow-[0_0_0_0.25rem_#FEFEFE] dark:shadow-[0_0_0_0.25rem_#272A37]'}`}
 									>
 										<Image
 											className="object-cover rounded-2xl"

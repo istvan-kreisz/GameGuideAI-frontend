@@ -40,8 +40,8 @@ module.exports = {
 				},
 				n: {
 					1: '#FEFEFE',
-					2: '#F3F5F7',
-					3: '#E8ECEF',
+					2: '#E8ECEF',
+					3: '#d5d8db',
 					4: '#6C7275',
 					5: '#343839',
 					6: '#272A37',
@@ -120,7 +120,7 @@ module.exports = {
 					'@apply text-[0.92rem]': {},
 				},
 				body: {
-					'@apply bg-surf-1 text-[1rem] leading-6 -tracking-[.01em] text-n-7 antialiased md:bg-n-1 dark:text-n-1 dark:md:bg-surf-2':
+					'@apply bg-surf-1 text-[1rem] leading-6 -tracking-[.01em] text-n-7 antialiased md:bg-n-1 dark:text-n-2 dark:md:bg-surf-2':
 						{},
 				},
 			})

@@ -33,7 +33,7 @@ const Actions = ({ text }: ActionsProps) => {
 	}
 
 	const styleButton: string =
-		'h-6 ml-3 px-2 rounded-md caption1 txt-n-4 text-gray-700 transition-colors hover:text-primary-1 dark:bg-surf-1'
+		'h-6 ml-3 px-2 rounded-md caption1 txt-n-4 transition-colors bg-n-2 hover:text-surf-3 dark:bg-surf-4'
 
 	return (
 		<>

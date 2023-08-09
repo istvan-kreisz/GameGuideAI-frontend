@@ -10,7 +10,7 @@ type QuestionProps = {
 
 const Question = ({ content, image, document, time }: QuestionProps) => (
 	<div className="max-w-[45rem] ml-auto">
-		<div className="space-y-6 pt-6 px-6 pb-6 border-3 border-n-2 rounded-[0.75rem] md:p-5 md:pb-8 dark:border-transparent dark:bg-surf-3/50">
+		<div className="space-y-6 pt-6 px-6 pb-6 border-3 border-n-2 rounded-[1.5rem] rounded-br-none md:p-5 md:pb-8 dark:border-transparent text-white bg-surf-3 dark:bg-surf-3/70">
 			{document && <Document value={document} />}
 			<div className="">{content}</div>
 			{image && (

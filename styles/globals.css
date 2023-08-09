@@ -140,3 +140,22 @@
 	justify-content: center;
 	align-items: center;
 }
+
+.three-d-hero {
+	transform: rotateX(0deg) rotateZ(0deg);
+	transform-style: preserve-3d;
+	border-radius: 32px;
+	transition: 0.4s ease-in-out transform, 0.4s ease-in-out box-shadow;
+	&:hover {
+		transform: translate3d(0px, -16px, 0px) rotateX(0deg) rotateZ(0deg);
+	}
+}
+
+.three-d-box {
+	box-shadow: 1px 1px 1px 0px #f9f9fb, -1px -1px 0px 10px rgba(34, 33, 81, 0.05),
+		-5px 5px 15px 5px rgba(34, 33, 81, 0.15);
+	&:hover {
+		box-shadow: 1px 1px 0 1px #f9f9fb, -2px -2px 10px 0px rgba(34, 33, 81, 0.05),
+			-10px 10px 20px 5px rgba(34, 33, 81, 0.2);
+	}
+}

@@ -14,7 +14,7 @@ const Answer = ({ text, loading, time }: AnswerProps) => {
 
 	return (
 		<div className="max-w-[45rem]">
-			<div className="pt-6 px-6 pb-16 space-y-4 bg-n-2 rounded-[0.75rem] md:p-5 md:pb-14 dark:bg-surf-1">
+			<div className="pt-6 px-6 pb-16 space-y-4 bg-n-2 rounded-[1.5rem] md:p-5 md:pb-14 dark:bg-surf-4">
 				{loading ? (
 					<Loading />
 				) : (
@@ -27,12 +27,8 @@ const Answer = ({ text, loading, time }: AnswerProps) => {
 					))
 				)}
 			</div>
-			<div className="-mt-9 flex items-end pl-6">
-				<div
-					className={`relative shrink-0 w-16 h-16 mr-auto rounded-2xl overflow-hidden ${
-						!loading && 'shadow-[0_0_0_0.25rem_#FEFEFE] dark:shadow-[0_0_0_0.25rem_#272A37]'
-					}`}
-				>
+			<div className="-mt-9 flex items-end pl-3">
+				<div className={`relative shrink-0 w-16 h-16 mr-auto rounded-2xl overflow-hidden`}>
 					<Image
 						className="object-cover rounded-2xl"
 						src="/images/avatar-chat.jpg"
