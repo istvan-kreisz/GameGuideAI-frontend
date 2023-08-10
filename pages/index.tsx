@@ -87,7 +87,7 @@ const Landing: NextPage = () => {
 
 	return (
 		<div className="flex flex-col min-h-screen bg-surf-2">
-			<div className="relative">
+			<div className="relative z-10">
 				{/* Navbar */}
 				<nav className="flex items-center justify-between p-6 bg-surf-1 shadow-lg">
 					{<Logo />}
@@ -277,12 +277,12 @@ const Landing: NextPage = () => {
 					</div>
 				</div>
 
-				{/*Infinite Floating Cubes */}
-				<div className="circles">
+				{/*Infinite Floating Cubes 
+				<div className="circles" style={{ zIndex: 0 }}>
 					{Array.from({ length: 10 }).map((_, i) => (
 						<div key={i}></div>
 					))}
-				</div>
+				</div>*/}
 			</div>
 			{/* Games Section */}
 			<section className="p-10 bg-surf-2 my-5 items-center text-center flex flex-col gap-10">
