@@ -3,7 +3,7 @@ import Radio from '@/components/Radio/Radio'
 import Package from './Package'
 import Features from './Features'
 
-import { price, featuresPrice } from 'mockdata/price'
+import { price, featuresPrice } from '@/mocks/landingpage'
 
 type MainProps = {}
 

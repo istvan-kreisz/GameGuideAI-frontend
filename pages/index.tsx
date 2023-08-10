@@ -9,11 +9,12 @@ import GamecardsCarousel from '@/components/Gamecards/GamecardsCarousel'
 import { navigation } from '@/constants/navigation'
 import { useColorMode } from '@chakra-ui/color-mode'
 import Package from '@/pages-lib/PricingPage/Main/Package'
-import { featuresPrice, price } from 'mockdata/price'
+import { comparison } from '@/mocks/landingpage'
 import FeatureBox from '@/pages-lib/HomePage/FeatureBox'
 import Features from '@/pages-lib/PricingPage/Main/Features'
 import Faq from '@/pages-lib/PricingPage/Faq'
 import Updates from '@/pages-lib/UpdatesAndFaqPage/Updates'
+import ComparisonTable from '@/pages-lib/LandingPage/ComparisonTable'
 
 const updates = [
 	{
@@ -267,7 +268,7 @@ const Landing: NextPage = () => {
 						</section>
 
 						<section className="items-center ">
-							<Features items={featuresPrice} />
+							<ComparisonTable></ComparisonTable>
 						</section>
 
 						<section className="items-center">
