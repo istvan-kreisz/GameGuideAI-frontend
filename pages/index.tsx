@@ -2,32 +2,14 @@ import type { NextPage } from 'next'
 import Logo from '@/components/Logo/Logo'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import Loading from '@/components/Answer/Loading/Loading'
-import { TypeAnimation } from 'react-type-animation'
 import Gamecards from '@/components/Gamecards/Gamecards'
 import GamecardsCarousel from '@/components/Gamecards/GamecardsCarousel'
 import { navigation } from '@/constants/navigation'
 import { useColorMode } from '@chakra-ui/color-mode'
-import Package from '@/pages-lib/PricingPage/Main/Package'
-import { comparison } from '@/mocks/landingpage'
-import FeatureBox from '@/pages-lib/HomePage/FeatureBox'
-import Features from '@/pages-lib/PricingPage/Main/Features'
-import Faq from '@/pages-lib/PricingPage/Faq'
-import Updates from '@/pages-lib/UpdatesAndFaqPage/Updates'
+import FeatureBox from '@/pages-lib/LandingPage/FeatureBox'
 import ComparisonTable from '@/pages-lib/LandingPage/ComparisonTable'
-
-const updates = [
-	{
-		id: '0',
-		title: 'Introducing the first ever AI GameGuide',
-		date: '22 June, 2023',
-		icon: 'star',
-		imageLight: '/images/hero-placeholder.png',
-		imageDark: '/images/hero-placeholder.png',
-		content:
-			'GameGuide.ai has currently been launched for skyrim, stay tuned for more games and updates',
-	},
-]
+import FeaturePreview from '@/pages-lib/LandingPage/FeaturePreview'
+import Faq from '@/pages-lib/LandingPage/Faq'
 
 const svgs = [
 	<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,9 +167,9 @@ const Landing: NextPage = () => {
 						</section>
 						<div className="my-10"></div>
 						<section className="items-center justify-center flex flex-col gap-20">
-							<header className="text-center max-w-6xl -mb-10 mt-10">
-								<h2 className="h1 text-n-2 font-medium">Features</h2>
-							</header>
+							<h2 className="h1 text-n-2 font-medium text-center max-w-6xl -mb-10 mt-10">
+								Features
+							</h2>
 
 							<div className="flex gap-16 lg:gap-6 md:flex-col">
 								<FeatureBox
@@ -264,7 +246,13 @@ const Landing: NextPage = () => {
 						</section>
 
 						<section className="items-center">
-							<Updates items={updates} />
+							<FeaturePreview
+								title="Feature 1"
+								text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis inventore, voluptatem dolores sapiente laudantium quos harum laborum, tempora tempore a voluptates possimus illum magnam quod nostrum. Expedita quam quae saepe."
+								icon={'recording'}
+								imageLight="/images/hero-placeholder.png"
+								imageDark="/images/hero-placeholder.png"
+							/>
 						</section>
 
 						<section className="items-center ">
