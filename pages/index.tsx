@@ -8,6 +8,69 @@ import Gamecards from '@/components/Gamecards/Gamecards'
 import GamecardsCarousel from '@/components/Gamecards/GamecardsCarousel'
 import { navigation } from '@/constants/navigation'
 import { useColorMode } from '@chakra-ui/color-mode'
+import Package from '@/pages-lib/PricingPage/Main/Package'
+import { featuresPrice, price } from 'mockdata/price'
+import FeatureBox from '@/pages-lib/HomePage/FeatureBox'
+import Features from '@/pages-lib/PricingPage/Main/Features'
+import Faq from '@/pages-lib/PricingPage/Faq'
+import Updates from '@/pages-lib/UpdatesAndFaqPage/Updates'
+
+const updates = [
+	{
+		id: '0',
+		title: 'Introducing the first ever AI GameGuide',
+		date: '22 June, 2023',
+		icon: 'star',
+		imageLight: '/images/hero-placeholder.png',
+		imageDark: '/images/hero-placeholder.png',
+		content:
+			'GameGuide.ai has currently been launched for skyrim, stay tuned for more games and updates',
+	},
+]
+
+const svgs = [
+	<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<rect width="48" height="48" rx="12" fill="#FFC876" />
+		<path
+			fill-rule="evenodd"
+			clip-rule="evenodd"
+			d="M30 33H18C16.3432 33 15 31.6569 15 30V18C15 16.3432 16.3432 15 18 15H30C31.6569 15 33 16.3432 33 18V30C33 31.6569 31.6569 33 30 33ZM29 20.4142L24.4142 25H26C26.5523 25 27 25.4477 27 26C27 26.5523 26.5523 27 26 27H22C21.4477 27 21 26.5523 21 26V22C21 21.4477 21.4477 21 22 21C22.5523 21 23 21.4477 23 22V23.5858L27.5858 19H26C25.4477 19 25 18.5523 25 18C25 17.4477 25.4477 17 26 17H30C30.5523 17 31 17.4477 31 18V22C31 22.5523 30.5523 23 30 23C29.4477 23 29 22.5523 29 22V20.4142Z"
+			fill="#0E0C15"
+		/>
+	</svg>,
+
+	<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<rect width="48" height="48" rx="12" fill="#7ADB78" />
+		<path
+			fill-rule="evenodd"
+			clip-rule="evenodd"
+			d="M31 29.5C31 28.6716 30.3284 28 29.5 28H20C17.2386 28 15 25.7614 15 23C15 20.2386 17.2386 18 20 18H23V20H20C18.3432 20 17 21.3432 17 23C17 24.6569 18.3432 26 20 26H29.5C31.433 26 33 27.567 33 29.5C33 31.433 31.433 33 29.5 33H16C15.4477 33 15 32.5523 15 32C15 31.4477 15.4477 31 16 31H29.5C30.3284 31 31 30.3284 31 29.5Z"
+			fill="#0E0C15"
+		/>
+		<path
+			d="M32 16H28V18H32C32.5523 18 33 17.5523 33 17C33 16.4477 32.5523 16 32 16Z"
+			fill="#0E0C15"
+		/>
+		<path
+			d="M32 20H28V22H32C32.5523 22 33 21.5523 33 21C33 20.4477 32.5523 20 32 20Z"
+			fill="#0E0C15"
+		/>
+		<path
+			d="M21 19C21 16.7909 22.7909 15 25 15H29C29.5523 15 30 15.4477 30 16V22C30 22.5523 29.5523 23 29 23H25C22.7909 23 21 21.2091 21 19Z"
+			fill="#0E0C15"
+		/>
+	</svg>,
+
+	<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<rect width="48" height="48" rx="12" fill="#AC6AFF" />
+		<path
+			fill-rule="evenodd"
+			clip-rule="evenodd"
+			d="M15 21.4V29.2747C15 31.1327 15 32.0617 15.3646 32.484C15.6809 32.8503 16.1545 33.0415 16.6364 32.9975C17.1921 32.9468 17.8371 32.2782 19.1272 30.9411L20.0563 29.9781C20.4043 29.6174 20.5783 29.4371 20.7832 29.3079C20.9648 29.1935 21.1637 29.109 21.3722 29.0578C21.6073 29 21.8579 29 22.3592 29H26.6C28.8402 29 29.9603 29 30.816 28.564C31.5686 28.1805 32.1805 27.5686 32.564 26.816C33 25.9603 33 24.8402 33 22.6V21.4C33 19.1598 33 18.0397 32.564 17.184C32.1805 16.4314 31.5686 15.8195 30.816 15.436C29.9603 15 28.8402 15 26.6 15H21.4C19.1598 15 18.0397 15 17.184 15.436C16.4314 15.8195 15.8195 16.4314 15.436 17.184C15 18.0397 15 19.1598 15 21.4ZM20 23C20.5523 23 21 22.5523 21 22C21 21.4477 20.5523 21 20 21C19.4477 21 19 21.4477 19 22C19 22.5523 19.4477 23 20 23ZM25 22C25 22.5523 24.5523 23 24 23C23.4477 23 23 22.5523 23 22C23 21.4477 23.4477 21 24 21C24.5523 21 25 21.4477 25 22ZM28 23C28.5523 23 29 22.5523 29 22C29 21.4477 28.5523 21 28 21C27.4477 21 27 21.4477 27 22C27 22.5523 27.4477 23 28 23Z"
+			fill="#0E0C15"
+		/>
+	</svg>,
+]
 
 const Landing: NextPage = () => {
 	const [loading, setLoading] = useState(true)
@@ -27,7 +90,7 @@ const Landing: NextPage = () => {
 				{/* Navbar */}
 				<nav className="flex items-center justify-between p-6 bg-surf-1 shadow-lg">
 					{<Logo />}
-					<div className="flex items-center space-x-4">
+					{/* <div className="flex items-center space-x-4">
 						<a
 							href="#"
 							className="flex items-center h-12 base2 font-semibold text-n-3 rounded-lg transition-colors hover:text-n-1"
@@ -37,17 +100,36 @@ const Landing: NextPage = () => {
 						<a href="#" className="text-white bg-surf-3 rounded-md px-6 py-2 hover:bg-blue-700">
 							Login
 						</a>
-					</div>
+					</div> */}
 				</nav>
 				<div className="flex flex-col h-fit items-center justify-center text-center relative">
 					<div className="bg-gradient-to-b from-surf-1 via-[#2a5e90] to-surf-2 w-full h-full pt-10 pb-20 px-10">
 						{/* Hero Section */}
 						<section className="items-center justify-center flex flex-col gap-20">
-							<h1 className="text-6xl m-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1">
-								First Ever AI-Powered Game Guide
-							</h1>
+							<div>
+								<h1 className="text-6xl m-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1">
+									First Ever AI-Powered Game Guide
+								</h1>
 
-							<div className="max-w-[640px] min-w-[640px] md:min-w-full mx-5 three-d-hero z-50">
+								<h2 className="text-2xl mt-6 font-semibold text-n-1 max-w-6xl">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque architecto rem
+									labore soluta perferendis ullam eum rerum optio asperiores! Veniam, provident
+									ullam dolor quas commodi voluptas aspernatur totam quaerat consequatur!
+								</h2>
+							</div>
+
+							<div
+								className={`relative shrink-0 w-[700px] h-96 mx-auto rounded-2xl overflow-hidden`}
+							>
+								<Image
+									className="object-cover rounded-2xl"
+									src="/images/hero-placeholder.png"
+									fill
+									alt=""
+								/>
+							</div>
+
+							{/* <div className="max-w-[640px] min-w-[640px] md:min-w-full mx-5 three-d-hero z-50">
 								<div className="pt-10 px-6 pb-16 space-y-4  rounded-[1.5rem] md:p-5 md:pb-14 bg-surf-1 three-d-box">
 									{loading ? (
 										<Loading />
@@ -57,7 +139,7 @@ const Landing: NextPage = () => {
 												'Chat with GPT trained on game info!\n\n' +
 													'Time to revolutionize gaming with in-depth tips and real-time assistance powered by AI 🧠\n\n' +
 													'Join us on Discord to participate in our closed beta 🚀\n\n',
-												/*+ "We're working hard to democratizing gaming data, making it accessible, personalized, and easy for everyone to use. We see a future where gaming data is open-source, public, and shaped by gamers for gamers 💪",*/
+												// "We're working hard to democratizing gaming data, making it accessible, personalized, and easy for everyone to use. We see a future where gaming data is open-source, public, and shaped by gamers for gamers 💪"
 											]}
 											speed={60}
 											wrapper="span"
@@ -78,7 +160,7 @@ const Landing: NextPage = () => {
 										/>
 									</div>
 								</div>
-							</div>
+							</div> */}
 							{/* Join Discord Button */}
 							<a
 								href="https://discord.gg/Pwzt3yBG5w"
@@ -103,14 +185,40 @@ const Landing: NextPage = () => {
 						<div className="my-10"></div>
 						<section className="items-center justify-center flex flex-col gap-20">
 							<header className="text-center max-w-6xl -mb-10 mt-10">
-								<h2 className="h3 text-n-2 font-medium">Our Goals</h2>
+								<h2 className="h1 text-n-2 font-medium">Features</h2>
 							</header>
-							<main className="flex flex-wrap justify-center gap-10 w-full z-50">
+
+							<div className="flex gap-16 lg:gap-6 md:flex-col">
+								<FeatureBox
+									title="Feature 1"
+									text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis inventore, voluptatem dolores sapiente laudantium quos harum laborum, tempora tempore a voluptates possimus illum magnam quod nostrum. Expedita quam quae saepe."
+									color="from-yellow-300/75"
+									svg={svgs[0]}
+									key={'feature-1'}
+								/>
+								<FeatureBox
+									title="Feature 2"
+									text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis inventore, voluptatem dolores sapiente laudantium quos harum laborum, tempora tempore a voluptates possimus illum magnam quod nostrum. Expedita quam quae saepe."
+									color="from-red-300/75"
+									svg={svgs[1]}
+									key={'feature-2'}
+								/>
+								<FeatureBox
+									title="Feature 3"
+									text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis inventore, voluptatem dolores sapiente laudantium quos harum laborum, tempora tempore a voluptates possimus illum magnam quod nostrum. Expedita quam quae saepe."
+									color="from-green-300/75"
+									svg={svgs[2]}
+									key={'feature-3'}
+								/>
+							</div>
+
+							{/* <div className="flex flex-wrap justify-center gap-10 w-full z-50">
 								<div className="w-full max-w-2xl text-left p-6 bg-surf-1 rounded-2xl shadow-lg">
 									<div className="text-5xl">👤⚡</div>
 									<h3 className="text-xl font-bold mb-2 text-surf-3">
 										Personalized and Instant Gaming Guidance
 									</h3>
+
 									<p>
 										Imagine having a personal gaming assistant who understands your play style,
 										responds to your queries in real-time, and provides you with accurate,
@@ -151,7 +259,19 @@ const Landing: NextPage = () => {
 										for more info!
 									</p>
 								</div>
-							</main>
+							</div> */}
+						</section>
+
+						<section className="items-center">
+							<Updates items={updates} />
+						</section>
+
+						<section className="items-center ">
+							<Features items={featuresPrice} />
+						</section>
+
+						<section className="items-center">
+							<Faq></Faq>
 						</section>
 					</div>
 				</div>
@@ -174,7 +294,7 @@ const Landing: NextPage = () => {
 			<section className="flex items-center justify-center text-center relative">
 				<div className="bg-gradient-to-b from-surf-2 to-primary-1/20 w-full py-40 px-10 gap-20 flex flex-col items-center"></div>
 			</section>
-			{/* Footer 
+			{/* Footer
 			<footer className="mt-auto p-6 bg-surf-2 shadow-lg">
 				<div className="text-center text-white">{&copy; 2023 AI Game Guide}</div>
 					</footer>*/}
