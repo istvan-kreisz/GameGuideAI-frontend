@@ -87,6 +87,7 @@ const GameAIPage = () => {
 			return
 		}
 
+		if (!userInfo) return
 		;(async () => {
 			try {
 				const res = await checkIfReachedMonthlyLimit()
@@ -97,8 +98,6 @@ const GameAIPage = () => {
 			}
 		})()
 	}, [userInfo])
-
-	console.log(didReachMonthlyLimit.current)
 
 	const send = async () => {
 		if (!user?.uid) return
