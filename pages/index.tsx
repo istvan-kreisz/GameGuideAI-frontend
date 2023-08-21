@@ -268,11 +268,14 @@ const Landing: NextPage = () => {
 						</section>
 
 						<section className="items-center ">
+							<h2 className="mb-12 text-center h3 lg:h4">How it compares</h2>
 							<ComparisonTable></ComparisonTable>
 						</section>
-
-						<section className="items-center">
-							<Faq></Faq>
+						<section className="p-10  my-5 items-center text-center flex flex-col gap-10">
+							<div className="h4 2xl:mb-2 2xl:h4 text-n-2">Our games in Beta</div>
+							<Gamecards className="mx-auto" items={navigation} filterEnabled />
+							<div className="h4 2xl:mb-2 2xl:h4 text-n-2">Vote on the next Game!</div>
+							<GamecardsCarousel className="mx-auto" items={navigation} filterDisabled />
 						</section>
 					</div>
 				</div>
@@ -285,11 +288,9 @@ const Landing: NextPage = () => {
 				</div>*/}
 			</div>
 			{/* Games Section */}
-			<section className="p-10 bg-surf-2 my-5 items-center text-center flex flex-col gap-10">
-				<div className="h4 2xl:mb-2 2xl:h4 text-n-2">Our games in Beta</div>
-				<Gamecards className="mx-auto" items={navigation} filterEnabled />
-				<div className="h4 2xl:mb-2 2xl:h4 text-n-2">Vote on the next Game!</div>
-				<GamecardsCarousel className="mx-auto" items={navigation} filterDisabled />
+
+			<section className="items-center ">
+				<Faq></Faq>
 			</section>
 			{/* Unused Section */}
 			<section className="flex items-center justify-center text-center relative">
