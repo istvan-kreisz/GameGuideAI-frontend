@@ -177,9 +177,7 @@ const Landing: NextPage = () => {
 						</section>
 						<div className="my-10"></div>
 						<section className="items-center justify-center flex flex-col gap-20">
-							<h2 className="h1 text-n-2 font-medium text-center max-w-6xl -mb-10 mt-10">
-								Features
-							</h2>
+							<h2 className="h2 lg:h3 font-bold text-center -mb-10 mt-10">Features</h2>
 
 							<div className="flex gap-16 lg:gap-6 md:flex-col">
 								<FeatureBox
@@ -268,19 +266,19 @@ const Landing: NextPage = () => {
 						</section>
 
 						<section className="items-center ">
-							<h2 className="mb-12 text-center h3 lg:h4">How it compares</h2>
+							<h2 className="mb-12 text-center h2 lg:h3">How it compares</h2>
 							<ComparisonTable></ComparisonTable>
 						</section>
 						<section className="p-10  my-5 items-center text-center flex flex-col gap-10">
-							<div className="h4 2xl:mb-2 2xl:h4 text-n-2">Our games in Beta</div>
+							<h3 className="h3 lg:h4 font-bold text-center 2xl:mb-2">Our games in Beta</h3>
 							<Gamecards className="mx-auto" items={navigation} filterEnabled />
-							<div className="h4 2xl:mb-2 2xl:h4 text-n-2">Vote on the next Game!</div>
+							<h3 className="h3 lg:h4 font-bold text-center 2xl:mb-2">Vote on the next Game!</h3>
 							<GamecardsCarousel className="mx-auto" items={navigation} filterDisabled />
 						</section>
 					</div>
 				</div>
 
-				{/*Infinite Floating Cubes 
+				{/*=Infinite Floating Cubes 
 				<div className="circles" style={{ zIndex: 0 }}>
 					{Array.from({ length: 10 }).map((_, i) => (
 						<div key={i}></div>
@@ -288,14 +286,10 @@ const Landing: NextPage = () => {
 				</div>*/}
 			</div>
 			{/* Games Section */}
-
 			<section className="items-center ">
 				<Faq></Faq>
 			</section>
-			{/* Unused Section */}
-			<section className="flex items-center justify-center text-center relative">
-				<div className="bg-gradient-to-b from-surf-2 to-primary-1/20 w-full py-40 px-10 gap-20 flex flex-col items-center"></div>
-			</section>
+
 			{/* Footer
 			<footer className="mt-auto p-6 bg-surf-2 shadow-lg">
 				<div className="text-center text-white">{&copy; 2023 AI Game Guide}</div>
