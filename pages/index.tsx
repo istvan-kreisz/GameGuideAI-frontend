@@ -86,7 +86,7 @@ const Landing: NextPage = () => {
 					</div> */}
 				</nav>
 				<div className="flex flex-col h-fit items-center justify-center text-center relative">
-					<div className="bg-gradient-to-b from-surf-1 via-[#2a5e90] to-surf-2 w-full h-full pt-10 pb-20 px-10 overflow-hidden">
+					<div className="bg-gradient-to-b from-surf-1 via-[#2a5e90] to-surf-2 w-full h-full pt-10 pb-20 px-5 overflow-hidden">
 						{/* Hero Section */}
 						<section className="items-center justify-center flex flex-col gap-20">
 							<div>

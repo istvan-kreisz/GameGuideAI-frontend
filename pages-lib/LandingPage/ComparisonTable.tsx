@@ -50,28 +50,16 @@ const ComparisonTable = () => {
 	]
 
 	return (
-		<div className="overflow-x-scroll max-w-6xl scrollbar mx-auto bg-surf-2 rounded-xl pt-7">
-			<div className="flex justify-between mb-2 h4">
-				<div className="flex-1 base2 font-semibold mt-auto min-w-[110px]">Core features</div>
-				<div className="flex items-center justify-center flex-1 px-4">
-					<div className="w-fit  rounded-lg flex flex-col items-center gap-1 justify-center min-w-[110px]">
-						<div className="bg-surf-4 rounded-full w-16 h-16">
-							<Icon name="google" className="w-8 h-full fill-primary-1 m-auto" />
-						</div>
-						<span className="lg:text-sm text-base self-center mt-2">Google Search</span>
-					</div>
-				</div>
-				<div className="flex items-center justify-center flex-1 px-4">
-					<div className="w-fit  rounded-lg flex flex-col items-center gap-1 justify-center min-w-[110px]">
-						<div className="bg-surf-4 rounded-full w-16 h-16">
-							<Icon name="book" className="w-8 h-full fill-primary-1 m-auto" />
-						</div>
-						<span className="lg:text-sm text-base self-center mt-2">Traditional Wiki</span>
-					</div>
-				</div>
-				<div className="flex items-center justify-center flex-1 px-4">
-					<div className="w-fit  rounded-lg flex flex-col items-center gap-1 justify-center min-w-[110px]">
-						<div className="bg-surf-4 rounded-full w-16 h-16 ">
+		<div className="grid grid-cols-4 gap-4 max-w-6xl scrollbar mx-auto bg-surf-2 rounded-xl py-8 px-4 items-center">
+			<div className="col-span-1 lg:text-sm text-base font-semibold mt-auto flex items-center justify-center">
+				Core features
+			</div>
+			{['Google Search', 'Traditional Wiki', 'AI GameGuide'].map((title, index) => (
+				<div key={index} className="col-span-1 flex flex-col items-center gap-1 justify-center">
+					<div className="bg-surf-4 rounded-full w-16 h-16 flex items-center justify-center">
+						{index === 0 && <Icon name="google" className="w-8 h-full fill-primary-1 m-auto" />}
+						{index === 1 && <Icon name="book" className="w-8 h-full fill-primary-1 m-auto" />}
+						{index === 2 && (
 							<Image
 								className="h-full w-9 m-auto"
 								src="/images/logosmall.svg"
@@ -79,39 +67,26 @@ const ComparisonTable = () => {
 								height={36}
 								alt=""
 							/>
-						</div>
-						<span className="lg:text-sm text-base self-center mt-2">AI GameGuide</span>
+						)}
 					</div>
+					<span className="lg:text-sm text-base self-center mt-2">{title}</span>
 				</div>
-			</div>
-			<div className="min-w-max">
-				{data.map((item: any) => (
-					<div
-						className="flex justify-between items-center py-5 border-t border-n-4/15 min-w-[110px]"
-						key={item.id}
-					>
-						<div className="flex-1 base2 font-semibold min-w-[110px]">{item.title}</div>
-						<div className="flex items-center justify-center flex-1 px-4 min-w-[110px]">
-							<Icon
-								className={`h-7 w-7 ${item['Google Search'] ? 'fill-primary-1' : 'fill-n-4'}`}
-								name={item['Google Search'] ? 'check-thin' : 'close'}
-							/>
-						</div>
-						<div className="flex items-center justify-center flex-1 px-4 min-w-[110px]">
-							<Icon
-								className={`h-7 w-7 ${item['Traditional Wiki'] ? 'fill-primary-1' : 'fill-n-4'}`}
-								name={item['Traditional Wiki'] ? 'check-thin' : 'close'}
-							/>
-						</div>
-						<div className="flex items-center justify-center flex-1 px-4 min-w-[110px]">
-							<Icon
-								className={`h-7 w-7 ${item['AI GameGuide'] ? 'fill-primary-1' : 'fill-n-4'}`}
-								name={item['AI GameGuide'] ? 'check-thin' : 'close'}
-							/>
-						</div>
+			))}
+			{data.map((item: any) => (
+				<React.Fragment key={item.id}>
+					<div className="col-span-1 lg:text-sm text-base font-semibold flex items-center justify-center text-center">
+						{item.title}
 					</div>
-				))}
-			</div>
+					{['Google Search', 'Traditional Wiki', 'AI GameGuide'].map((title, index) => (
+						<div key={index} className="col-span-1 flex items-center justify-center">
+							<Icon
+								className={`h-7 w-7 ${item[title] ? 'fill-primary-1' : 'fill-n-4'}`}
+								name={item[title] ? 'check-thin' : 'close'}
+							/>
+						</div>
+					))}
+				</React.Fragment>
+			))}
 		</div>
 	)
 }
