@@ -19,7 +19,7 @@ const FaqItem = ({ item }: FaqItemProps) => (
 				leaveFrom="transform scale-100 opacity-100"
 				leaveTo="transform scale-95 opacity-0"
 			>
-				<Disclosure.Panel className="-mt-4 pl-16 pb-6 base1 text-n-4 md:pl-14">
+				<Disclosure.Panel className="-mt-4 pl-16 pb-6 base1 text-left text-n-3 md:pl-14">
 					{item.content}
 				</Disclosure.Panel>
 			</Transition>

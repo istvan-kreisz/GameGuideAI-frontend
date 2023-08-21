@@ -86,30 +86,39 @@ const Landing: NextPage = () => {
 					</div> */}
 				</nav>
 				<div className="flex flex-col h-fit items-center justify-center text-center relative">
-					<div className="bg-gradient-to-b from-surf-1 via-[#2a5e90] to-surf-2 w-full h-full pt-10 pb-20 px-10">
+					<div className="bg-gradient-to-b from-surf-1 via-[#2a5e90] to-surf-2 w-full h-full pt-10 pb-20 px-10 overflow-hidden">
 						{/* Hero Section */}
 						<section className="items-center justify-center flex flex-col gap-20">
 							<div>
-								<h1 className="text-6xl m-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1">
+								<h1 className="text-7xl m-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1">
 									First Ever AI-Powered Game Guide
 								</h1>
 
-								<h2 className="text-2xl mt-6 font-semibold text-n-1 max-w-6xl">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque architecto rem
-									labore soluta perferendis ullam eum rerum optio asperiores! Veniam, provident
-									ullam dolor quas commodi voluptas aspernatur totam quaerat consequatur!
+								<h2 className="text-2xl mt-6 font-medium text-n-1 max-w-6xl">
+									Join us in creating the future of gaming! Gameguide.ai provides tips, strategies,
+									walkthroughs, and answers to gaming related questions in real time!
 								</h2>
 							</div>
 
 							<div
-								className={`relative shrink-0 w-[700px] h-96 mx-auto rounded-2xl overflow-hidden`}
+								className="max-w-[1200px] flex flex-row"
+								style={{
+									alignItems: 'start',
+								}}
 							>
-								<Image
-									className="object-cover rounded-2xl"
-									src="/images/hero-placeholder.png"
-									fill
-									alt=""
-								/>
+								<div className="h-full w-full rounded-xl bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1 p-1">
+									<Image
+										className="w-full h-auto max-h-[744px] max-w-[1200px]"
+										style={{
+											flex: '1 0 120vw',
+										}}
+										src="/images/hero.png"
+										width={1200}
+										height={744}
+										quality={100}
+										alt=""
+									/>
+								</div>
 							</div>
 
 							{/* <div className="max-w-[640px] min-w-[640px] md:min-w-full mx-5 three-d-hero z-50">
@@ -145,10 +154,11 @@ const Landing: NextPage = () => {
 								</div>
 							</div> */}
 							{/* Join Discord Button */}
+
 							<a
 								href="https://discord.gg/Pwzt3yBG5w"
 								aria-label="Discord"
-								className="btn btn-secondary z-50 bg-blue-600 hover:bg-blue-700 flex flex-row gap-x-2 justify-center items-center rounded-full w-5/6 max-w-xs mx-auto h-12 mb-14"
+								className="text-white bg-gradient-to-br from-purple-600 to-primary-1 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2  hover:bg-blue-700 flex flex-row gap-x-2 justify-center items-center w-5/6 max-w-xs h-12 mb-14"
 							>
 								<h3 className="text-2xl font-medium text-white">Join on Discord</h3>
 								<svg
@@ -247,11 +257,13 @@ const Landing: NextPage = () => {
 
 						<section className="items-center">
 							<FeaturePreview
-								title="Feature 1"
-								text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis inventore, voluptatem dolores sapiente laudantium quos harum laborum, tempora tempore a voluptates possimus illum magnam quod nostrum. Expedita quam quae saepe."
+								title="Building a Gaming Community"
+								text="We're building not just a product but a community. 
+								Our plans include game-specific community features like popular questions, influencer content, polls, quizzes and challenges. 
+								All to enhance the gaming experience and camaraderie among gamers!"
 								icon={'recording'}
-								imageLight="/images/hero-placeholder.png"
-								imageDark="/images/hero-placeholder.png"
+								imageLight="/images/q&a.png"
+								imageDark="/images/q&a.png"
 							/>
 						</section>
 
