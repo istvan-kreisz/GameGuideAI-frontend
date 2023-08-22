@@ -74,8 +74,8 @@ const GamecardsCarousel = ({ items, filterEnabled = false, filterDisabled = fals
 				className="w-5/6"
 			>
 				{filteredItems.map((item, index) => (
-					<SwiperSlide>
-						<Link href={item.url} key={index} passHref>
+					<SwiperSlide key={index}>
+						<Link href={item.url} passHref as="image">
 							<div
 								className={`group w-[212px] 2xl:w-[150px] xl:w-[127px] flex flex-col items-center border-2 border-n-3 rounded-xl h6 transition-all hover:shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0px_2rem_1.5rem_-1rem_rgba(0,0,0,0.12)] last:mb-0 dark:border-n-4 dark:hover:border-n-5 dark:hover:bg-surf-1`}
 								onClick={(event) => handleClick(event, item.enabled)}
@@ -89,7 +89,6 @@ const GamecardsCarousel = ({ items, filterEnabled = false, filterDisabled = fals
 										fill
 										sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 10vw"
 										alt={`Game cover - ${item.title}`}
-										priority={index < 10}
 									/>
 									{!item.enabled && (
 										<div className="absolute text-white 2xl:text-2xl text-3xl text-center bg-black bg-opacity-40 w-full">

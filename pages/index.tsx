@@ -16,9 +16,9 @@ const svgs = [
 		<rect width="48" height="48" rx="12" className="fill-orange-400" />
 		<path
 			fill="#0E0C15"
-			fill-rule="evenodd"
+			fillRule="evenodd"
 			d="M30 33H18a3 3 0 0 1-3-3V18a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3Zm-1-12.6L24.4 25H26a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1v-4a1 1 0 1 1 2 0v1.6l4.6-4.6H26a1 1 0 1 1 0-2h4c.6 0 1 .4 1 1v4a1 1 0 1 1-2 0v-1.6Z"
-			clip-rule="evenodd"
+			clipRule="evenodd"
 		/>
 	</svg>,
 
@@ -26,9 +26,9 @@ const svgs = [
 		<rect width="48" height="48" rx="12" className="fill-primary-2" />
 		<path
 			fill="#0E0C15"
-			fill-rule="evenodd"
+			fillRule="evenodd"
 			d="M31 29.5c0-.8-.7-1.5-1.5-1.5H20a5 5 0 0 1 0-10h3v2h-3a3 3 0 0 0 0 6h9.5a3.5 3.5 0 1 1 0 7H16a1 1 0 1 1 0-2h13.5c.8 0 1.5-.7 1.5-1.5Z"
-			clip-rule="evenodd"
+			clipRule="evenodd"
 		/>
 		<path fill="#0E0C15" d="M32 16h-4v2h4a1 1 0 1 0 0-2ZM32 20h-4v2h4a1 1 0 1 0 0-2Z" />
 		<path
@@ -41,9 +41,9 @@ const svgs = [
 		<rect width="48" height="48" rx="12" className="fill-accent-3" />
 		<path
 			fill="#0E0C15"
-			fill-rule="evenodd"
+			fillRule="evenodd"
 			d="M15 21.4v7.9c0 1.8 0 2.8.4 3.2.3.4.8.5 1.2.5.6 0 1.2-.7 2.5-2l1-1 .7-.7.6-.2 1-.1h4.2c2.2 0 3.4 0 4.2-.4a4 4 0 0 0 1.8-1.8c.4-.8.4-2 .4-4.2v-1.2c0-2.2 0-3.4-.4-4.2a4 4 0 0 0-1.8-1.8c-.8-.4-2-.4-4.2-.4h-5.2c-2.2 0-3.4 0-4.2.4a4 4 0 0 0-1.8 1.8c-.4.8-.4 2-.4 4.2Zm5 1.6a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm5-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
-			clip-rule="evenodd"
+			clipRule="evenodd"
 		/>
 	</svg>,
 ]
@@ -95,6 +95,7 @@ const Landing: NextPage = () => {
 										width={1200}
 										height={744}
 										quality={100}
+										priority={true}
 										alt=""
 									/>
 								</div>
