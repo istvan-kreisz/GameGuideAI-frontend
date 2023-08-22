@@ -176,7 +176,7 @@ const Landing: NextPage = () => {
 							</a>
 						</section>
 						<div className="my-10"></div>
-						<section className="items-center justify-center flex flex-col gap-20">
+						<section className="items-center justify-center flex flex-col gap-20 mb-40 mt-20">
 							<h2 className="h1 text-n-2 font-medium text-center max-w-6xl -mb-10 mt-10">
 								Features
 							</h2>
@@ -287,11 +287,11 @@ const Landing: NextPage = () => {
 							/>
 						</section>
 
-						<section className="items-center ">
+						<section className="items-center mt-40">
 							<ComparisonTable></ComparisonTable>
 						</section>
 
-						<section className="items-center">
+						<section className="items-center mt-40">
 							<Faq></Faq>
 						</section>
 					</div>
