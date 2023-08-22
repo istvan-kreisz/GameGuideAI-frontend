@@ -17,7 +17,7 @@ const FeaturePreview = ({ title, text, icon, imageLight, imageDark }: FeaturePre
 
 	return (
 		<>
-			<div className="flex flex-wrap-reverse w-full py-16 border-t border-n-3 lg:flex-col md:py-8 dark:border-n-4 place-content-center items-center  text-n-2 ">
+			<div className="flex flex-wrap-reverse w-full py-16 lg:flex-col md:py-8 place-content-center items-center text-n-2 ">
 				<div className="max-w-lg lg:max-w-none mr-16 lg:mb-10 lg:mr-0 lg:pr-0">
 					<div className="dark:bg-surf-1/80 p-8 rounded-xl">
 						<div className="flex items-center gap-4">

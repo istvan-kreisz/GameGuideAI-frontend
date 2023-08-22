@@ -8,14 +8,14 @@ type FeatureBoxProps = {
 const FeatureBox = ({ title, text, color, svg }: FeatureBoxProps) => {
 	return (
 		<div
-			className={`bg-gradient-to-b ${color} to-surf-4 p-1 flex basis-1/3 rounded-[30px]
+			className={`bg-gradient-to-br ${color} via-n-3 to-primary-1 p-1 flex basis-1/3 rounded-[30px] border-none
         ${
 					''
 					//  item.popular && 'relative text-n-1 before:absolute before:-top-4 before:left-0 before:right-0 before:-bottom-4 before:bg-surf-2 before:rounded-3xl dark:text-n-7 dark:before:bg-n-2'
 				}
         `}
 		>
-			<div className="flex h-full w-full items-center justify-center p-8 2xl:px-6 dark:bg-surf-1 back rounded-[27px]">
+			<div className="flex h-full w-full items-center justify-center p-8 2xl:px-6 dark:bg-surf-2 back rounded-[27px]">
 				<div className="relative flex flex-col grow z-2">
 					<div className="flex justify-between items-center mb-1">
 						<div className="h4" style={{ color: color }}>
@@ -29,7 +29,7 @@ const FeatureBox = ({ title, text, color, svg }: FeatureBoxProps) => {
 					/{plan ? 'year' : 'mo'}
 				</span>
 			</div> */}
-					<div className="base1 text-n-4 text-left mb-6">{text}</div>
+					<div className="base1 text-n-2 text-left mb-6">{text}</div>
 
 					{svg}
 
