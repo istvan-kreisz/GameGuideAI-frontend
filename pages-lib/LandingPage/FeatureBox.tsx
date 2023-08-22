@@ -1,6 +1,6 @@
 type FeatureBoxProps = {
 	title: string
-	text: string
+	text: string | JSX.Element
 	color: string
 	svg: JSX.Element
 }

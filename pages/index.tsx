@@ -141,27 +141,40 @@ const Landing: NextPage = () => {
 								<FeatureBox
 									title="Personalized and Instant Gaming Guidance"
 									text="Imagine having a personal gaming assistant who understands your play style,
-									responds to your queries in real-time, and provides you with accurate,
-									context-aware answers. That's what we're attempting to build with AI GameGuide -
-									a revolutionary alternative to traditional wikis that offers tailored guidance
-									and tips for gamers."
+										responds to your queries in real-time, and provides you with accurate,
+										context-aware answers. That's what we're building with AI GameGuide -
+										a revolutionary alternative to traditional wikis that offers tailored guidance
+										and tips for gamers."
 									color="from-accent-5/75"
 									svg={svgs[0]}
 									key={'feature-1'}
 								/>
 								<FeatureBox
 									title="Community-driven Knowledge Base"
-									text="We recognize the expertise of our gaming community. That's why we're planning to
-									open up our AI's knowledge base for contributions. Whether you're a casual gamer
-									or a fanatic, you'll be able to improve the accuracy of our GameGuide's
-									responses by updating and modifying its data sources."
+									text="We recognize the expertise of the gaming community. That's why we're planning to
+										open up our AI's knowledge base for contributions. Whether you're a casual gamer
+										or a fanatic, you'll be able to improve the accuracy of our GameGuide's
+										responses by updating and modifying its data sources."
 									color="from-primary-2/75"
 									svg={svgs[1]}
 									key={'feature-2'}
 								/>
 								<FeatureBox
 									title="Building a Gaming Community"
-									text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis inventore, voluptatem dolores sapiente laudantium quos harum laborum, tempora tempore a voluptates possimus illum magnam quod nostrum. Expedita quam quae saepe."
+									text={
+										<>
+											We're not just building a product; we're building a community. We plan to
+											introduce game specific community features such as showcasing popular
+											questions asked by others, integrating streamer content, and creating
+											interactive elements like polls, quizzes, and challenges. All of these
+											features aim to foster a spirit of camaraderie among gamers and make gaming a
+											more fun and engaging experience overall.{' '}
+											<a href="https://discord.gg/Pwzt3yBG5w" className="text-primary-1">
+												Join our discord
+											</a>{' '}
+											for more info!
+										</>
+									}
 									color="from-accent-3/75"
 									svg={svgs[2]}
 									key={'feature-3'}
