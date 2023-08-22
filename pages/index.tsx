@@ -183,22 +183,42 @@ const Landing: NextPage = () => {
 
 							<div className="flex gap-16 lg:gap-6 md:flex-col">
 								<FeatureBox
-									title="Feature 1"
-									text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis inventore, voluptatem dolores sapiente laudantium quos harum laborum, tempora tempore a voluptates possimus illum magnam quod nostrum. Expedita quam quae saepe."
+									title="Personalized and Instant Gaming Guidance"
+									text="Imagine having a personal gaming assistant who understands your play style,
+										responds to your queries in real-time, and provides you with accurate,
+										context-aware answers. That's what we're building with AI GameGuide -
+										a revolutionary alternative to traditional wikis that offers tailored guidance
+										and tips for gamers."
 									color="from-yellow-300/75"
 									svg={svgs[0]}
 									key={'feature-1'}
 								/>
 								<FeatureBox
-									title="Feature 2"
-									text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis inventore, voluptatem dolores sapiente laudantium quos harum laborum, tempora tempore a voluptates possimus illum magnam quod nostrum. Expedita quam quae saepe."
+									title="Community-driven Knowledge Base"
+									text="We recognize the expertise of the gaming community. That's why we're planning to
+										open up our AI's knowledge base for contributions. Whether you're a casual gamer
+										or a fanatic, you'll be able to improve the accuracy of our GameGuide's
+										responses by updating and modifying its data sources."
 									color="from-red-300/75"
 									svg={svgs[1]}
 									key={'feature-2'}
 								/>
 								<FeatureBox
-									title="Feature 3"
-									text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis inventore, voluptatem dolores sapiente laudantium quos harum laborum, tempora tempore a voluptates possimus illum magnam quod nostrum. Expedita quam quae saepe."
+									title="Building a Gaming Community"
+									text={
+										<>
+											We're not just building a product; we're building a community. We plan to
+											introduce game specific community features such as showcasing popular
+											questions asked by others, integrating streamer content, and creating
+											interactive elements like polls, quizzes, and challenges. All of these
+											features aim to foster a spirit of camaraderie among gamers and make gaming a
+											more fun and engaging experience overall.{' '}
+											<a href="https://discord.gg/Pwzt3yBG5w" className="text-primary-1">
+												Join our discord
+											</a>{' '}
+											for more info!
+										</>
+									}
 									color="from-green-300/75"
 									svg={svgs[2]}
 									key={'feature-3'}
@@ -258,8 +278,8 @@ const Landing: NextPage = () => {
 						<section className="items-center">
 							<FeaturePreview
 								title="Building a Gaming Community"
-								text="We're building not just a product but a community. 
-								Our plans include game-specific community features like popular questions, influencer content, polls, quizzes and challenges. 
+								text="We're building not just a product but a community.
+								Our plans include game-specific community features like popular questions, influencer content, polls, quizzes and challenges.
 								All to enhance the gaming experience and camaraderie among gamers!"
 								icon={'recording'}
 								imageLight="/images/q&a.png"
@@ -277,7 +297,7 @@ const Landing: NextPage = () => {
 					</div>
 				</div>
 
-				{/*Infinite Floating Cubes 
+				{/*Infinite Floating Cubes
 				<div className="circles" style={{ zIndex: 0 }}>
 					{Array.from({ length: 10 }).map((_, i) => (
 						<div key={i}></div>
