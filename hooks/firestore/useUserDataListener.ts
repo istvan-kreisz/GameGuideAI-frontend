@@ -62,6 +62,11 @@ export function useUserDataListener(
 		[]
 	)
 
+    if (typeof window !== 'undefined') {
+        console.log(window.location.href)
+
+    }
+
 	if (currentUserId.current !== user?.uid) {
 		unsubscribeConversation.current?.()
 		unsubscribeMessages.current?.()

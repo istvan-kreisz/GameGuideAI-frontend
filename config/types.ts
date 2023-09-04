@@ -12,10 +12,18 @@ import {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const Game = union([literal('Skyrim'), literal('Terraria'), literal('Starfield')])
+
+type Game = Infer<typeof Game>
+
+const ALLGAMES: Game[] = ['Skyrim', 'Terraria', 'Starfield']
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 const Conversation = object({
 	id: string(),
 	userId: string(),
-	game: string(),
+	game: Game,
 	createdAt: number(),
 	updatedAt: number(),
 })
@@ -67,4 +75,4 @@ type UserInfo = Infer<typeof UserInfo>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-export { Conversation, MessageType, Message, Subscription, UserInfo }
+export { Game, ALLGAMES, Conversation, MessageType, Message, Subscription, UserInfo }

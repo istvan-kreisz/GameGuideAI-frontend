@@ -14,5 +14,12 @@ const handleError = (error: any) => {
 		showNotification('An unknown error occurred', 'error')
 	}
 }
+const conversationId = () => {
+	if (typeof window !== 'undefined') {
+		return window.location.search.split('=')?.[0]
+	} else {
+		return undefined
+	}
+}
 
-export { capitalize, handleError }
+export { capitalize, handleError, conversationId }

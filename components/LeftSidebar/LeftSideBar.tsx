@@ -10,6 +10,7 @@ import ToggleTheme from './ToggleTheme/ToggleTheme'
 import { settings } from '@/constants/settings'
 import { twMerge } from 'tailwind-merge'
 import { useAuth } from 'context/AuthContext'
+import { useUserData } from 'context/UserDataContext'
 
 type LeftSidebarProps = {
 	value: boolean
@@ -21,6 +22,7 @@ type LeftSidebarProps = {
 const LeftSidebar = ({ value, setValue, smallSidebar, visibleRightSidebar }: LeftSidebarProps) => {
 	const [visibleSettings, setVisibleSettings] = useState<boolean>(false)
 	const { user, logout } = useAuth()
+	const { conversations } = useUserData()
 
 	useEffect(() => {
 		window.addEventListener('keydown', handleWindowKeyDown)
@@ -35,19 +37,29 @@ const LeftSidebar = ({ value, setValue, smallSidebar, visibleRightSidebar }: Lef
 		}
 	}
 
-	const navigation = [
+	const chats = conversations.map((conversation) => {
+		return {
+			title: conversation.game + ' Chat',
+			icon: 'chat',
+			color: 'fill-accent-5',
+			url: `/${conversation.game.toLowerCase()}?id=${conversation.id}`,
+		}
+	})
+
+	const navigation: {
+		title: string
+		icon: string
+		color: string
+		url?: string
+		onClick?: () => void
+	}[] = [
 		{
 			title: 'Home',
 			icon: 'home',
 			color: 'fill-accent-2',
 			url: '/',
 		},
-		{
-			title: 'Skyrim Chat',
-			icon: 'chat',
-			color: 'fill-accent-5',
-			url: '/skyrim',
-		},
+		...chats,
 		/*{
 			title: 'Manage subscription',
 			icon: 'card',

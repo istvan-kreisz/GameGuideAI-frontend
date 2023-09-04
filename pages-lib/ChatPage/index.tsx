@@ -4,24 +4,26 @@ import Chat from '@/components/Chat/Chat'
 import Question from '@/components/Question/Question'
 import Answer from '@/components/Answer/Answer'
 import { useUserData } from 'context/UserDataContext'
-import { Message as MessageType } from 'config/types'
+import { Game, Message as MessageType } from 'config/types'
 import Message from '@/components/Message/Message'
 import { v4 as uuidv4 } from 'uuid'
 import { useAuth } from 'context/AuthContext'
 import { useSendMessage } from '@/hooks/api/endpoints/post/useSendMessage'
 import { useDeleteAllMessages } from '@/hooks/api/endpoints/post/useDeleteAllMessages'
 import { showNotification } from '@/components/Notify/showNotification'
-import { handleError } from '@/utils/utils'
+import { conversationId, handleError } from '@/utils/utils'
 import { useMessageListener } from '@/hooks/realtimedatabase/useMessageListener'
 import { useCheckIfReachedMonthlyLimit } from '@/hooks/api/endpoints/post/useCheckIfReachedDailyLimit'
 import { useGetUser } from '@/hooks/api/endpoints/get/useGetUser'
 import { boolean, create, object } from 'superstruct'
 
-const GameAIPage = () => {
+const GameAIPage = ({ game }: { game: Game }) => {
 	const MONTHLY_LIMIT = 25
 	const { user } = useAuth()
 	const { userInfo } = useGetUser()
-	const { selectedConversationId, messages } = useUserData()
+	const { messages } = useUserData()
+
+	const selectedConversationId = conversationId()
 	const { sendMessage } = useSendMessage()
 	const { checkIfReachedMonthlyLimit } = useCheckIfReachedMonthlyLimit()
 	const { deleteAllMessages } = useDeleteAllMessages()
@@ -136,20 +138,23 @@ const GameAIPage = () => {
 			if (newUserMessage.text.length === 0) {
 				throw new Error('Message is empty')
 			}
-			if (selectedConversationId) {
-				listenToMessageUpdates(user.uid, selectedConversationId, newAIMessage.id, (text) => {
-					setPendingAIMessage((val) => {
-						if (val) {
-							const newVal = { ...val, text: val.text + text }
-							return newVal
-						} else {
-							return val
-						}
-					})
-				})
+			if (!selectedConversationId) {
+				throw new Error('No conversation selected')
 			}
 
+			listenToMessageUpdates(user.uid, selectedConversationId, newAIMessage.id, (text) => {
+				setPendingAIMessage((val) => {
+					if (val) {
+						const newVal = { ...val, text: val.text + text }
+						return newVal
+					} else {
+						return val
+					}
+				})
+			})
+
 			const res = await sendMessage({
+				selectedConversationId: selectedConversationId,
 				userMessageId: newUserMessage.id,
 				message: newUserMessage.text,
 				aiMessageId: newAIMessage.id,
