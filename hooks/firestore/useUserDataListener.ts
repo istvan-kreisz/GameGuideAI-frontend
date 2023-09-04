@@ -6,11 +6,10 @@ import { CollectionRef } from './constants'
 import { array, create } from 'superstruct'
 import { useCallback, useEffect, useRef } from 'react'
 import { User } from 'firebase/auth'
+import { conversationId } from '@/utils/utils'
 
 export function useUserDataListener(
 	user: User | null | undefined,
-	selectedConversationId: string | null,
-	setSelectedConversationId: React.Dispatch<React.SetStateAction<string | null>>,
 	setConversations: React.Dispatch<React.SetStateAction<Conversation[]>>,
 	setMessages: React.Dispatch<React.SetStateAction<Message[]>>
 ) {
@@ -62,11 +61,6 @@ export function useUserDataListener(
 		[]
 	)
 
-    if (typeof window !== 'undefined') {
-        console.log(window.location.href)
-
-    }
-
 	if (currentUserId.current !== user?.uid) {
 		unsubscribeConversation.current?.()
 		unsubscribeMessages.current?.()
@@ -74,16 +68,12 @@ export function useUserDataListener(
 		if (user?.uid) {
 			conversationsListener(user?.uid, (conversations) => {
 				setConversations(conversations)
-				const conversationIds = conversations.map((conversation) => conversation.id)
-				setSelectedConversationId((currentValue) => {
-					return currentValue && conversationIds.includes(currentValue)
-						? currentValue
-						: conversations[0]?.id
-				})
 			})
 		}
 		currentUserId.current = user?.uid
 	}
+
+	const selectedConversationId = conversationId()
 
 	if (currentConversationId.current !== selectedConversationId) {
 		unsubscribeMessages.current?.()

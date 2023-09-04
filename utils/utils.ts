@@ -16,7 +16,7 @@ const handleError = (error: any) => {
 }
 const conversationId = () => {
 	if (typeof window !== 'undefined') {
-		return window.location.search.split('=')?.[0]
+		return window.location.search.split('=')?.[1]
 	} else {
 		return undefined
 	}

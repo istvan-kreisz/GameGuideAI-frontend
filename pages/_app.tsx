@@ -28,31 +28,16 @@ const noAuthRequired = ['/', '/sign-in', '/pagelist', '/thanks', '/404', '/updat
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
 
-	const {
-		selectedConversationId,
-		setSelectedConversationId,
-		conversations,
-		setConversations,
-		messages,
-		setMessages,
-	} = UserDataContextProvider()
+	const { conversations, setConversations, messages, setMessages } = UserDataContextProvider()
 
 	const { user, login, loginWithGoogle, signup, logout, resetPassword } = AuthContextProvider()
 
-	useUserDataListener(
-		user,
-		selectedConversationId,
-		setSelectedConversationId,
-		setConversations,
-		setMessages
-	)
+	useUserDataListener(user, setConversations, setMessages)
 
 	return (
 		<AuthContext.Provider value={{ user, login, loginWithGoogle, signup, logout, resetPassword }}>
 			<UserDataContext.Provider
 				value={{
-					selectedConversationId,
-					setSelectedConversationId,
 					conversations,
 					setConversations,
 					messages,

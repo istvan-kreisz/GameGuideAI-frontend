@@ -6,4 +6,3 @@ const GameAI: NextPage = () => {
 }
 
 export default GameAI
-x
