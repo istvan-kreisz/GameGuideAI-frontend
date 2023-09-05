@@ -51,7 +51,7 @@ const ComparisonTable = () => {
 
 	return (
 		<div className="grid grid-cols-4 gap-4 max-w-6xl scrollbar mx-auto bg-surf-2 rounded-xl py-8 px-4 items-center">
-			<div className="col-span-1 lg:text-sm text-base font-semibold mt-auto flex items-center justify-center">
+			<div className="col-span-1 lg:text-sm text-base  mt-auto flex items-center justify-center">
 				Core features
 			</div>
 			{['Google Search', 'Traditional Wiki', 'AI GameGuide'].map((title, index) => (
@@ -74,7 +74,7 @@ const ComparisonTable = () => {
 			))}
 			{data.map((item: any) => (
 				<React.Fragment key={item.id}>
-					<div className="col-span-1 lg:text-sm text-base font-semibold flex items-center justify-center text-center">
+					<div className="col-span-1 lg:text-sm text-base flex items-center justify-center text-center">
 						{item.title}
 					</div>
 					{['Google Search', 'Traditional Wiki', 'AI GameGuide'].map((title, index) => (

@@ -3,6 +3,23 @@
 @tailwind utilities;
 
 @layer components {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-outfit;
+	}
+	* {
+		@apply font-inter;
+	}
+	.font-outfit {
+		font-family: 'Outfit', sans-serif;
+	}
+	.font-inter {
+		font-family: 'Inter', sans-serif;
+	}
 	.react-datepicker {
 		@apply !border-n-3 !rounded-lg !font-inter shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0_2rem_2rem_-1rem_rgba(0,0,0,0.1)] overflow-hidden dark:bg-surf-1 dark:!border-n-5;
 	}
@@ -158,4 +175,26 @@
 		box-shadow: 1px 1px 0 1px #f9f9fb, -2px -2px 10px 0px rgba(34, 33, 81, 0.05),
 			-10px 10px 20px 5px rgba(34, 33, 81, 0.2);
 	}
+}
+
+.blurgradient {
+	width: 440px;
+	height: 440px;
+	border-radius: 15rem;
+	background: linear-gradient(197.37deg, #7450db -0.38%, rgba(138, 234, 240, 0) 101.89%),
+		linear-gradient(
+			115.93deg,
+			#3e88f6 4.86%,
+			rgba(62, 180, 246, 0.33) 38.05%,
+			rgba(62, 235, 246, 0) 74.14%
+		),
+		radial-gradient(
+			56.47% 76.87% at 6.92% 7.55%,
+			rgba(62, 136, 246, 0.7) 0%,
+			rgba(62, 158, 246, 0.182) 52.16%,
+			rgba(62, 246, 246, 0) 100%
+		),
+		linear-gradient(306.53deg, #2ee4e3 19.83%, rgba(46, 228, 227, 0) 97.33%);
+	background-blend-mode: normal, normal, normal, normal, normal, normal;
+	filter: blur(69px);
 }

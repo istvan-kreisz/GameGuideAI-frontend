@@ -76,8 +76,8 @@ module.exports = {
 				DEFAULT: 'linear',
 			},
 			fontFamily: {
-				sans: ['var(--font-karla)', ...fontFamily.sans],
-				inter: 'var(--font-inter)',
+				inter: ['var(--font-inter)', ...fontFamily.sans],
+				outfit: 'var(--font-outfit)',
 			},
 			fontSize: {
 				0: ['0px', '0px'],
@@ -126,22 +126,22 @@ module.exports = {
 			})
 			addComponents({
 				'.h1': {
-					'@apply font-inter text-6xl font-bold -tracking-[.025em]': {},
+					'@apply font-outfit text-6xl font-medium -tracking-[.025em]': {},
 				},
 				'.h2': {
-					'@apply font-inter text-5xl font-bold -tracking-[.025em]': {},
+					'@apply font-outfit text-5xl font-medium': {},
 				},
 				'.h3': {
-					'@apply font-inter text-4xl font-bold -tracking-[.045em]': {},
+					'@apply font-outfit text-4xl font-medium': {},
 				},
 				'.h4': {
-					'@apply font-inter text-3xl font-bold -tracking-[.02em]': {},
+					'@apply font-outfit text-3xl font-bold': {},
 				},
 				'.h5': {
-					'@apply font-inter text-2xl font-semibold -tracking-[.03em]': {},
+					'@apply font-outfit text-2xl font-bold': {},
 				},
 				'.h6': {
-					'@apply font-inter text-xl font-semibold -tracking-[.03em]': {},
+					'@apply font-outfit text-xl font-bold': {},
 				},
 				'.body1': {
 					'@apply text-[1.5rem] leading-9 -tracking-[.03em]': {},

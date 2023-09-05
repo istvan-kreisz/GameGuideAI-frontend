@@ -15,13 +15,12 @@ const FeatureBox = ({ title, text, color, svg }: FeatureBoxProps) => {
 				}
         `}
 		>
-			<div className="flex h-full w-full items-center justify-center p-8 2xl:px-6 dark:bg-surf-2 back rounded-[27px]">
+			<div className="flex h-full w-full items-center justify-center p-8 2xl:px-6 dark:bg-surf-2 back rounded-[27px] ">
 				<div className="relative flex flex-col grow z-2">
-					<div className="flex justify-between items-center mb-1">
-						<div className="h4" style={{ color: color }}>
-							{title}
-						</div>
+					<div className="h5 bg-surf-4 w-auto h-20" style={{ color: color }}>
+						<h4 className="">{title}</h4>
 					</div>
+
 					{/* <div className="mb-6 base1 font-semibold">{item.description}</div> */}
 					{/* <div className="mb-2">
 				<span className="mr-2 h2">${plan ? item.priceYear : item.priceMonth}</span>
