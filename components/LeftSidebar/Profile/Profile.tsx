@@ -75,7 +75,7 @@ const Profile = ({ visible }: ProfileProps) => {
 											></path>
 										</g>
 									</svg>
-									<span className="text-sm">Join us on Discord</span>
+									<span className="text-xs">Join us on Discord</span>
 								</div>
 							</a>
 						</div>
