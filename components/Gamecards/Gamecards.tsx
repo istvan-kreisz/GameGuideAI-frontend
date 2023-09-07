@@ -23,7 +23,7 @@ const Gamecards = ({
 	items,
 	filterEnabled = false,
 	filterDisabled = false,
-	clickable = true,
+	clickable = false,
 }: MenuProps) => {
 	const [visible, setVisible] = useState<boolean>(false)
 
