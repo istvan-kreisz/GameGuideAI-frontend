@@ -170,7 +170,7 @@ const Landing: NextPage = () => {
 						</section>
 						<section className="p-10 mt-20 mb-10 items-center text-center flex flex-col gap-10">
 							<h3 className="h3 lg:h4 text-center 2xl:mb-2">Our games in Beta</h3>
-							<Gamecards className="mx-auto" items={navigation} filterEnabled />
+							<Gamecards className="mx-auto" items={navigation} filterEnabled clickable={false} />
 							<h3 className="h3 lg:h4 text-center 2xl:mb-2">Vote on the next Game!</h3>
 							<GamecardsCarousel className="mx-auto" items={navigation} filterDisabled />
 						</section>
