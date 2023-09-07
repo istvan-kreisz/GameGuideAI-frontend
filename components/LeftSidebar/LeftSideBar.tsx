@@ -41,7 +41,7 @@ const LeftSidebar = ({ value, setValue, smallSidebar, visibleRightSidebar }: Lef
 		return {
 			title: conversation.game + ' Chat',
 			icon: 'chat',
-			color: 'fill-accent-5',
+			color: 'fill-accent-4',
 			url: `/${conversation.game.toLowerCase()}?id=${conversation.id}`,
 		}
 	})
