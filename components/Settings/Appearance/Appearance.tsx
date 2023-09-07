@@ -48,7 +48,7 @@ const Appearance = ({}: AppearanceProps) => {
 				{items.map((item, index) => (
 					<button
 						className={twMerge(
-							`basis-1/2 p-3 border-4 border-transparent bg-n-2 rounded-2xl text-left transition-colors dark:bg-n-6 dark:text-n-3/50 ${
+							`basis-1/2 p-3 border-4 border-transparent bg-n-2 rounded-2xl text-left transition-colors dark:bg-surf-2 dark:text-n-3/50 ${
 								item.active &&
 								'bg-transparent border-primary-1 text-n-6/50 dark:text-n-1 dark:bg-transparent'
 							}`
@@ -75,7 +75,7 @@ const Appearance = ({}: AppearanceProps) => {
         </div>
         <Select
           className="min-w-[13.125rem]"
-          classButton="bg-n-3/75 dark:bg-n-6 dark:shadow-[inset_0_0_0_0.0625rem_#232627]"
+          classButton="bg-n-3/75 dark:bg-surf-2 dark:shadow-[inset_0_0_0_0.0625rem_#272A37]"
           items={languages}
           value={language}
           onChange={setLanguage}

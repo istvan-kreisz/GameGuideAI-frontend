@@ -1,7 +1,8 @@
 import '@/styles/globals.css'
+import '../styles/floatingCubes.css'
 import type { AppProps } from 'next/app'
 import { Toaster, resolveValue } from 'react-hot-toast'
-import { Inter, Karla } from 'next/font/google'
+import { Inter, Outfit } from 'next/font/google'
 import { ColorModeScript, ColorModeProvider } from '@chakra-ui/color-mode'
 import { AuthContext, AuthContextProvider } from 'context/AuthContext'
 import ProtectedRoute from '@/components/Auth/ProtectedRoute'
@@ -16,14 +17,22 @@ const inter = Inter({
 	variable: '--font-inter',
 })
 
-const karla = Karla({
+const outfit = Outfit({
 	weight: ['300', '400', '700'],
 	subsets: ['latin'],
 	display: 'block',
-	variable: '--font-karla',
+	variable: '--font-outfit',
 })
 
-const noAuthRequired = ['/', '/sign-in', '/pagelist', '/thanks', '/404', '/updates-and-faq']
+const noAuthRequired = [
+	'/',
+	'/games',
+	'/sign-in',
+	'/pagelist',
+	'/thanks',
+	'/404',
+	'/updates-and-faq',
+]
 
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
@@ -45,10 +54,13 @@ export default function App({ Component, pageProps }: AppProps) {
 				}}
 			>
 				{/* move to another file */}
-				<main className={`${karla.variable} ${inter.variable} font-sans`}>
+				<main className={`${outfit.variable} ${inter.variable} font-sans`}>
 					<style jsx global>{`
 						html {
-							font-family: ${karla.style.fontFamily};
+							font-family: ${inter.style.fontFamily};
+						}
+						body {
+							font-family: ${outfit.style.fontFamily};
 						}
 						#headlessui-portal-root {
 							font-family: ${inter.style.fontFamily};
@@ -56,9 +68,9 @@ export default function App({ Component, pageProps }: AppProps) {
 					`}</style>
 					<ColorModeProvider>
 						<ColorModeScript
-							initialColorMode="system"
+							initialColorMode="dark"
 							key="chakra-ui-no-flash"
-							storageKey="chakra-ui-color-mode"
+							storageKey="theme-color-mode"
 						/>
 
 						{noAuthRequired.includes(router.pathname) ? (

@@ -44,7 +44,7 @@ const Modal = ({
 				>
 					<div
 						className={`fixed inset-0 ${
-							video ? 'bg-n-7/95' : 'bg-n-7/75 dark:bg-n-6/90'
+							video ? 'bg-surf-1/95' : 'bg-surf-1/75 dark:bg-surf-2/90'
 						} ${classOverlay}`}
 						aria-hidden="true"
 					/>
@@ -60,7 +60,7 @@ const Modal = ({
 				>
 					<Dialog.Panel
 						className={twMerge(
-							`relative z-10 max-w-[37.5rem] w-full m-auto h-4/5 bg-n-1 rounded-3xl dark:bg-n-7 ${
+							`relative z-10 max-w-[37.5rem] w-full m-auto h-4/5 bg-n-1 rounded-3xl dark:bg-surf-1 ${
 								video &&
 								'static max-w-[64rem] aspect-video rounded-[1.25rem] overflow-hidden shadow-[0_2.5rem_8rem_rgba(0,0,0,0.5)]'
 							} ${classWrap}`

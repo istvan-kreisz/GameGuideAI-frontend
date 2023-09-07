@@ -26,7 +26,7 @@ const Updates = ({ items }: UpdatesProps) => {
 			<div>
 				{items.map((item) => (
 					<div
-						className="flex py-16 border-t border-n-3 lg:block md:py-8 dark:border-n-5"
+						className="flex py-16 border-t border-n-3 lg:block md:py-8 dark:border-n-4"
 						key={item.id}
 					>
 						<div className="shrink-0 w-[21rem] pr-20 2xl:w-72 2xl:pr-12 lg:w-full lg:mb-10 lg:pr-0">

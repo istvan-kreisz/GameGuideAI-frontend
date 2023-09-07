@@ -75,7 +75,7 @@ export {}
 //                   {!visible && (
 //                     <>
 //                       <div className="ml-5">{item.title}</div>
-//                       <div className="ml-auto px-2 bg-n-6 rounded-lg base2 font-semibold text-n-4">
+//                       <div className="ml-auto px-2 bg-surf-2 rounded-lg base2 font-semibold text-n-4">
 //                         {item.counter}
 //                       </div>
 //                     </>

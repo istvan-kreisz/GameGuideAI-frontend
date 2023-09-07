@@ -52,7 +52,9 @@ const Form = ({}: FormProps) => {
 			<div className="flex items-center mb-3 base2">
 				<div className="mr-auto dark:text-n-4">Plan</div>
 				<div className="mr-5 text-n-4">Change currency</div>
-				<div className="px-3 py-0.5 bg-n-3 rounded font-semibol dark:bg-n-7 dark:text-n-1">USD</div>
+				<div className="px-3 py-0.5 bg-n-3 rounded font-semibol dark:bg-surf-1 dark:text-n-1">
+					USD
+				</div>
 			</div>
 			<RadioGroup items={plans} value={plan} setValue={setPlan} />
 			<div className="mb-3 border border-n-3 rounded-xl dark:border-n-5">

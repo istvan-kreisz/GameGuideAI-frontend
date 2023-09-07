@@ -1,18 +1,18 @@
 import { useEffect } from 'react'
 import { useColorMode } from '@chakra-ui/color-mode'
 
-const useColorModDefault = () => {
+const useColorModeDefault = () => {
 	const { colorMode, setColorMode } = useColorMode()
 
 	// Set the default color mode
 	useEffect(() => {
 		const savedColorMode = localStorage.getItem('theme-color-mode')
 		if (!savedColorMode) {
-			setColorMode('light')
+			setColorMode('dark')
 		} else {
 			setColorMode(savedColorMode)
 		}
-	}, [setColorMode])
+	}, []) // Removing dependency on setColorMode
 
 	// Update local storage if color mode changes
 	useEffect(() => {
@@ -22,4 +22,4 @@ const useColorModDefault = () => {
 	return { colorMode, setColorMode }
 }
 
-export default useColorModDefault
+export default useColorModeDefault

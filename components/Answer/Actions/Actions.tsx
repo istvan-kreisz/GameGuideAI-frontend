@@ -33,7 +33,7 @@ const Actions = ({ text }: ActionsProps) => {
 	}
 
 	const styleButton: string =
-		'h-6 ml-3 px-2 rounded-md caption1 txt-n-4 text-gray-700 transition-colors hover:text-primary-1 dark:bg-n-7'
+		'h-6 ml-3 px-2 rounded-md caption1 txt-n-4 transition-colors bg-n-2 hover:text-surf-3 dark:bg-surf-4'
 
 	return (
 		<>
@@ -42,7 +42,7 @@ const Actions = ({ text }: ActionsProps) => {
 			</CopyToClipboard>
 			{/* <button className={styleButton}>Regenerate response</button> */}
 			{/* {!share && !archive && (
-				<div className="flex ml-3 px-1 space-x-1 bg-n-3 rounded-md md:hidden dark:bg-n-7">
+				<div className="flex ml-3 px-1 space-x-1 bg-n-3 rounded-md md:hidden dark:bg-surf-1">
 					<button className="" onClick={() => setShare(true)}>
 						<Image
 							src="/images/smile-heart-eyes.png"

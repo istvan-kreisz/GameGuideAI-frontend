@@ -46,7 +46,7 @@ const Select = ({
 						className={twMerge(
 							`flex items-center w-full h-[3.25rem] px-4 rounded-xl bg-n-1 base2 outline-none tap-highlight-color ${
 								small
-									? `h-9 pr-3 rounded-md shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.15)] dark:shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.15),inset_0_0_0_0.0625rem_rgba(254,254,254,.1)] dark:bg-n-6 ${
+									? `h-9 pr-3 rounded-md shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.15)] dark:shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.15),inset_0_0_0_0.0625rem_rgba(254,254,254,.1)] dark:bg-surf-2 ${
 											open && 'shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.15)]'
 									  }`
 									: `shadow-[inset_0_0_0_0.0625rem_#E8ECEF] dark:shadow-[inset_0_0_0_0.0625rem_#343839] dark:bg-transparent ${
@@ -90,7 +90,7 @@ const Select = ({
 					>
 						<Listbox.Options
 							className={twMerge(
-								`absolute left-0 right-0 w-full mt-2 p-2 bg-n-1 rounded-lg shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0_2rem_2rem_-1.5rem_rgba(0,0,0,0.1),inset_0_0_0_0.0625rem_#E8ECEF] outline-none dark:shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0_2rem_2rem_-1.5rem_rgba(0,0,0,0.1),inset_0_0_0_0.0625rem_#343839] dark:bg-n-6 ${
+								`absolute left-0 right-0 w-full mt-2 p-2 bg-n-1 rounded-lg shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0_2rem_2rem_-1.5rem_rgba(0,0,0,0.1),inset_0_0_0_0.0625rem_#E8ECEF] outline-none dark:shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0_2rem_2rem_-1.5rem_rgba(0,0,0,0.1),inset_0_0_0_0.0625rem_#343839] dark:bg-surf-2 ${
 									small && 'right-auto mt-1 shadow-md'
 								} ${up && `top-auto bottom-full mt-0 ${small ? 'mb-1' : 'mb-2'}`} ${
 									open && 'z-10'
@@ -99,7 +99,7 @@ const Select = ({
 						>
 							{items.map((item: any) => (
 								<Listbox.Option
-									className={`flex items-start p-2 rounded-lg base2 text-n-4 transition-colors cursor-pointer hover:text-n-7 ui-selected:!bg-n-3/50 ui-selected:!text-n-7 tap-highlight-color dark:hover:text-n-3 dark:ui-selected:!bg-n-7 dark:ui-selected:!text-n-1 ${
+									className={`flex items-start p-2 rounded-lg base2 text-n-4 transition-colors cursor-pointer hover:text-n-7 ui-selected:!bg-n-3/50 ui-selected:!text-n-7 tap-highlight-color dark:hover:text-n-3 dark:ui-selected:!bg-surf-1 dark:ui-selected:!text-n-1 ${
 										small && 'py-1 font-semibold'
 									} ${classOption}`}
 									key={item.id}

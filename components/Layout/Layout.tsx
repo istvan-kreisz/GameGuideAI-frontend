@@ -42,7 +42,7 @@ const Layout = ({ smallSidebar, hideRightSidebar, backUrl, children }: LayoutPro
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 			</Head>
 			<div
-				className={`pr-6 bg-n-7 md:p-0 md:bg-n-1 dark:md:bg-n-6 md:overflow-hidden ${
+				className={`pr-6 bg-surf-1 md:p-0 md:bg-n-1 dark:md:bg-surf-2 md:overflow-hidden ${
 					visibleSidebar
 						? 'pl-24 md:pl-0'
 						: smallSidebar
@@ -58,7 +58,7 @@ const Layout = ({ smallSidebar, hideRightSidebar, backUrl, children }: LayoutPro
 				/>
 				<div className={'flex py-6 md:py-0 h-screen h-screen-ios'}>
 					<div
-						className={`relative flex grow max-w-full bg-n-1 rounded-[0.75rem] md:rounded-none dark:bg-n-6 ${
+						className={`relative flex grow max-w-full bg-n-1 rounded-[0.75rem] md:rounded-none dark:bg-surf-2 ${
 							!hideRightSidebar && 'pr-[22.5rem] 2xl:pr-80 lg:pr-0'
 						}`}
 					>
@@ -97,7 +97,7 @@ const Layout = ({ smallSidebar, hideRightSidebar, backUrl, children }: LayoutPro
 				</div>
 				<div
 					className={twMerge(
-						`fixed inset-0 z-10 bg-n-7/80 invisible opacity-0 md:hidden ${
+						`fixed inset-0 z-10 bg-surf-1/80 invisible opacity-0 md:hidden ${
 							(!visibleSidebar && smallSidebar) || (visibleRightSidebar && 'visible opacity-100')
 						}`
 					)}

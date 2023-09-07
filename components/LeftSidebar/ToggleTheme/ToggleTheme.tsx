@@ -1,13 +1,13 @@
 import { twMerge } from 'tailwind-merge'
 import Icon from '@/components/Icon/Icon'
-import useColorModDefault from '@/styles/useColorModeDefault'
+import { useColorMode } from '@chakra-ui/color-mode'
 
 type ToggleThemeProps = {
 	visible?: boolean
 }
 
 const ToggleTheme = ({ visible }: ToggleThemeProps) => {
-	const { colorMode, setColorMode } = useColorModDefault()
+	const { colorMode, setColorMode } = useColorMode()
 
 	const items = [
 		{
@@ -28,7 +28,7 @@ const ToggleTheme = ({ visible }: ToggleThemeProps) => {
 		<div
 			className={`${
 				!visible &&
-				`relative flex w-full p-1 bg-n-6 rounded-xl before:absolute before:left-1 before:top-1 before:bottom-1 before:w-[calc(50%-0.25rem)] before:bg-n-7 before:rounded-[0.625rem] before:transition-all ${
+				`relative flex w-full p-1 bg-surf-2 rounded-xl before:absolute before:left-1 before:top-1 before:bottom-1 before:w-[calc(50%-0.25rem)] before:bg-surf-1 before:rounded-[0.625rem] before:transition-all ${
 					colorMode === 'dark' && 'before:translate-x-full'
 				}`
 			}`}
@@ -38,7 +38,7 @@ const ToggleTheme = ({ visible }: ToggleThemeProps) => {
 					className={twMerge(
 						`relative z-1 group flex justify-center items-center ${
 							visible
-								? `flex w-full h-16 rounded-xl bg-n-6 md:w-8 md:h-8 md:mx-auto ${
+								? `flex w-full h-16 rounded-xl bg-surf-2 md:w-8 md:h-8 md:mx-auto ${
 										item.active && 'hidden'
 								  }`
 								: `h-10 basis-1/2 base2 font-semibold text-n-4 transition-colors hover:text-n-1 ${

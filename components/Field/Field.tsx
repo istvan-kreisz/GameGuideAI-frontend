@@ -51,7 +51,7 @@ const Field = ({
 				<div className="relative">
 					{textarea ? (
 						<textarea
-							className={`w-full h-24 px-3.5 py-3 bg-n-2 border-2 border-n-2 rounded-xl base2  text-n-7 outline-none transition-colors placeholder:text-n-4/50 focus:bg-transparent resize-none dark:bg-n-6 dark:border-n-6 dark:text-n-3 dark:focus:bg-transparent ${
+							className={`w-full h-24 px-3.5 py-3 bg-n-2 border-2 border-n-2 rounded-xl base2  text-n-7 outline-none transition-colors placeholder:text-n-4/50 focus:bg-transparent resize-none dark:bg-surf-2 dark:border-n-6 dark:text-n-3 dark:focus:bg-transparent ${
 								icon && 'pl-[3.125rem]'
 							} ${value !== '' && 'bg-transparent border-n-3/50'}`}
 							value={value}
@@ -64,7 +64,7 @@ const Field = ({
 					) : (
 						<input
 							className={twMerge(
-								`w-full h-13 px-3.5 bg-n-2 border-2 border-n-2 rounded-xl base2  text-n-7 outline-none transition-colors placeholder:text-n-4/50 focus:bg-transparent dark:bg-n-6 dark:border-n-6 dark:text-n-3 dark:focus:bg-transparent ${
+								`w-full h-13 px-3.5 bg-n-2 border-2 border-n-2 rounded-xl base2  text-n-7 outline-none transition-colors placeholder:text-n-4/50 focus:bg-transparent dark:bg-surf-2 dark:border-n-6 dark:text-n-3 dark:focus:bg-transparent ${
 									icon && 'pl-[3.125rem]'
 								} ${value !== '' && 'bg-transparent border-n-3/50'} ${classInput}`
 							)}

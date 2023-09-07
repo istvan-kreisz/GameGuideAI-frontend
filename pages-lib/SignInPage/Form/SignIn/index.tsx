@@ -39,7 +39,7 @@ const SignIn = ({ onClick }: SignInProps) => {
 		<form onSubmit={handleLogin}>
 			<Field
 				className="mb-4"
-				classInput="dark:bg-n-7 dark:border-n-7 dark:focus:bg-transparent"
+				classInput="dark:bg-surf-1 dark:border-n-7 dark:focus:bg-transparent"
 				placeholder="Email"
 				icon="email"
 				value={email}
@@ -49,7 +49,7 @@ const SignIn = ({ onClick }: SignInProps) => {
 			/>
 			<Field
 				className="mb-2"
-				classInput="dark:bg-n-7 dark:border-n-7 dark:focus:bg-transparent"
+				classInput="dark:bg-surf-1 dark:border-n-7 dark:focus:bg-transparent"
 				placeholder="Password"
 				icon="lock"
 				type="password"

@@ -40,12 +40,18 @@ module.exports = {
 				},
 				n: {
 					1: '#FEFEFE',
-					2: '#F3F5F7',
-					3: '#E8ECEF',
+					2: '#E8ECEF',
+					3: '#d5d8db',
 					4: '#6C7275',
 					5: '#343839',
-					6: '#232627',
+					6: '#272A37',
 					7: '#141718',
+				},
+				surf: {
+					1: '#272A37',
+					2: '#323644',
+					3: '#1D90F5',
+					4: '#424656',
 				},
 			},
 			spacing: {
@@ -70,8 +76,8 @@ module.exports = {
 				DEFAULT: 'linear',
 			},
 			fontFamily: {
-				sans: ['var(--font-karla)', ...fontFamily.sans],
-				inter: 'var(--font-inter)',
+				inter: ['var(--font-inter)', ...fontFamily.sans],
+				outfit: 'var(--font-outfit)',
 			},
 			fontSize: {
 				0: ['0px', '0px'],
@@ -114,28 +120,28 @@ module.exports = {
 					'@apply text-[0.92rem]': {},
 				},
 				body: {
-					'@apply bg-n-7 text-[1rem] leading-6 -tracking-[.01em] text-n-7 antialiased md:bg-n-1 dark:text-n-1 dark:md:bg-n-6':
+					'@apply bg-surf-1 text-[1rem] leading-6 -tracking-[.01em] text-n-7 antialiased md:bg-n-1 dark:text-n-2 dark:md:bg-surf-2':
 						{},
 				},
 			})
 			addComponents({
 				'.h1': {
-					'@apply font-inter text-6xl font-bold -tracking-[.025em]': {},
+					'@apply font-outfit text-6xl font-medium -tracking-[.025em]': {},
 				},
 				'.h2': {
-					'@apply font-inter text-5xl font-bold -tracking-[.025em]': {},
+					'@apply font-outfit text-5xl font-medium': {},
 				},
 				'.h3': {
-					'@apply font-inter text-4xl font-bold -tracking-[.045em]': {},
+					'@apply font-outfit text-4xl font-medium': {},
 				},
 				'.h4': {
-					'@apply font-inter text-3xl font-bold -tracking-[.02em]': {},
+					'@apply font-outfit text-3xl font-bold': {},
 				},
 				'.h5': {
-					'@apply font-inter text-2xl font-semibold -tracking-[.03em]': {},
+					'@apply font-outfit text-2xl font-bold': {},
 				},
 				'.h6': {
-					'@apply font-inter text-xl font-semibold -tracking-[.03em]': {},
+					'@apply font-outfit text-xl font-bold': {},
 				},
 				'.body1': {
 					'@apply text-[1.5rem] leading-9 -tracking-[.03em]': {},
@@ -174,18 +180,18 @@ module.exports = {
 						{},
 				},
 				'.btn-dark': {
-					'@apply btn bg-n-7 border-n-7 text-n-1 fill-n-1 hover:bg-n-5 hover:border-n-5 dark:bg-n-1 dark:border-n-1 dark:text-n-7 dark:fill-n-7 dark:hover:border-transparent dark:hover:text-primary-1 dark:hover:fill-primary-1':
+					'@apply btn bg-surf-1 border-n-7 text-n-1 fill-n-1 hover:bg-n-5 hover:border-n-5 dark:bg-n-1 dark:border-n-1 dark:text-n-7 dark:fill-n-7 dark:hover:border-transparent dark:hover:text-primary-1 dark:hover:fill-primary-1':
 						{},
 				},
 				'.btn-white': {
-					'@apply btn bg-n-1 border-transparent shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.15)] text-n-7 fill-n-7 hover:bg-n-2 dark:bg-n-6 dark:border-n-1/10 dark:text-n-1 dark:fill-n-1 dark:hover:bg-n-1/10':
+					'@apply btn bg-n-1 border-transparent shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.15)] text-n-7 fill-n-7 hover:bg-n-2 dark:bg-surf-2 dark:border-n-1/10 dark:text-n-1 dark:fill-n-1 dark:hover:bg-n-1/10':
 						{},
 				},
 				'.btn-stroke-dark': {
-					'@apply btn border-n-5 text-n-1 hover:bg-n-5': {},
+					'@apply btn border-surf-4 text-n-1 hover:bg-surf-1': {},
 				},
 				'.btn-stroke-light': {
-					'@apply btn border-n-3 fill-n-7 hover:bg-n-3 hover:text-n-7 dark:border-n-5 dark:hover:bg-n-5 dark:hover:text-n-1 dark:fill-n-1':
+					'@apply btn border-n-3 fill-n-7 hover:bg-n-3 hover:text-n-7 dark:border-n-4 dark:hover:bg-surf-1 dark:hover:text-n-1 dark:fill-n-1':
 						{},
 				},
 				'.btn-large': {
