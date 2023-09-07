@@ -179,7 +179,7 @@ const GameAIPage = ({ game }: { game: Game }) => {
 	return (
 		<Layout hideRightSidebar>
 			<Chat
-				title="Skyrim Chat"
+				title={game + ` Chat`}
 				clean={messageIds.length === 0}
 				deleteAllMessages={async () => {
 					if (selectedConversationId) {
