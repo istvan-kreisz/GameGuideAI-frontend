@@ -51,7 +51,7 @@ export function useMessageListener() {
 		return () => {
 			stopListener()
 		}
-	}, [])
+	}, [stopListener])
 
 	return {
 		listenToMessageUpdates,

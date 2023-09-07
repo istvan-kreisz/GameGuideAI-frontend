@@ -13,7 +13,7 @@ import DiscordButton from '@/pages-lib/LandingPage/JoinDiscordButton'
 import Faq from '@/pages-lib/LandingPage/Faq'
 
 const svgs = [
-	<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none">
+	<svg key={1} xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none">
 		<rect width="48" height="48" rx="12" className="fill-orange-400" />
 		<path
 			fill="#0E0C15"
@@ -23,7 +23,7 @@ const svgs = [
 		/>
 	</svg>,
 
-	<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none">
+	<svg key={2} xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none">
 		<rect width="48" height="48" rx="12" className="fill-primary-2" />
 		<path
 			fill="#0E0C15"
@@ -38,7 +38,7 @@ const svgs = [
 		/>
 	</svg>,
 
-	<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none">
+	<svg key={3} xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none">
 		<rect width="48" height="48" rx="12" className="fill-accent-3" />
 		<path
 			fill="#0E0C15"
@@ -59,7 +59,7 @@ const Landing: NextPage = () => {
 		setTimeout(() => {
 			setLoading(false)
 		}, 2000)
-	}, [])
+	}, [setColorMode])
 
 	return (
 		<div className="flex flex-col min-h-screen bg-surf-2">
@@ -133,8 +133,8 @@ const Landing: NextPage = () => {
 							<div className="flex gap-16 lg:gap-6 sm:flex-col justify-center">
 								<FeatureBox
 									title="Personalized and Instant Gaming Guidance"
-									text="Imagine a personal gaming assistant that understands your play style, 
-									responds to queries in real-time, and provides accurate, context-aware answers. 
+									text="Imagine a personal gaming assistant that understands your play style,
+									responds to queries in real-time, and provides accurate, context-aware answers.
 									That's what we're building with AI GameGuide -
 									a revolutionary alternative to traditional wikis "
 									color="from-accent-5/75"
@@ -143,9 +143,9 @@ const Landing: NextPage = () => {
 								/>
 								<FeatureBox
 									title="Community-driven Knowledge Base"
-									text="We recognize the expertise of the gaming community. 
-									That's why we plan to open our AI's knowledge base for contributions from all gamers. 
-									Casual or fanatic, you will be able to improve GameGuide's accuracy 
+									text="We recognize the expertise of the gaming community.
+									That's why we plan to open our AI's knowledge base for contributions from all gamers.
+									Casual or fanatic, you will be able to improve GameGuide's accuracy
 									by updating and modifying its data sources."
 									color="from-primary-2/75"
 									svg={svgs[1]}
@@ -177,7 +177,7 @@ const Landing: NextPage = () => {
 					</div>
 				</div>
 
-				{/*=Infinite Floating Cubes 
+				{/*=Infinite Floating Cubes
 				<div className="circles" style={{ zIndex: 0 }}>
 					{Array.from({ length: 10 }).map((_, i) => (
 						<div key={i}></div>
