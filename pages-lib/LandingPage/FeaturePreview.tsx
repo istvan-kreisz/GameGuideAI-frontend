@@ -17,7 +17,7 @@ const FeaturePreview = ({ title, text, icon, imageLight, imageDark }: FeaturePre
 
 	return (
 		<>
-			<div className="flex flex-wrap-reverse w-full py-16 lg:flex-col md:py-8 dark:border-n-4 place-content-center items-center text-n-2">
+			<div className="flex flex-wrap-reverse w-full py-16 lg:flex-col md:py-8 dark:border-n-4 place-content-center items-center text-n-2 ">
 				<Image
 					className="w-full h-auto max-h-[1000px] max-w-[700px] absolute z-[-1] overflow-hidden right-1/2 opacity-80"
 					src="/images/blobanimation.svg"
@@ -43,7 +43,7 @@ const FeaturePreview = ({ title, text, icon, imageLight, imageDark }: FeaturePre
 				{imageLight && (
 					<div className="h-fit w-fit rounded-xl bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1 p-[2px]">
 						<Image
-							className="w-full h-auto-full h-auto max-h-[506px] max-w-[519px]"
+							className="w-full h-auto-full h-auto max-h-[506px] max-w-[519px] glowborder"
 							style={{ flex: '1 0 120vw' }}
 							src={isDarkMode ? imageDark : imageLight}
 							width={519}

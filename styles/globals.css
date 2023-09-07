@@ -198,3 +198,9 @@
 	background-blend-mode: normal, normal, normal, normal, normal, normal;
 	filter: blur(69px);
 }
+
+.glowborder {
+	box-shadow: 0 0 0.5em rgba(255, 255, 255, 0.5);
+	font-size: 2em;
+	color: #fff;
+}

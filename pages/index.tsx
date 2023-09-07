@@ -13,7 +13,14 @@ import DiscordButton from '@/pages-lib/LandingPage/JoinDiscordButton'
 import Faq from '@/pages-lib/LandingPage/Faq'
 
 const svgs = [
-	<svg key={1} xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none">
+	<svg
+		key={1}
+		xmlns="http://www.w3.org/2000/svg"
+		width="48"
+		height="48"
+		fill="none"
+		className="opacity-90"
+	>
 		<rect width="48" height="48" rx="12" className="fill-orange-400" />
 		<path
 			fill="#0E0C15"
@@ -86,9 +93,9 @@ const Landing: NextPage = () => {
 									alignItems: 'start',
 								}}
 							>
-								<div className="h-full w-full rounded-xl bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1 p-1">
+								<div className="rounded-xl bg-gradient-to-r from-purple-400 via-blue-200 to-primary-1 p-1 ">
 									<Image
-										className="w-full h-auto max-h-[744px] max-w-[1200px]"
+										className="w-full h-auto max-h-[744px] max-w-[1200px] glowborder"
 										style={{
 											flex: '1 0 120vw',
 										}}
@@ -130,7 +137,7 @@ const Landing: NextPage = () => {
 						<section className="items-center justify-center flex flex-col gap-20 my-20">
 							<h2 className="h3 lg:h4 text-center -mb-10 mt-10">Features</h2>
 
-							<div className="flex gap-16 lg:gap-6 sm:flex-col justify-center">
+							<div className="flex gap-16 lg:gap-6 lg:flex-col justify-center">
 								<FeatureBox
 									title="Personalized and Instant Gaming Guidance"
 									text="Imagine a personal gaming assistant that understands your play style,
