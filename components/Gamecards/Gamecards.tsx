@@ -89,6 +89,7 @@ const Gamecards = ({
 				} else {
 					return (
 						<div
+							key={index}
 							className={`group flex flex-col items-center border-2 border-n-3 rounded-xl h6 transition-all hover:shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0px_2rem_1.5rem_-1rem_rgba(0,0,0,0.12)] last:mb-0 dark:border-n-4 dark:hover:border-n-5 dark:hover:bg-surf-1`}
 							onClick={(event) => handleClick(event, item.enabled)}
 						>
