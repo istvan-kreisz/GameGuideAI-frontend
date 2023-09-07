@@ -17,7 +17,7 @@ const FeaturePreview = ({ title, text, icon, imageLight, imageDark }: FeaturePre
 
 	return (
 		<>
-			<div className="flex flex-wrap-reverse w-full py-16 lg:flex-col md:py-8 dark:border-n-4 place-content-center items-center text-n-2 ">
+			<div className="flex gap-16 lg:gap-6 flex-wrap-reverse w-full py-16 lg:flex-col md:py-8 dark:border-n-4 place-content-center items-center text-n-2 ">
 				<Image
 					className="w-full h-auto max-h-[1000px] max-w-[700px] absolute z-[-1] overflow-hidden right-1/2 opacity-80"
 					src="/images/blobanimation.svg"
