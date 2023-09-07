@@ -6,6 +6,12 @@ export const navigation = [
 		enabled: true,
 	},
 	{
+		title: 'Starfield',
+		image: 'starfield.jpg',
+		url: '/starfield',
+		enabled: true,
+	},
+	{
 		title: 'GTA V',
 		image: 'gtav.jpg',
 		url: '/gtav',
