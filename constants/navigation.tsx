@@ -12,6 +12,12 @@ export const navigation = [
 		enabled: true,
 	},
 	{
+		title: 'Terraria',
+		image: 'terraria.jpg',
+		url: '/terraria',
+		enabled: true,
+	},
+	{
 		title: 'GTA V',
 		image: 'gtav.jpg',
 		url: '/gtav',
@@ -57,12 +63,6 @@ export const navigation = [
 		title: 'Cyberpunk 2077',
 		image: 'cyberpunk.jpg',
 		url: '/cyberpunk',
-		enabled: false,
-	},
-	{
-		title: 'Terraria',
-		image: 'terraria.jpg',
-		url: '/terraria',
 		enabled: false,
 	},
 	{
