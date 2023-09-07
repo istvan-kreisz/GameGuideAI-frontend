@@ -55,7 +55,7 @@ export const faqs = [
 		id: '2',
 		title: 'What games are currently supported by GameGuide.ai?',
 		content:
-			'Currently, the only game supported by GameGuide.ai is Skyrim. However, more games will be added in the future.',
+			'Currently, the only games supported by GameGuide.ai are Skyrim, Starfield and Terraria. However, more games will be added in the future.',
 		defaultOpen: false,
 	},
 	{
@@ -76,7 +76,7 @@ export const faqs = [
 		id: '5',
 		title: 'Can I suggest new games to be added to GameGuide.ai?',
 		content:
-			'Yes, you can suggest new games to be added to GameGuide.ai by Voting on the Google Form on our homepage!',
+			'Yes, you can suggest new games to be added to GameGuide.ai by clicking on the voting bottoms on our homepage!',
 		defaultOpen: false,
 	},
 	{
