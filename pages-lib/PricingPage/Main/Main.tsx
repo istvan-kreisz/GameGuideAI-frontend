@@ -3,7 +3,7 @@ import Radio from '@/components/Radio/Radio'
 import Package from './Package'
 import Features from './Features'
 
-import { price, featuresPrice } from '@/mocks/landingpage'
+import { price, comparison } from '@/mocks/landingpage'
 
 type MainProps = {}
 
@@ -42,7 +42,7 @@ const Main = ({}: MainProps) => {
 						))}
 					</div>
 				</div>
-				<Features items={featuresPrice} />
+				<Features items={comparison} />
 			</div>
 		</div>
 	)
