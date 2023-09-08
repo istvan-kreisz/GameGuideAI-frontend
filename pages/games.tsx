@@ -4,9 +4,19 @@ import Layout from '@/components/Layout/Layout'
 import Gamecards from '@/components/Gamecards/Gamecards'
 import { navigation } from '@/constants/navigation'
 import Modal from '@/components/Modal/Modal'
+import { useUserData } from 'context/UserDataContext'
 
 const Home: NextPage = () => {
 	const [visible, setVisible] = useState<boolean>(false)
+	const { conversations } = useUserData()
+
+	conversations.forEach((conversation) => {
+		const navigationElement = navigation.find((nav) => nav.title === conversation.game)
+
+		if (navigationElement && !navigationElement.url.includes('?')) {
+			navigationElement.url += `?id=${conversation.id}`
+		}
+	})
 
 	return (
 		<>

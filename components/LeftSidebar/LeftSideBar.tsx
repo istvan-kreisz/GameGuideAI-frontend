@@ -57,7 +57,7 @@ const LeftSidebar = ({ value, setValue, smallSidebar, visibleRightSidebar }: Lef
 			title: 'Home',
 			icon: 'home',
 			color: 'fill-accent-2',
-			url: '/',
+			url: '/games',
 		},
 		...chats,
 		/*{

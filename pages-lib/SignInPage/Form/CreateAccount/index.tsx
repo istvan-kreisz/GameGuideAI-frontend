@@ -15,7 +15,7 @@ const CreateAccount = ({}: CreateAccountProps) => {
 	const router = useRouter()
 
 	if (user) {
-		router.push('/')
+		router.push('/games')
 	}
 
 	const handleSignup: FormEventHandler<HTMLFormElement> = async (event) => {
@@ -23,7 +23,7 @@ const CreateAccount = ({}: CreateAccountProps) => {
 
 		try {
 			await signup(email, password)
-			router.push('/')
+			router.push('/games')
 		} catch (error) {
 			const errorMessage = getErrorMessage(error)
 			if (errorMessage) {

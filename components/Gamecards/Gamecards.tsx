@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from '@/components/Image/Image'
 import { useState } from 'react'
 import Modal from '@/components/Modal/Modal'
+import { useAuth } from 'context/AuthContext'
 
 type MenuType = {
 	title: string
@@ -26,6 +27,7 @@ const Gamecards = ({
 	clickable = true,
 }: MenuProps) => {
 	const [visible, setVisible] = useState<boolean>(false)
+	const { user } = useAuth()
 
 	const handleClick = (event: React.MouseEvent, enabled: boolean) => {
 		if (!enabled) {
@@ -53,7 +55,7 @@ const Gamecards = ({
 			{filteredItems.map((item, index) => {
 				if (clickable) {
 					return (
-						<Link href={item.url} key={index} passHref>
+						<Link href={!!user ? item.url : 'sign-in'} key={index} passHref>
 							<div
 								className={`group flex flex-col items-center border-2 border-n-3 rounded-xl h6 transition-all hover:shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0px_2rem_1.5rem_-1rem_rgba(0,0,0,0.12)] last:mb-0 dark:border-n-4 dark:hover:border-n-5 dark:hover:bg-surf-1`}
 								onClick={(event) => handleClick(event, item.enabled)}

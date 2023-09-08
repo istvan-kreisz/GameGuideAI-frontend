@@ -16,14 +16,14 @@ const SignIn = ({ onClick }: SignInProps) => {
 	const router = useRouter()
 
 	if (user) {
-		router.push('/')
+		router.push('/games')
 	}
 
 	const handleLogin: FormEventHandler<HTMLFormElement> = async (event) => {
 		event.preventDefault()
 		try {
 			await login(email, password)
-			router.push('/')
+			router.push('/games')
 		} catch (error) {
 			const errorMessage = getErrorMessage(error)
 			if (errorMessage) {

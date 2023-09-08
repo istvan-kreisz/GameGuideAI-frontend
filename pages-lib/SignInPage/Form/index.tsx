@@ -27,7 +27,7 @@ const Form = ({}: FormProps) => {
 	const googleLogin = async () => {
 		try {
 			await loginWithGoogle()
-			router.push('/')
+			router.push('/games')
 		} catch (error) {
 			const errorMessage = getErrorMessage(error)
 			if (errorMessage) {
