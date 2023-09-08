@@ -21,7 +21,7 @@ type LeftSidebarProps = {
 
 const LeftSidebar = ({ value, setValue, smallSidebar, visibleRightSidebar }: LeftSidebarProps) => {
 	const [visibleSettings, setVisibleSettings] = useState<boolean>(false)
-	const { user, logout } = useAuth()
+	const { user } = useAuth()
 	const { conversations } = useUserData()
 
 	useEffect(() => {
