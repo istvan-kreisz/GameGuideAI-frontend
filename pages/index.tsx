@@ -105,6 +105,7 @@ const Landing: NextPage = () => {
 										quality={100}
 										priority={true}
 										alt=""
+										loading="eager"
 									/>
 								</div>
 							</div>
