@@ -5,12 +5,12 @@ export const navigation = [
 		url: '/skyrim',
 		enabled: true,
 	},
-	{
-		title: 'Starfield',
-		image: 'starfield.jpg',
-		url: '/starfield',
-		enabled: true,
-	},
+	// {
+	// 	title: 'Starfield',
+	// 	image: 'starfield.jpg',
+	// 	url: '/starfield',
+	// 	enabled: true,
+	// },
 	{
 		title: 'Terraria',
 		image: 'terraria.jpg',
