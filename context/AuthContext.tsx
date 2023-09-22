@@ -10,7 +10,6 @@ import {
 	GoogleAuthProvider,
 } from 'firebase/auth'
 import { auth } from '../config/firebase'
-import { handleError } from '@/utils/utils'
 
 export const AuthContext = createContext<{
 	user: User | null | undefined

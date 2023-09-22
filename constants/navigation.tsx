@@ -3,6 +3,7 @@ export const navigation = [
 		title: 'Skyrim',
 		image: 'skyrim.jpg',
 		url: '/skyrim',
+		baseURL: '/skyrim',
 		enabled: true,
 	},
 	// {
@@ -15,6 +16,7 @@ export const navigation = [
 		title: 'Terraria',
 		image: 'terraria.jpg',
 		url: '/terraria',
+		baseURL: '/terraria',
 		enabled: true,
 	},
 	{

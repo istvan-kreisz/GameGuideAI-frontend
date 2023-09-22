@@ -13,8 +13,8 @@ const Home: NextPage = () => {
 	conversations.forEach((conversation) => {
 		const navigationElement = navigation.find((nav) => nav.title === conversation.game)
 
-		if (navigationElement && !navigationElement.url.includes('?')) {
-			navigationElement.url += `?id=${conversation.id}`
+		if (navigationElement && navigationElement.baseURL) {
+			navigationElement.url = navigationElement.baseURL + `?id=${conversation.id}`
 		}
 	})
 
