@@ -10,6 +10,7 @@ import FeatureBox from '@/pages-lib/LandingPage/FeatureBox'
 import ComparisonTable from '@/pages-lib/LandingPage/ComparisonTable'
 import FeaturePreview from '@/pages-lib/LandingPage/FeaturePreview'
 import DiscordButton from '@/pages-lib/LandingPage/JoinDiscordButton'
+import AccessButton from '@/pages-lib/LandingPage/AccessPrototypeButton'
 import Faq from '@/pages-lib/LandingPage/Faq'
 
 const svgs = [
@@ -120,7 +121,7 @@ const Landing: NextPage = () => {
 								alt=""
 							/>
 
-							<DiscordButton></DiscordButton>
+							<AccessButton></AccessButton>
 							<div className="flex flex-row relative max-w-3xl">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +131,8 @@ const Landing: NextPage = () => {
 									<path d="M92.3 10.1a2.6 2.6 0 0 0-2.6 2.6v7a62.1 62.1 0 0 0-83.9 4.1c-1 1-1 2.7 0 3.7s2.7 1 3.7 0A57 57 0 0 1 85.3 23h-6a2.6 2.6 0 0 0-2.6 2.6c0 1.5 1.2 2.6 2.6 2.6h12.9l1-.2c.6-.3 1.2-.8 1.4-1.4l.2-1V12.7a2.4 2.4 0 0 0-2.5-2.6z" />
 								</svg>
 								<h3 className="h4 text-3xl lg:text-2xl mt-6 font-medium text-n-1 max-w-6xl mx-28 lg:mx-20 sm:mx-10">
-									Join our discord for early access to the prototype.
+									Give it a go! Some image features are still in the works, so keep that in mind.
+									Eager to hear what you think!
 								</h3>
 							</div>
 						</section>
@@ -178,7 +180,7 @@ const Landing: NextPage = () => {
 						</section>
 						<section className="p-10 mt-20 mb-10 items-center text-center flex flex-col gap-10">
 							<h3 className="h3 lg:h4 text-center 2xl:mb-2">Our games in Beta</h3>
-							<Gamecards className="mx-auto" items={navigation} filterEnabled clickable={false} />
+							<Gamecards className="mx-auto" items={navigation} filterEnabled clickable={true} />
 							<h3 className="h3 lg:h4 text-center 2xl:mb-2 mt-10">Vote on the next Game!</h3>
 							<GamecardsCarousel className="mx-auto" items={navigation} filterDisabled />
 						</section>
@@ -194,7 +196,7 @@ const Landing: NextPage = () => {
 			</div>
 			{/* Games Section */}
 			<section className="mb-10">
-				<h3 className="mb-12 text-center h3 lg:h4">Join now for access to the prototype</h3>
+				<h3 className="mb-12 text-center h3 lg:h4">Let us know your thoughts on our discord!</h3>
 				<DiscordButton></DiscordButton>
 			</section>
 			<section className="items-center bg-gradient-to-b from-surf-2  to-surf-1 justify-center">
