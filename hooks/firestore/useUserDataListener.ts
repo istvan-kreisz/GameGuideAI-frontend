@@ -67,7 +67,11 @@ export function useUserDataListener(
 
 		if (user?.uid) {
 			conversationsListener(user?.uid, (conversations) => {
-				setConversations(conversations.filter((conversation) => conversation.game !== 'Starfield'))
+				setConversations(
+					conversations.filter(
+						(conversation) => conversation.game !== 'Starfield' && conversation.game !== 'Terraria'
+					)
+				)
 			})
 		}
 		currentUserId.current = user?.uid

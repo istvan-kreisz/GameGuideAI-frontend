@@ -17,7 +17,7 @@ export const navigation = [
 		image: 'terraria.jpg',
 		url: '/terraria',
 		baseURL: '/terraria',
-		enabled: true,
+		enabled: false,
 	},
 	{
 		title: 'GTA V',
